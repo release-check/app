@@ -1,0 +1,19 @@
+{
+  "name": "app",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/release-check/app.git"
+  },
+  "packageManager": "bun@1.3.14",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "check": "bun run typecheck",
+    "dev:api": "bun run --cwd apps/api dev",
+    "test": "bun test",
+    "typecheck": "bun run --cwd apps/api typecheck && bun run --cwd packages/rc-sdk-js typecheck"
+  }
+}
