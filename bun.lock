@@ -15,6 +15,13 @@
         "typescript": "^5.6.0",
       },
     },
+    "apps/web": {
+      "name": "@release-check/web",
+      "devDependencies": {
+        "bun-types": "^1.3.14",
+        "typescript": "^5.6.0",
+      },
+    },
     "packages/rc-sdk-js": {
       "name": "@release-check/sdk-js",
       "version": "0.1.0",
@@ -27,6 +34,8 @@
     "@release-check/api": ["@release-check/api@workspace:apps/api"],
 
     "@release-check/sdk-js": ["@release-check/sdk-js@workspace:packages/rc-sdk-js"],
+
+    "@release-check/web": ["@release-check/web@workspace:apps/web"],
 
     "@types/node": ["@types/node@26.1.0", "", { "dependencies": { "undici-types": "~8.3.0" } }, "sha512-O0A1G3xPGy4w7AgQdAQYUlQ+BKk2Oovw8eRpofyp5KdBZULnbe+WqaOVNrm705SHphCiG4XHsACrSmPu1f+Kgw=="],
 

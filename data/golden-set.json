@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "description": "Phase 2 local golden candidates for API, SDK, and web demo contract checks.",
+  "candidateIds": [
+    "demo-park-hye-jin-like-this",
+    "demo-dj-python-angel",
+    "demo-dj-python-angel-live-demo",
+    "demo-massive-attack-angel"
+  ]
+}

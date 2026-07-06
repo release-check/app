@@ -54,6 +54,61 @@ Target shape:
 
 See [docs/performance.md](docs/performance.md).
 
+## Local Demo
+
+Run the API and web UI together:
+
+```bash
+bun run dev:demo
+```
+
+Open `http://localhost:3001`.
+
+The web demo shows a search input, top candidates, six platform statuses,
+confidence, evidence, `unknown` states, and version/same-title ambiguity.
+
+For the full demo flow, see [docs/demo.md](docs/demo.md).
+
+## Local API
+
+Install dependencies with Bun, then run the API:
+
+```bash
+bun install
+bun run dev:api
+```
+
+Useful Phase 1 requests:
+
+```bash
+curl 'http://localhost:3000/health'
+curl 'http://localhost:3000/search?q=Park%20Hye%20Jin%20Like%20This'
+curl 'http://localhost:3000/availability?artist=Park%20Hye%20Jin&track=Like%20This'
+curl 'http://localhost:3000/search?q=DJ%20Python%20Angel%20live%20demo'
+```
+
+The search response returns candidates with canonical fields, confidence,
+evidence, ambiguity markers, and six-platform availability states.
+
+For the full Phase 1 API contract, see [docs/api.md](docs/api.md).
+
+## Demo Data And Evaluation
+
+Print the local demo fixture:
+
+```bash
+bun run demo-data
+```
+
+Run the local contract/evaluation guard:
+
+```bash
+bun run eval:demo
+```
+
+The evaluation checks top-3 candidate behavior, version and same-name
+ambiguity, six platform statuses, and false-positive availability guards.
+
 ## Repository Layout
 
 ```text

@@ -12,8 +12,12 @@
   ],
   "scripts": {
     "check": "bun run typecheck",
+    "demo-data": "bun run scripts/demo-data.ts",
+    "dev:demo": "bun run scripts/dev-demo.ts",
     "dev:api": "bun run --cwd apps/api dev",
+    "dev:web": "bun run --cwd apps/web dev",
+    "eval:demo": "bun run scripts/eval-demo.ts",
     "test": "bun test",
-    "typecheck": "bun run --cwd apps/api typecheck && bun run --cwd packages/rc-sdk-js typecheck"
+    "typecheck": "bun run --cwd apps/api typecheck && bun run --cwd apps/web typecheck && bun run --cwd packages/rc-sdk-js typecheck"
   }
 }

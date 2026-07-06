@@ -1,0 +1,45 @@
+{
+  "cases": [
+    {
+      "name": "exact original query",
+      "query": "Park Hye Jin Like This",
+      "expectedTop3Id": "demo-park-hye-jin-like-this"
+    },
+    {
+      "name": "same-name title query",
+      "query": "Angel",
+      "expectedTop3Id": "demo-dj-python-angel",
+      "requiresAmbiguity": "same-title",
+      "minCandidates": 3
+    },
+    {
+      "name": "live demo ambiguity query",
+      "query": "DJ Python Angel live demo",
+      "expectedTop3Id": "demo-dj-python-angel-live-demo",
+      "requiresAmbiguity": "demo",
+      "minCandidates": 2
+    }
+  ],
+  "requiredStateChecks": [
+    {
+      "candidateId": "demo-dj-python-angel-live-demo",
+      "platform": "youtube_music",
+      "state": "duplicate_candidate"
+    },
+    {
+      "candidateId": "demo-dj-python-angel-live-demo",
+      "platform": "soundcloud",
+      "state": "unknown"
+    },
+    {
+      "candidateId": "demo-massive-attack-angel",
+      "platform": "bandcamp",
+      "state": "removed"
+    },
+    {
+      "candidateId": "demo-massive-attack-angel",
+      "platform": "melon",
+      "state": "region_locked"
+    }
+  ]
+}

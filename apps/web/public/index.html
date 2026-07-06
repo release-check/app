@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReleaseCheck Demo</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="search-band">
+        <div>
+          <p class="eyebrow">ReleaseCheck Phase 2 Demo</p>
+          <h1>Music availability index</h1>
+        </div>
+        <form class="search-form" id="search-form">
+          <label for="query">Search track or release</label>
+          <div class="query-row">
+            <input
+              id="query"
+              name="query"
+              type="search"
+              value="DJ Python Angel live demo"
+              autocomplete="off"
+            />
+            <button type="submit">Search</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="status-strip" aria-live="polite">
+        <div>
+          <span class="metric-label">API</span>
+          <strong id="api-status">checking</strong>
+        </div>
+        <div>
+          <span class="metric-label">Candidates</span>
+          <strong id="candidate-count">0</strong>
+        </div>
+        <div>
+          <span class="metric-label">Latency budget</span>
+          <strong id="latency-budget">150 ms</strong>
+        </div>
+        <div>
+          <span class="metric-label">Unknown states</span>
+          <strong id="unknown-count">0</strong>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="candidate-list">
+          <div class="section-heading">
+            <h2>Top candidates</h2>
+            <span id="query-label"></span>
+          </div>
+          <div id="candidate-list"></div>
+        </aside>
+
+        <section class="detail-panel" id="detail-panel">
+          <div class="empty-state">Run a search to inspect availability and evidence.</div>
+        </section>
+      </section>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
