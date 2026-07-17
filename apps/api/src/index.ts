@@ -36,7 +36,7 @@ app.get("/search", (c) => {
       source: "demo-index",
       latencyBudgetMs: INDEXED_SEARCH_LATENCY_BUDGET_MS,
     },
-    candidates: searchDemoIndex(query),
+    candidates: searchDemoIndex(query).slice(0, 10),
   };
 
   return c.json(response);

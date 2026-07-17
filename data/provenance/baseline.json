@@ -1,0 +1,42 @@
+{
+  "schema_version": "releasecheck.provenance.v1",
+  "iteration_id": "rc-app-baseline-20260717-01",
+  "fixtures": [
+    {
+      "path": "apps/api/src/demo-index.ts",
+      "content_sha256": "81292b0941a7146df8297a8e8c94cd621a6fa6ec8edf7f0ae030f4c46b5ab874",
+      "source_identifier": "repo:apps/api/src/demo-index.ts",
+      "source_url": null,
+      "retrieved_at": null,
+      "classification": "handwritten_demo",
+      "verification_state": "unverified",
+      "labels": ["confidence", "evidence", "ambiguity", "availability_state"],
+      "permitted_use": "contract_and_baseline_smoke_only",
+      "policy_note": "Runtime handwritten candidates; not authoritative matching or availability ground truth."
+    },
+    {
+      "path": "data/golden-set.json",
+      "content_sha256": "9e3a0f9f718e231fc0136f8ddd3193291593fb9b6c52db4f1409ada3423cbde0",
+      "source_identifier": "repo:data/golden-set.json",
+      "source_url": null,
+      "retrieved_at": null,
+      "classification": "handwritten_demo",
+      "verification_state": "unverified",
+      "labels": ["candidate_ids"],
+      "permitted_use": "contract_and_baseline_smoke_only",
+      "policy_note": "Local handwritten fixture; not authoritative availability ground truth."
+    },
+    {
+      "path": "data/evaluation-set.json",
+      "content_sha256": "83dba063b7909a3fb056e20be08ac7705af8d927ef03c76f2ac58f34e13991aa",
+      "source_identifier": "repo:data/evaluation-set.json",
+      "source_url": null,
+      "retrieved_at": null,
+      "classification": "handwritten_demo",
+      "verification_state": "unverified",
+      "labels": ["top3_smoke", "ambiguity_smoke", "availability_state_smoke"],
+      "permitted_use": "contract_and_baseline_smoke_only",
+      "policy_note": "Local handwritten fixture; not independently held-out or source-verified."
+    }
+  ]
+}

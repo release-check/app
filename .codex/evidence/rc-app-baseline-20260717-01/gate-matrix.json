@@ -1,0 +1,110 @@
+{
+  "schema_version": "releasecheck.gate-matrix.v1",
+  "iteration_id": "rc-app-baseline-20260717-01",
+  "slice": "app-baseline",
+  "frozen": true,
+  "scope": {
+    "repositories": ["app"],
+    "base_revision": "fa30ae67a660f18ba5c7439814a0d72fbf188aa1",
+    "non_goals": [
+      "MusicBrainz ingest",
+      "Rust-correlated public search",
+      "verified availability quality claims",
+      "cross-repository delivery"
+    ]
+  },
+  "gates": [
+    {
+      "id": "repository_integrity",
+      "commands": ["bun run check", "bun test"],
+      "thresholds": {
+        "all_exit_zero": true,
+        "minimum_executed_tests": 1,
+        "unresolved_or_user_owned_hunks_committed": 0
+      }
+    },
+    {
+      "id": "executable_verification_surface",
+      "commands": [
+        "bun run test:public-contract",
+        "bun run eval:verified",
+        "bun run validate:provenance",
+        "bun run bench:public-search"
+      ],
+      "thresholds": {
+        "all_exit_zero": true,
+        "machine_readable_json": true,
+        "negative_control_observed_failure": true
+      }
+    },
+    {
+      "id": "baseline_public_contract",
+      "command": "bun run test:public-contract",
+      "thresholds": {
+        "public_http_status": 200,
+        "maximum_ranked_candidates": 10,
+        "api_sdk_runtime_equivalence": true,
+        "ui_search_contract_present": true,
+        "rust_correlation": "not_applicable_baseline"
+      }
+    },
+    {
+      "id": "baseline_quality_surface",
+      "command": "bun run eval:verified",
+      "thresholds": {
+        "minimum_seed_cases": 3,
+        "top_3_seed_failures": 0,
+        "verified_availability_claim": false,
+        "fixture_classification": "handwritten_demo_unverified"
+      }
+    },
+    {
+      "id": "baseline_provenance_integrity",
+      "command": "bun run validate:provenance",
+      "thresholds": {
+        "manifest_completeness_percent": 100,
+        "content_hash_mismatches": 0,
+        "synthetic_or_handwritten_rows_claimed_verified": 0,
+        "musicbrainz_policy_mapping": "not_applicable_baseline"
+      }
+    },
+    {
+      "id": "baseline_public_performance",
+      "command": "bun run bench:public-search",
+      "thresholds": {
+        "warmups": 25,
+        "measured_requests": 250,
+        "synthetic_pressure_inputs": 500,
+        "maximum_ranked_candidates": 10,
+        "p95_milliseconds": 150,
+        "maximum_response_bytes": 262144,
+        "regression_claim": "candidate_baseline_only"
+      }
+    },
+    {
+      "id": "deterministic_reproduction",
+      "commands": [
+        "bun run check",
+        "bun test",
+        "bun run test:public-contract",
+        "bun run eval:verified",
+        "bun run validate:provenance",
+        "bun run bench:public-search"
+      ],
+      "thresholds": {
+        "runs_on_frozen_candidate": 2,
+        "stable_fields_identical": true,
+        "excluded_volatile_fields": ["timing", "pid", "temporary_path", "timestamp"]
+      }
+    },
+    {
+      "id": "independent_review",
+      "thresholds": {
+        "read_only_roles": ["product-flow", "adversarial-matching-data", "engineering"],
+        "reports_bound_to_same_tree_and_gate_matrix": true,
+        "unresolved_critical_findings": 0,
+        "verdict_rule": "hard_gate_and"
+      }
+    }
+  ]
+}
