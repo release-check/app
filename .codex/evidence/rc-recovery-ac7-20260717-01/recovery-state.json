@@ -1,0 +1,271 @@
+{
+  "schema_version": "releasecheck.vertical-slice-recovery.v1",
+  "iteration_id": "rc-recovery-ac7-20260717-01",
+  "scenario": "Preserve an auditable, resumable stop before unverified or partial cross-repository delivery.",
+  "scope": {
+    "repositories": ["app", "core"],
+    "contracts": ["recovery", "ownership", "attempt accounting", "conditional delivery"],
+    "data_sources": [],
+    "document_manifest": [
+      "AGENTS.md",
+      "ROADMAP.md",
+      "app/AGENTS.md",
+      "app/ROADMAP.md",
+      "core/AGENTS.md",
+      "core/ROADMAP.md",
+      "app/.codex/evidence/rc-app-baseline-20260717-01/gate-matrix.json"
+    ],
+    "non_goals": [
+      "modify product code",
+      "author or reveal holdout labels",
+      "weaken an active gate matrix",
+      "commit or push a partial delivery"
+    ]
+  },
+  "base_revisions": {
+    "captured_at": "2026-07-17T04:26:11Z",
+    "app": {
+      "head": "63dd90b51427bf7d49772bb797c0901bc32dcbf3",
+      "branch": "main",
+      "upstream": "origin/main",
+      "upstream_relation": "ahead 1",
+      "unstaged_binary_diff_sha256": "4e911d59a917bff40fba58d62f07d956fe73d0b6f2eb11ad108713110311bc53",
+      "staged_binary_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "porcelain_v2_with_untracked_sha256": "30f2516165e7d5bc7a98e6870e891c1f6d42b335ece4339e7f00c2c3e9f584d7",
+      "ignored_status_sha256": "630760b489f3bf5e1c06e4b6d28e81942a8653e8e4fd43422c5ad68dbaf147d3",
+      "symlink_manifest_sha256": "8a873d1cff02560fe2fe4dfebcf8e6d3ffda0fcbf3ee6595bd47586147ffcff8",
+      "submodule_manifest_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "candidate_tree_frozen": false
+    },
+    "core": {
+      "head": "ed554b0039ed4d7cccdb85fab41f1e5a2d7b9212",
+      "branch": "main",
+      "upstream": "origin/main",
+      "upstream_relation": "in sync",
+      "unstaged_binary_diff_sha256": "b5d2446118d79b7e123892762cdfc68d17625384edfd651452ae290d9f1c4982",
+      "staged_binary_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "porcelain_v2_with_untracked_sha256": "19b7ca095a35b727d4dfdbf14b0a578d6ac5992c672105b68ebeff1ef543f35c",
+      "ignored_status_sha256": "ae9a3c36e39c9f2670b8524cea7b723470bf2b53acbf8b555f8d9c4785ec6cc5",
+      "symlink_manifest_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "submodule_manifest_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "candidate_tree_frozen": false
+    }
+  },
+  "gate_matrix_hash": "c86e1f8f1fd2d2772d3c65de9f890b0f159bcb4391a518ed8e08e9affa2a6b25",
+  "gate_matrix_scope": "app-baseline only; it does not authorize the full ingest-to-UI slice",
+  "ownership_manifest": [
+    {
+      "repository": "app",
+      "paths": [
+        ".gitignore", "README.md", "apps/api/src/index.ts", "apps/api/src/types.ts",
+        "docs/api.md", "docs/performance.md", "package.json",
+        "packages/rc-sdk-js/src/index.ts", "scripts/demo-data.ts", "scripts/eval-demo.ts"
+      ],
+      "hunks": "all unstaged hunks present at snapshot",
+      "classification": "unresolved",
+      "disposition": "preserve; do not stage or commit"
+    },
+    {
+      "repository": "app",
+      "paths": [
+        "apps/api/src/adapters.ts", "apps/api/src/core-bridge.ts", "apps/api/src/search-index.ts",
+        "apps/api/src/synthetic-fixtures.ts", "scripts/bench-search.ts", "scripts/build-index.ts",
+        "scripts/eval-core-bridge.ts"
+      ],
+      "hunks": "entire untracked files",
+      "classification": "unresolved",
+      "disposition": "preserve; do not add or commit"
+    },
+    {
+      "repository": "core",
+      "paths": [
+        "Cargo.lock", "README.md", "crates/rc-core/Cargo.toml", "crates/rc-core/src/lib.rs",
+        "crates/rc-worker/Cargo.toml", "crates/rc-worker/src/main.rs"
+      ],
+      "hunks": "all unstaged hunks present at snapshot",
+      "classification": "unresolved",
+      "disposition": "preserve; do not stage or commit"
+    },
+    {
+      "repository": "app",
+      "paths": [
+        ".codex/evidence/rc-recovery-ac7-20260717-01/recovery-state.json",
+        ".codex/evidence/rc-recovery-ac7-20260717-01/RESUME.md"
+      ],
+      "hunks": "entire recovery artifact",
+      "classification": "loop-owned",
+      "disposition": "preserve uncommitted as resumable evidence until a later PASS"
+    }
+  ],
+  "document_findings": [
+    {
+      "finding": "App and core are independent repositories and partial cross-repository delivery is forbidden.",
+      "sources": ["AGENTS.md", "Seed constraints"]
+    },
+    {
+      "finding": "Unresolved ownership and absent independent reports prevent PASS.",
+      "sources": ["Seed runtime ownership policy", "Seed runtime independent_review gate"]
+    },
+    {
+      "finding": "The frozen matrix applies only to app baseline, not the later shared slice.",
+      "sources": ["app/.codex/evidence/rc-app-baseline-20260717-01/gate-matrix.json"]
+    },
+    {
+      "finding": "A non-mutating STOP is the smallest reversible document-consistent action.",
+      "sources": ["Seed exit conditions", "Seed runtime attempt and delivery policy"]
+    }
+  ],
+  "data_provenance": [],
+  "baseline": {
+    "kind": "recovery snapshot, not a quality or performance baseline",
+    "commands": [
+      "cd app && bun run check",
+      "cd app && bun test",
+      "cd core && cargo test --workspace",
+      "git -C <repo> status --porcelain=v2 --untracked-files=all",
+      "git -C <repo> status --short --ignored",
+      "git -C <repo> diff --binary",
+      "git -C <repo> submodule status",
+      "find <repo> -type l"
+    ],
+    "fixtures": [],
+    "environment": {
+      "workspace": "/Users/justn/orca/projects/release-check",
+      "captured_at": "2026-07-17T04:26:11Z"
+    },
+    "quality_metrics": null,
+    "latency": null,
+    "response_size": null,
+    "integrity": {
+      "app_dirty": true,
+      "core_dirty": true,
+      "staged_changes_present": false,
+      "app_untracked_source_files": 7,
+      "core_untracked_files": 0
+    },
+    "repository_integrity_diagnostic": {
+      "app_check_exit": 0,
+      "app_test_exit": 0,
+      "app_tests_executed": 5,
+      "core_test_exit": 0,
+      "core_tests_executed": 11,
+      "candidate_bound": false,
+      "note": "Diagnostic only because no exact candidate tree is frozen."
+    }
+  },
+  "attempts": [],
+  "attempt_accounting": {
+    "attempts_consumed_by_this_lane": 0,
+    "reason": "No candidate tree was frozen and no complete verifier round began.",
+    "maximum_total_attempts": 3,
+    "repair_rule": "Check for new user instructions first; a terminal failure requires a fresh independently frozen terminal set."
+  },
+  "verifier_reports": [],
+  "gates": [
+    {
+      "gate": "repository_integrity_diagnostic",
+      "threshold": "app check and at least one app test pass; core workspace tests pass",
+      "measurement": {
+        "app_check_exit": 0,
+        "app_test_exit": 0,
+        "app_tests_executed": 5,
+        "core_test_exit": 0,
+        "core_tests_executed": 11,
+        "candidate_tree_frozen": false
+      },
+      "artifact": "app/.codex/evidence/rc-recovery-ac7-20260717-01/recovery-state.json",
+      "verdict": "PASS_DIAGNOSTIC_ONLY"
+    },
+    {
+      "gate": "recovery_ready",
+      "threshold": "STOP without product mutation, commit, push, or gate weakening when PASS is not established",
+      "measurement": {
+        "product_files_modified_by_ac7": 0,
+        "commits_created_by_ac7": 0,
+        "pushes_performed_by_ac7": 0,
+        "active_gates_removed_or_weakened": 0,
+        "resumable_record_present": true
+      },
+      "artifact": "app/.codex/evidence/rc-recovery-ac7-20260717-01/recovery-state.json",
+      "verdict": "PASS"
+    },
+    {
+      "gate": "conditional_delivery",
+      "threshold": "All frozen gates pass twice and three independent reports bind to the same tree and matrix with zero critical findings",
+      "measurement": {
+        "candidate_tree_frozen": false,
+        "complete_reruns": 0,
+        "independent_reports": 0,
+        "unresolved_ownership_groups": 3
+      },
+      "artifact": "app/.codex/evidence/rc-recovery-ac7-20260717-01/recovery-state.json",
+      "verdict": "STOP"
+    }
+  ],
+  "timestamps": {
+    "iteration_started": "2026-07-17T04:26:11Z",
+    "snapshot_captured": "2026-07-17T04:26:11Z",
+    "attempt_started": null,
+    "ingest": null,
+    "verification": "2026-07-17T04:29:39Z",
+    "interruption": null,
+    "completion": "2026-07-17T04:26:11Z"
+  },
+  "verdict": "STOP",
+  "verdict_rationale": [
+    "Both repositories contain unresolved unstaged changes.",
+    "App contains unresolved untracked source files.",
+    "No exact cross-repository candidate tree is frozen.",
+    "No complete independent verifier round is present.",
+    "App is ahead of upstream while the shared slice is incomplete, so pushing would be partial delivery."
+  ],
+  "conditional_delivery": {
+    "verdict_precedence": ["STOP", "NOT_EVALUABLE", "FIX", "PASS"],
+    "stop_triggers": [
+      "scope-changing user instruction", "required authority", "unclear data policy",
+      "destructive action", "interruption", "partial delivery", "final-check failure",
+      "three exhausted attempts"
+    ],
+    "not_evaluable_trigger": "Required ground truth or independent evidence is unavailable and no higher STOP blocker applies.",
+    "fix_trigger": "A mandatory gate fails, no STOP blocker applies, and fewer than three attempts are consumed.",
+    "pass_trigger": "Every frozen gate passes twice, hard-gate AND review passes, ownership is resolved, and no critical finding remains.",
+    "commit_order_after_pass": ["core", "app"],
+    "commit_scope": "exact frozen loop-owned hunks only",
+    "required_commit_trailer": "Iteration-ID: <shared iteration_id>",
+    "push_allowed": false,
+    "push_blocker": "Current state is not PASS and a push would be partial delivery."
+  },
+  "commits": [
+    {
+      "repository": "app",
+      "sha": "63dd90b51427bf7d49772bb797c0901bc32dcbf3",
+      "iteration_id": "rc-app-baseline-20260717-01",
+      "relationship": "present before AC7 snapshot; not authored or approved by this lane",
+      "pushed": false
+    }
+  ],
+  "change_disposition": {
+    "committed": [],
+    "preserved": [
+      "all unresolved app state", "all unresolved core state",
+      "existing app baseline commit", "this recovery artifact"
+    ],
+    "resumable": true,
+    "recovery_instructions": [
+      "Check for new user instructions before repair, verdict, commit, or push.",
+      "Re-snapshot both repos and compare hashes; expand ownership before touching a new path.",
+      "Resolve every ownership group without staging user-owned or unresolved hunks.",
+      "Freeze the full-slice gate matrix and exact staged candidate trees.",
+      "Run read-only product-flow, adversarial matching/data, and engineering verification on identical hashes.",
+      "Use FIX only with fewer than three complete attempts; otherwise STOP.",
+      "On PASS only, commit core then app with one shared Iteration-ID and run final checks.",
+      "On interruption, policy or authority block, destructive choice, partial commit, or final failure, STOP without push and update this record."
+    ]
+  },
+  "escalation": {
+    "blocked": false,
+    "reason": "No user exception is required to preserve and stop safely.",
+    "minimal_required_user_authority": null,
+    "future_escalation_condition": "Ask only if ownership cannot be proven, MusicBrainz policy remains materially ambiguous, or destructive or partial-delivery recovery is required."
+  }
+}

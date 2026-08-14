@@ -1,0 +1,353 @@
+{
+  "schema_version": "releasecheck.musicbrainz-positive-recordings.v1",
+  "dataset_id": "musicbrainz-positive-recordings-20260717",
+  "iteration_id": "rc-mb-positive-seeds-ac1-20260717-01",
+  "purpose": "Hand-verified positive recording identities for offline contract and matching tests; not availability ground truth.",
+  "classification": "verified_musicbrainz_recording",
+  "verification_state": "hand_verified",
+  "policy": {
+    "redistributed_fields": "musicbrainz_core_metadata_only",
+    "excluded_fields": [
+      "annotations",
+      "audio",
+      "cover_art",
+      "edit_history",
+      "ratings",
+      "tags"
+    ],
+    "permitted_use": "offline_positive_recording_identity_fixture",
+    "license_id": "CC0-1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "musicbrainz_data_license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "musicbrainz_database_scope_url": "https://musicbrainz.org/doc/MusicBrainz_Database",
+    "musicbrainz_api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "musicbrainz_rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "api_usage": {
+      "meaningful_user_agent_required": true,
+      "source_ip_average_requests_per_second_maximum": 1,
+      "polling_for_changes_allowed": false
+    }
+  },
+  "seeds": [
+    {
+      "seed_id": "mb-positive-newjeans-ditto",
+      "classification": "verified_musicbrainz_recording",
+      "identity": {
+        "recording_mbid": "adf44a12-e5f4-48aa-9029-b9ef4b5f1d6d",
+        "track_mbid": "4a5f8dd3-73e4-40e2-bf5e-882de8be55b1",
+        "release_mbid": "4e9c7e78-568f-4643-b2a8-b5a59ee2ca87",
+        "release_group_mbid": "f99c9e74-52e3-47cb-9286-ce0019a9b69a",
+        "artist_mbids": ["49204a7a-ed85-407a-828f-6fd46f1d8126"]
+      },
+      "metadata": {
+        "title": "Ditto",
+        "artist_credit": "NewJeans",
+        "release_title": "Ditto",
+        "release_status": "official",
+        "release_date": "2022-12-19",
+        "duration_ms": 186000,
+        "duration_precision": "display_seconds",
+        "isrcs": ["USA2P2254487"]
+      },
+      "source": {
+        "provider": "MusicBrainz",
+        "source_identifier": "musicbrainz:recording:adf44a12-e5f4-48aa-9029-b9ef4b5f1d6d",
+        "recording_url": "https://musicbrainz.org/recording/adf44a12-e5f4-48aa-9029-b9ef4b5f1d6d",
+        "release_url": "https://musicbrainz.org/release/4e9c7e78-568f-4643-b2a8-b5a59ee2ca87",
+        "api_lookup_url": "https://musicbrainz.org/ws/2/recording/adf44a12-e5f4-48aa-9029-b9ef4b5f1d6d?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+        "retrieved_at": "2026-07-17T04:34:38Z",
+        "retrieval_method": "manual_official_entity_review"
+      },
+      "label": {
+        "kind": "positive_recording_identity",
+        "expected_relationship": "exact_musicbrainz_recording",
+        "expected_recording_mbid": "adf44a12-e5f4-48aa-9029-b9ef4b5f1d6d",
+        "rationale": "The official Ditto release track links to this recording and credits NewJeans."
+      },
+      "verification": {
+        "state": "hand_verified",
+        "verified_at": "2026-07-17T04:34:38Z",
+        "method": "Cross-checked the official MusicBrainz recording, release, release-group, artist, and track links.",
+        "verified_by_role": "seed_writer",
+        "checked_fields": [
+          "recording_mbid",
+          "track_mbid",
+          "release_mbid",
+          "release_group_mbid",
+          "artist_mbids",
+          "title",
+          "artist_credit",
+          "release_status",
+          "release_date",
+          "duration_ms",
+          "isrcs"
+        ]
+      },
+      "policy_provenance": {
+        "license_id": "CC0-1.0",
+        "license_url": "https://musicbrainz.org/doc/About/Data_License",
+        "data_scope": "core_metadata_only",
+        "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+        "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+        "redistribution": "permitted_core_metadata",
+        "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+      }
+    },
+    {
+      "seed_id": "mb-positive-bjork-joga",
+      "classification": "verified_musicbrainz_recording",
+      "identity": {
+        "recording_mbid": "83534ada-9f60-4093-bbf3-ca182a03cf8b",
+        "track_mbid": "8677d875-ab35-4c3e-8c05-938d72de7da5",
+        "release_mbid": "bd9732db-27bf-4bc6-9df6-d0460ed62dab",
+        "release_group_mbid": "ecb0a296-2813-36cb-9470-dae14b44fda3",
+        "artist_mbids": ["87c5dedd-371d-4a53-9f7f-80522fb7f3cb"]
+      },
+      "metadata": {
+        "title": "Jóga",
+        "artist_credit": "Björk",
+        "release_title": "Jóga",
+        "release_status": "official",
+        "release_date": "1997",
+        "duration_ms": 306000,
+        "duration_precision": "display_seconds",
+        "isrcs": []
+      },
+      "source": {
+        "provider": "MusicBrainz",
+        "source_identifier": "musicbrainz:recording:83534ada-9f60-4093-bbf3-ca182a03cf8b",
+        "recording_url": "https://musicbrainz.org/recording/83534ada-9f60-4093-bbf3-ca182a03cf8b",
+        "release_url": "https://musicbrainz.org/release/bd9732db-27bf-4bc6-9df6-d0460ed62dab",
+        "api_lookup_url": "https://musicbrainz.org/ws/2/recording/83534ada-9f60-4093-bbf3-ca182a03cf8b?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+        "retrieved_at": "2026-07-17T04:34:38Z",
+        "retrieval_method": "manual_official_entity_review"
+      },
+      "label": {
+        "kind": "positive_recording_identity",
+        "expected_relationship": "exact_musicbrainz_recording",
+        "expected_recording_mbid": "83534ada-9f60-4093-bbf3-ca182a03cf8b",
+        "rationale": "The official Jóga release track links to this recording and credits Björk."
+      },
+      "verification": {
+        "state": "hand_verified",
+        "verified_at": "2026-07-17T04:34:38Z",
+        "method": "Cross-checked the official MusicBrainz release, release-group, artist, recording, and track links.",
+        "verified_by_role": "seed_writer",
+        "checked_fields": [
+          "recording_mbid",
+          "track_mbid",
+          "release_mbid",
+          "release_group_mbid",
+          "artist_mbids",
+          "title",
+          "artist_credit",
+          "release_status",
+          "release_date",
+          "duration_ms",
+          "isrcs"
+        ]
+      },
+      "policy_provenance": {
+        "license_id": "CC0-1.0",
+        "license_url": "https://musicbrainz.org/doc/About/Data_License",
+        "data_scope": "core_metadata_only",
+        "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+        "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+        "redistribution": "permitted_core_metadata",
+        "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+      }
+    },
+    {
+      "seed_id": "mb-positive-ymo-rydeen",
+      "classification": "verified_musicbrainz_recording",
+      "identity": {
+        "recording_mbid": "96d9565e-0772-4202-9b8a-c52a96582bae",
+        "track_mbid": "c1eeb15b-1db9-3634-9958-269b9fbc65d7",
+        "release_mbid": "8d3f2c3a-d96d-48fe-abd9-8c805c7ae5ca",
+        "release_group_mbid": "f9997231-b7af-3ba4-a1d7-17128522cbb3",
+        "artist_mbids": ["ac5af671-1df0-4312-8b7b-e61992ecc883"]
+      },
+      "metadata": {
+        "title": "Rydeen",
+        "artist_credit": "Yellow Magic Orchestra",
+        "release_title": "Y.M.O. Best Selection",
+        "release_status": "official",
+        "release_date": "1986-02-25",
+        "duration_ms": 268000,
+        "duration_precision": "display_seconds",
+        "isrcs": []
+      },
+      "source": {
+        "provider": "MusicBrainz",
+        "source_identifier": "musicbrainz:recording:96d9565e-0772-4202-9b8a-c52a96582bae",
+        "recording_url": "https://musicbrainz.org/recording/96d9565e-0772-4202-9b8a-c52a96582bae",
+        "release_url": "https://musicbrainz.org/release/8d3f2c3a-d96d-48fe-abd9-8c805c7ae5ca",
+        "api_lookup_url": "https://musicbrainz.org/ws/2/recording/96d9565e-0772-4202-9b8a-c52a96582bae?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+        "retrieved_at": "2026-07-17T04:34:38Z",
+        "retrieval_method": "manual_official_entity_review"
+      },
+      "label": {
+        "kind": "positive_recording_identity",
+        "expected_relationship": "exact_musicbrainz_recording",
+        "expected_recording_mbid": "96d9565e-0772-4202-9b8a-c52a96582bae",
+        "rationale": "The official compilation track links Rydeen by Yellow Magic Orchestra to this recording."
+      },
+      "verification": {
+        "state": "hand_verified",
+        "verified_at": "2026-07-17T04:34:38Z",
+        "method": "Cross-checked the official MusicBrainz release, release-group, artist, recording, and track links.",
+        "verified_by_role": "seed_writer",
+        "checked_fields": [
+          "recording_mbid",
+          "track_mbid",
+          "release_mbid",
+          "release_group_mbid",
+          "artist_mbids",
+          "title",
+          "artist_credit",
+          "release_status",
+          "release_date",
+          "duration_ms",
+          "isrcs"
+        ]
+      },
+      "policy_provenance": {
+        "license_id": "CC0-1.0",
+        "license_url": "https://musicbrainz.org/doc/About/Data_License",
+        "data_scope": "core_metadata_only",
+        "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+        "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+        "redistribution": "permitted_core_metadata",
+        "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+      }
+    },
+    {
+      "seed_id": "mb-positive-charli-xcx-vroom-vroom",
+      "classification": "verified_musicbrainz_recording",
+      "identity": {
+        "recording_mbid": "1c1d4379-4aef-4b6f-be69-b97c54db276f",
+        "track_mbid": "d585035c-9675-462f-9330-ef8cf72c38e5",
+        "release_mbid": "e2f1dc68-f821-472e-8819-c9661d00fe26",
+        "release_group_mbid": "d4cc6eea-bf86-4c79-a5d9-2da07df19e0e",
+        "artist_mbids": ["260b6184-8828-48eb-945c-bc4cb6fc34ca"]
+      },
+      "metadata": {
+        "title": "Vroom Vroom",
+        "artist_credit": "Charli XCX",
+        "release_title": "Vroom Vroom",
+        "release_status": "official",
+        "release_date": "2024-06-05",
+        "duration_ms": 193000,
+        "duration_precision": "display_seconds",
+        "isrcs": []
+      },
+      "source": {
+        "provider": "MusicBrainz",
+        "source_identifier": "musicbrainz:recording:1c1d4379-4aef-4b6f-be69-b97c54db276f",
+        "recording_url": "https://musicbrainz.org/recording/1c1d4379-4aef-4b6f-be69-b97c54db276f",
+        "release_url": "https://musicbrainz.org/release/e2f1dc68-f821-472e-8819-c9661d00fe26",
+        "api_lookup_url": "https://musicbrainz.org/ws/2/recording/1c1d4379-4aef-4b6f-be69-b97c54db276f?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+        "retrieved_at": "2026-07-17T04:34:38Z",
+        "retrieval_method": "manual_official_entity_review"
+      },
+      "label": {
+        "kind": "positive_recording_identity",
+        "expected_relationship": "exact_musicbrainz_recording",
+        "expected_recording_mbid": "1c1d4379-4aef-4b6f-be69-b97c54db276f",
+        "rationale": "The official Vroom Vroom EP track links to this recording and credits Charli XCX."
+      },
+      "verification": {
+        "state": "hand_verified",
+        "verified_at": "2026-07-17T04:34:38Z",
+        "method": "Cross-checked the official MusicBrainz release, release-group, artist, recording, and track links.",
+        "verified_by_role": "seed_writer",
+        "checked_fields": [
+          "recording_mbid",
+          "track_mbid",
+          "release_mbid",
+          "release_group_mbid",
+          "artist_mbids",
+          "title",
+          "artist_credit",
+          "release_status",
+          "release_date",
+          "duration_ms",
+          "isrcs"
+        ]
+      },
+      "policy_provenance": {
+        "license_id": "CC0-1.0",
+        "license_url": "https://musicbrainz.org/doc/About/Data_License",
+        "data_scope": "core_metadata_only",
+        "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+        "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+        "redistribution": "permitted_core_metadata",
+        "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+      }
+    },
+    {
+      "seed_id": "mb-positive-mariya-takeuchi-plastic-love",
+      "classification": "verified_musicbrainz_recording",
+      "identity": {
+        "recording_mbid": "a5efcc7d-b28a-4917-bc4c-a23b6c59dee2",
+        "track_mbid": "8d11cfe4-f74a-4645-b07c-4c036c88cf3e",
+        "release_mbid": "b09a26e1-33f8-421f-9a72-d3d5feb0d3ce",
+        "release_group_mbid": "956911dd-1831-457d-a57d-f5feb507baad",
+        "artist_mbids": ["02bdc7ec-d102-4698-85e2-789a42d40b9c"]
+      },
+      "metadata": {
+        "title": "プラスティック・ラブ",
+        "artist_credit": "竹内まりや",
+        "release_title": "Variety",
+        "release_status": "official",
+        "release_date": "2014-11-19",
+        "duration_ms": 294000,
+        "duration_precision": "display_seconds",
+        "isrcs": []
+      },
+      "source": {
+        "provider": "MusicBrainz",
+        "source_identifier": "musicbrainz:recording:a5efcc7d-b28a-4917-bc4c-a23b6c59dee2",
+        "recording_url": "https://musicbrainz.org/recording/a5efcc7d-b28a-4917-bc4c-a23b6c59dee2",
+        "release_url": "https://musicbrainz.org/release/b09a26e1-33f8-421f-9a72-d3d5feb0d3ce",
+        "api_lookup_url": "https://musicbrainz.org/ws/2/recording/a5efcc7d-b28a-4917-bc4c-a23b6c59dee2?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+        "retrieved_at": "2026-07-17T04:34:38Z",
+        "retrieval_method": "manual_official_entity_review"
+      },
+      "label": {
+        "kind": "positive_recording_identity",
+        "expected_relationship": "exact_musicbrainz_recording",
+        "expected_recording_mbid": "a5efcc7d-b28a-4917-bc4c-a23b6c59dee2",
+        "rationale": "The official Variety release track links プラスティック・ラブ by 竹内まりや to this recording."
+      },
+      "verification": {
+        "state": "hand_verified",
+        "verified_at": "2026-07-17T04:34:38Z",
+        "method": "Cross-checked the official MusicBrainz release, release-group, artist, recording, and track links.",
+        "verified_by_role": "seed_writer",
+        "checked_fields": [
+          "recording_mbid",
+          "track_mbid",
+          "release_mbid",
+          "release_group_mbid",
+          "artist_mbids",
+          "title",
+          "artist_credit",
+          "release_status",
+          "release_date",
+          "duration_ms",
+          "isrcs"
+        ]
+      },
+      "policy_provenance": {
+        "license_id": "CC0-1.0",
+        "license_url": "https://musicbrainz.org/doc/About/Data_License",
+        "data_scope": "core_metadata_only",
+        "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+        "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+        "redistribution": "permitted_core_metadata",
+        "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+      }
+    }
+  ]
+}

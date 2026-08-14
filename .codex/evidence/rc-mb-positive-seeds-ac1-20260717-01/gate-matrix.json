@@ -1,0 +1,127 @@
+{
+  "schema_version": "releasecheck.gate-matrix.v1",
+  "iteration_id": "rc-mb-positive-seeds-ac1-20260717-01",
+  "slice": "musicbrainz-positive-recording-seeds",
+  "frozen": true,
+  "scope": {
+    "repositories": ["app"],
+    "base_revision": "63dd90b51427bf7d49772bb797c0901bc32dcbf3",
+    "scenario": "Five hand-verified MusicBrainz recording identities are available as policy-aware offline positive seeds and reject incomplete or overclaimed provenance.",
+    "document_manifest": [
+      "../AGENTS.md",
+      "AGENTS.md",
+      "../ROADMAP.md",
+      "ROADMAP.md",
+      "data/provenance/baseline.json",
+      "verification/baseline.ts"
+    ],
+    "loop_owned_paths": [
+      ".codex/evidence/rc-mb-positive-seeds-ac1-20260717-01",
+      "data/musicbrainz/positive-recording-seeds.v1.json",
+      "tests/musicbrainz-positive-seeds.test.ts",
+      "verification/musicbrainz-positive-seeds.ts"
+    ],
+    "non_goals": [
+      "live MusicBrainz ingest",
+      "availability claims for the six v0 platforms",
+      "matching holdouts or ranking-quality claims",
+      "public HTTP, SDK, or UI integration",
+      "core repository changes",
+      "cover art, audio, ratings, tags, annotations, or supplementary MusicBrainz data"
+    ]
+  },
+  "starting_state": {
+    "captured_at": "2026-07-17T04:34:38Z",
+    "porcelain_v2_with_untracked_sha256": "10b4f8e32061c83725e6ff872195445854cdd53877e2ff1fe28576bf394cba03",
+    "unstaged_binary_diff_sha256": "4e911d59a917bff40fba58d62f07d956fe73d0b6f2eb11ad108713110311bc53",
+    "staged_binary_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "untracked_path_manifest_sha256": "af65ad8614180736a9247bf7faee1064df811928700ee832b81b54e79801c7f2",
+    "submodule_manifest_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "symlink_manifest_sha256": "81ce7092fde0e9105e2e1c4a5955a689c3a787e41009af1cae05e3db33ab3428",
+    "pre_existing_changes_classification": "unresolved_and_preserve"
+  },
+  "gates": [
+    {
+      "id": "dataset_content",
+      "command": "bun test tests/musicbrainz-positive-seeds.test.ts",
+      "thresholds": {
+        "positive_seed_count_minimum": 5,
+        "positive_seed_count_maximum": 10,
+        "unique_recording_mbids_percent": 100,
+        "complete_identifier_sets_percent": 100,
+        "positive_label_alignment_percent": 100,
+        "executed_tests_minimum": 1
+      }
+    },
+    {
+      "id": "provenance_integrity",
+      "command": "bun test tests/musicbrainz-positive-seeds.test.ts",
+      "thresholds": {
+        "source_retrieval_label_verification_policy_completeness_percent": 100,
+        "verification_state": "hand_verified",
+        "classification": "verified_musicbrainz_recording",
+        "synthetic_rows_claimed_verified": 0,
+        "redistributed_fields": "musicbrainz_core_metadata_only",
+        "license": "CC0-1.0",
+        "official_policy_mapping_complete": true
+      }
+    },
+    {
+      "id": "negative_controls",
+      "command": "bun test tests/musicbrainz-positive-seeds.test.ts",
+      "thresholds": {
+        "missing_provenance_fails": true,
+        "misaligned_positive_label_fails": true,
+        "synthetic_verified_overclaim_fails": true
+      }
+    },
+    {
+      "id": "repository_integrity",
+      "commands": [
+        "bun run check",
+        "bun test"
+      ],
+      "thresholds": {
+        "all_exit_zero": true,
+        "minimum_executed_tests": 1,
+        "user_owned_or_unresolved_hunks_staged": 0
+      }
+    },
+    {
+      "id": "deterministic_reproduction",
+      "commands": [
+        "bun test tests/musicbrainz-positive-seeds.test.ts",
+        "bun run check",
+        "bun test"
+      ],
+      "thresholds": {
+        "runs_on_frozen_candidate": 2,
+        "dataset_content_sha256_identical": true,
+        "test_outcomes_identical": true
+      }
+    },
+    {
+      "id": "independent_review",
+      "thresholds": {
+        "read_only_roles": [
+          "product-flow",
+          "adversarial-matching-data",
+          "engineering"
+        ],
+        "reports_bound_to_same_tree_and_gate_matrix": true,
+        "writer_authors_reports": false,
+        "unresolved_critical_findings": 0,
+        "verdict_rule": "hard_gate_and"
+      }
+    }
+  ],
+  "deferred_seed_gates": {
+    "reason": "This governed Sub-AC creates only positive identity fixtures and their offline validator; it does not alter the active thresholds of later ingest, matching, public-contract, performance, holdout, or delivery slices.",
+    "gates": [
+      "public_contract",
+      "matching_safety",
+      "public_performance_and_bounds",
+      "MusicBrainz ingest-to-UI availability verification"
+    ]
+  }
+}
