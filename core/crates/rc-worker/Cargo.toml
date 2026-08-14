@@ -1,0 +1,15 @@
+[package]
+name = "rc-worker"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "rc-worker"
+path = "src/main.rs"
+
+[dependencies]
+rc-core = { path = "../rc-core" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

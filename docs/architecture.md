@@ -30,7 +30,7 @@ platform adapters
 - `web`: search UI and evidence display
 - `sdk-js`: developer client
 
-The matching engine and worker live in the sibling `core` repository.
+The matching engine and worker live in the `core/` directory of this repository.
 
 ## Adapter Boundary
 

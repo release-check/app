@@ -94,6 +94,12 @@ For the full Phase 1 API contract, see [docs/api.md](docs/api.md).
 
 ## Demo Data And Evaluation
 
+Build the local cache/index fixture:
+
+```bash
+bun run build:index
+```
+
 Print the local demo fixture:
 
 ```bash
@@ -107,7 +113,24 @@ bun run eval:demo
 ```
 
 The evaluation checks top-3 candidate behavior, version and same-name
-ambiguity, six platform statuses, and false-positive availability guards.
+ambiguity, six platform statuses, false-positive availability guards, and the
+expanded 500+ candidate index shape.
+
+Measure the local search path:
+
+```bash
+bun run bench:search
+```
+
+Verify the app-to-Rust matching bridge:
+
+```bash
+bun run eval:core
+```
+
+The 500+ load fixture is synthetic and clearly marked as unverified. It is for
+latency and contract pressure, not a substitute for the hand-verified golden
+set.
 
 ## Repository Layout
 
@@ -120,7 +143,7 @@ rfc                   Design notes before implementation
 infra                 Deployment and local infrastructure
 ```
 
-The Rust matching engine and worker live in the sibling `core` repository.
+The Rust matching engine and worker live in the `core/` directory of this repository.
 
 ## Contest Position
 

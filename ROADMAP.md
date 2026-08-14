@@ -18,8 +18,8 @@ The app should make platform availability, candidates, confidence, and evidence 
 
 ## Non-Goals
 
-- Do not implement Rust matching logic in this repo.
-- Do not add Cargo files or Rust crates here.
+- Do not implement Rust matching logic outside `core/`.
+- Do not mix Rust and TypeScript in one package or crate.
 - Do not live-call every platform on every search request.
 - Do not build production auth, billing, or admin tools before the v0 path works.
 - Do not introduce pnpm, npm lockfiles, yarn, or tsx.
