@@ -1,10 +1,213 @@
 {
-  "version": 1,
-  "description": "Phase 2 local golden candidates for API, SDK, and web demo contract checks.",
-  "candidateIds": [
-    "demo-park-hye-jin-like-this",
-    "demo-dj-python-angel",
-    "demo-dj-python-angel-live-demo",
-    "demo-massive-attack-angel"
+  "schema_version": "releasecheck.golden-set.v1",
+  "iteration_id": "rc-golden-mb-seeds-v1-20260814",
+  "description": "First real-data golden set: hand-verified MusicBrainz recording identities with public platform availability links. Scene buckets run in parallel (korea/japan/internet). Availability labels are seed-writer verified against public platform pages on 2026-08-14; identities verified against MusicBrainz core metadata (CC0).",
+  "scenes": ["korea", "japan", "internet"],
+  "cases": [
+    {
+      "id": "golden-mb-newjeans-ditto",
+      "scene": "korea",
+      "candidateId": "verified-newjeans-ditto",
+      "canonical": {
+        "artist": "NewJeans",
+        "title": "Ditto",
+        "release": "NewJeans 'OMG'",
+        "releaseDate": "2022-12-19",
+        "durationMs": 186000,
+        "isrc": "USA2P2254487"
+      },
+      "musicbrainz": {
+        "recordingMbid": "adf44a12-e5f4-48aa-9029-b9ef4b5f1d6d",
+        "releaseMbid": "4e9c7e78-568f-4643-b2a8-b5a59ee2ca87",
+        "artistMbid": "49204a7a-ed85-407a-828f-6fd46f1d8126"
+      },
+      "versionDistinction": "original_studio",
+      "queries": ["NewJeans Ditto", "Ditto NewJeans"],
+      "acceptableTop3Ids": ["verified-newjeans-ditto"],
+      "rationale": "Official Ditto release track links to this recording and credits NewJeans; duration and ISRC corroborate.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/3r8RuvgbX9s7ammBn07D3W"
+        },
+        "youtube_music": {
+          "state": "available",
+          "url": "https://music.youtube.com/watch?v=pSUydWEqKwE"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1657231962"
+        },
+        "soundcloud": { "state": "unknown" },
+        "bandcamp": { "state": "missing" },
+        "melon": {
+          "state": "available",
+          "url": "https://www.melon.com/song/detail.htm?songId=35945927"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-bjork-joga",
+      "scene": "internet",
+      "candidateId": "verified-bjork-joga",
+      "canonical": {
+        "artist": "Björk",
+        "title": "Jóga",
+        "release": "Homogenic",
+        "releaseDate": "1997",
+        "durationMs": 306000
+      },
+      "musicbrainz": {
+        "recordingMbid": "83534ada-9f60-4093-bbf3-ca182a03cf8b",
+        "releaseMbid": "bd9732db-27bf-4bc6-9df6-d0460ed62dab",
+        "artistMbid": "87c5dedd-371d-4a53-9f7f-80522fb7f3cb"
+      },
+      "versionDistinction": "original_studio",
+      "queries": ["Björk Jóga", "Bjork Joga"],
+      "acceptableTop3Ids": ["verified-bjork-joga"],
+      "rationale": "Official Homogenic release track links to this recording and credits Björk.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/18NehrWLUFK7NPH522YQMQ"
+        },
+        "youtube_music": {
+          "state": "available",
+          "url": "https://music.youtube.com/watch?v=loB0kmz_0MM"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1101192924"
+        },
+        "soundcloud": { "state": "unknown" },
+        "bandcamp": { "state": "missing" },
+        "melon": { "state": "unknown" }
+      }
+    },
+    {
+      "id": "golden-mb-ymo-rydeen",
+      "scene": "japan",
+      "candidateId": "verified-ymo-rydeen",
+      "canonical": {
+        "artist": "Yellow Magic Orchestra",
+        "title": "Rydeen",
+        "release": "Solid State Survivor",
+        "releaseDate": "1979",
+        "durationMs": 268000
+      },
+      "musicbrainz": {
+        "recordingMbid": "96d9565e-0772-4202-9b8a-c52a96582bae",
+        "releaseMbid": "8d3f2c3a-d96d-48fe-abd9-8c805c7ae5ca",
+        "artistMbid": "ac5af671-1df0-4312-8b7b-e61992ecc883"
+      },
+      "versionDistinction": "original_studio",
+      "queries": ["Yellow Magic Orchestra Rydeen", "YMO Rydeen"],
+      "acceptableTop3Ids": ["verified-ymo-rydeen"],
+      "rationale": "Official compilation track links Rydeen by Yellow Magic Orchestra to this recording; remastered/live versions must stay separate.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/3IzHpHPDwAT7gJK1yperlm"
+        },
+        "youtube_music": {
+          "state": "available",
+          "url": "https://music.youtube.com/watch?v=Yxep-gS-Btg"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1291838926"
+        },
+        "soundcloud": { "state": "unknown" },
+        "bandcamp": { "state": "missing" },
+        "melon": { "state": "unknown" }
+      }
+    },
+    {
+      "id": "golden-mb-charli-xcx-vroom-vroom",
+      "scene": "internet",
+      "candidateId": "verified-charli-xcx-vroom-vroom",
+      "canonical": {
+        "artist": "Charli XCX",
+        "title": "Vroom Vroom",
+        "release": "Vroom Vroom EP",
+        "releaseDate": "2024-06-05",
+        "durationMs": 193000
+      },
+      "musicbrainz": {
+        "recordingMbid": "1c1d4379-4aef-4b6f-be69-b97c54db276f",
+        "releaseMbid": "e2f1dc68-f821-472e-8819-c9661d00fe26",
+        "artistMbid": "260b6184-8828-48eb-945c-bc4cb6fc34ca"
+      },
+      "versionDistinction": "original_studio",
+      "queries": ["Charli XCX Vroom Vroom"],
+      "acceptableTop3Ids": ["verified-charli-xcx-vroom-vroom"],
+      "rationale": "Official Vroom Vroom EP track links to this recording and credits Charli XCX.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/5hyq3LBlCfjRQAFkdQwe8o"
+        },
+        "youtube_music": {
+          "state": "available",
+          "url": "https://music.youtube.com/watch?v=qfAqtFuGjWM"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/album/vroom-vroom-ep/1083723149",
+          "note": "album-level link; track-level page not confirmed"
+        },
+        "soundcloud": { "state": "unknown" },
+        "bandcamp": { "state": "missing" },
+        "melon": { "state": "unknown" }
+      }
+    },
+    {
+      "id": "golden-mb-mariya-takeuchi-plastic-love",
+      "scene": "japan",
+      "candidateId": "verified-mariya-takeuchi-plastic-love",
+      "canonical": {
+        "artist": "Mariya Takeuchi",
+        "title": "Plastic Love",
+        "release": "Variety",
+        "releaseDate": "2014-11-19",
+        "durationMs": 294000
+      },
+      "musicbrainz": {
+        "recordingMbid": "a5efcc7d-b28a-4917-bc4c-a23b6c59dee2",
+        "releaseMbid": "b09a26e1-33f8-421f-9a72-d3d5feb0d3ce",
+        "artistMbid": "02bdc7ec-d102-4698-85e2-789a42d40b9c"
+      },
+      "versionDistinction": "original_studio",
+      "queries": ["Mariya Takeuchi Plastic Love", "Plastic Love Mariya Takeuchi"],
+      "acceptableTop3Ids": ["verified-mariya-takeuchi-plastic-love"],
+      "rationale": "Official Variety release track links プラスティック・ラブ by 竹内まりや to this recording; romanized title maps to the same identity.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/7rU6Iebxzlvqy5t857bKFq"
+        },
+        "youtube_music": {
+          "state": "available",
+          "url": "https://music.youtube.com/watch?v=T_lC2O1oIew"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1591437487"
+        },
+        "soundcloud": { "state": "unknown" },
+        "bandcamp": { "state": "missing" },
+        "melon": { "state": "unknown" }
+      }
+    }
+  ],
+  "negativeCases": [
+    {
+      "candidateId": "demo-dj-python-angel-live-demo",
+      "reason": "live demo must not collapse into the original studio recording"
+    },
+    {
+      "candidateId": "demo-massive-attack-angel",
+      "reason": "same-title different-artist candidate must stay separated"
+    }
   ]
 }

@@ -1,7 +1,7 @@
 # API Contract
 
-Phase 1 exposes a local demo-backed API contract. The API does not call live
-music platforms in the request path.
+Phase 1 exposes a local demo/cache-backed API contract. The API does not call
+live music platforms in the request path.
 
 ## Run
 
@@ -27,9 +27,14 @@ Returns service status.
 {
   "ok": true,
   "service": "release-check-api",
-  "index": "demo"
+  "index": "demo-cache"
 }
 ```
+
+### `GET /index/stats`
+
+Returns the active local index shape, including handwritten, synthetic,
+verified, and messy-case counts.
 
 ### `GET /search?q=`
 
@@ -73,6 +78,12 @@ curl -X POST 'http://localhost:3000/batch' \
   -d '{"items":[{"q":"Angel"},{"artist":"Park Hye Jin","track":"Like This"}]}'
 ```
 
+### `POST /core/match`
+
+Debug endpoint for the Rust bridge. It accepts the `rc-worker match-json`
+request shape and returns Rust matching decisions with confidence and evidence.
+This is not the public search path yet.
+
 ## Availability States
 
 Every candidate includes these six platform keys:
@@ -101,6 +112,7 @@ information to claim `available` or `missing`.
 Print the local demo fixture:
 
 ```bash
+bun run build:index
 bun run demo-data
 ```
 
@@ -108,6 +120,8 @@ Run the local Phase 1 evaluation guard:
 
 ```bash
 bun run eval:demo
+bun run eval:core
+bun run bench:search
 ```
 
 The evaluation checks:
@@ -117,6 +131,8 @@ The evaluation checks:
 - live/demo ambiguity is visible
 - every candidate has all six platform statuses
 - uncertain platform slots are not marked as false-positive `available`
+- the expanded local index has 500+ candidates
+- the Rust core bridge returns evidence-bearing decisions
 
 `eval:demo` reads `data/evaluation-set.json`. `demo-data` also includes
 `data/golden-set.json`, so later generated workspace fixtures can replace the
@@ -125,8 +141,11 @@ local demo files without changing the command shape.
 ## Current Limitations
 
 - Demo data is hand-written and local.
-- Search ranking is a small fixture ranker, not the final matching engine.
+- The 500+ load fixture is synthetic and unverified; it is for latency and
+  contract pressure only.
+- Search ranking is still a small fixture ranker, not the final matching
+  engine.
 - No live fan-out to Spotify, YouTube Music, Apple Music, SoundCloud, Bandcamp,
   or Melon happens on user requests.
-- The Rust matching engine and ingestion worker belong in the sibling `core`
-  repository.
+- The Rust matching engine is available through a JSON bridge, but the public
+  search path has not been fully reranked through core yet.

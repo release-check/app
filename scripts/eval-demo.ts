@@ -1,4 +1,5 @@
 import { DEMO_INDEX, searchDemoIndex } from "../apps/api/src/demo-index";
+import { getSearchIndexStats, searchReleaseIndex } from "../apps/api/src/search-index";
 import { PLATFORMS, type Candidate, type Platform } from "../apps/api/src/types";
 
 interface EvalCase {
@@ -24,7 +25,7 @@ const evalCases = evaluationSet.cases;
 const failures: string[] = [];
 
 for (const evalCase of evalCases) {
-  const candidates = searchDemoIndex(evalCase.query);
+  const candidates = searchReleaseIndex(evalCase.query);
   const top3 = candidates.slice(0, 3);
 
   if (!top3.some((candidate) => candidate.id === evalCase.expectedTop3Id)) {
@@ -56,6 +57,7 @@ for (const candidate of DEMO_INDEX) {
   assertExplainedUncertainStates(candidate);
 }
 
+assertExpandedIndexShape();
 assertFalsePositiveGuards();
 
 if (failures.length > 0) {
@@ -66,7 +68,9 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
-console.log(`Demo evaluation passed: ${evalCases.length} query cases, ${DEMO_INDEX.length} candidates.`);
+console.log(
+  `Demo evaluation passed: ${evalCases.length} query cases, ${getSearchIndexStats().candidateCount} indexed candidates.`,
+);
 
 function assertSixPlatformStatuses(candidate: Candidate): void {
   const actualPlatforms = Object.keys(candidate.availability).sort();
@@ -100,5 +104,24 @@ function assertFalsePositiveGuards(): void {
         `${expected.candidateId}.${expected.platform}: expected ${expected.state}, got ${actualState ?? "missing candidate"}`,
       );
     }
+  }
+}
+
+function assertExpandedIndexShape(): void {
+  const stats = getSearchIndexStats();
+
+  if (stats.candidateCount < 500) {
+    failures.push(`expected at least 500 indexed candidates, got ${stats.candidateCount}`);
+  }
+
+  if (stats.verifiedCount < DEMO_INDEX.length) {
+    failures.push(`expected handwritten demo candidates to remain verified, got ${stats.verifiedCount}`);
+  }
+
+  const legacyResults = searchDemoIndex("Angel").map((candidate) => candidate.id);
+  const expandedResults = searchReleaseIndex("Angel").map((candidate) => candidate.id);
+
+  if (!legacyResults.every((id) => expandedResults.includes(id))) {
+    failures.push("expanded index dropped legacy Angel demo candidates");
   }
 }

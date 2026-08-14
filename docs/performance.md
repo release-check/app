@@ -18,6 +18,24 @@ ReleaseCheck is useful only if search feels immediate.
 5. Return partial known results before waiting on slow refreshes.
 6. Measure p50, p95, and p99 latency from the first prototype.
 
+## Current Local Benchmark
+
+Run:
+
+```bash
+bun run build:index
+bun run bench:search
+```
+
+The benchmark runs the in-memory local search path over the active demo/cache
+index and fails if p95 exceeds the 150 ms indexed-search budget. The expanded
+fixture currently includes 600 synthetic load candidates plus the handwritten
+demo candidates.
+
+Synthetic load candidates are not hand-verified music availability data. They
+exist to catch ranking/latency regressions while the real golden and evaluation
+sets are still small.
+
 ## Future Stack Options
 
 - PostgreSQL with `pg_trgm` for early fuzzy search

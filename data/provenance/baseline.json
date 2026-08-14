@@ -16,15 +16,15 @@
     },
     {
       "path": "data/golden-set.json",
-      "content_sha256": "9e3a0f9f718e231fc0136f8ddd3193291593fb9b6c52db4f1409ada3423cbde0",
+      "content_sha256": "a5bf5d24e965e420ade8030770de15596c77b778a833ebb97746d96e7f4a3418",
       "source_identifier": "repo:data/golden-set.json",
       "source_url": null,
-      "retrieved_at": null,
-      "classification": "handwritten_demo",
-      "verification_state": "unverified",
-      "labels": ["candidate_ids"],
-      "permitted_use": "contract_and_baseline_smoke_only",
-      "policy_note": "Local handwritten fixture; not authoritative availability ground truth."
+      "retrieved_at": "2026-08-14",
+      "classification": "verified_musicbrainz_identity",
+      "verification_state": "hand_verified",
+      "labels": ["platform_url", "availability_state", "musicbrainz_mbid", "scene_bucket"],
+      "permitted_use": "golden_set_evaluation",
+      "policy_note": "Recording identities hand-verified against MusicBrainz core metadata (CC0); platform availability labels seed-writer verified via public links on 2026-08-14."
     },
     {
       "path": "data/evaluation-set.json",

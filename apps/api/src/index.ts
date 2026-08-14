@@ -1,11 +1,13 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
+import { matchWithRustCore, type CoreMatchInput } from "./core-bridge";
+import { normalize } from "./demo-index";
 import {
-  findAvailability,
-  normalize,
-  resolveDemoUrl,
-  searchDemoIndex,
-} from "./demo-index";
+  findIndexedAvailability,
+  getSearchIndexStats,
+  resolveIndexedUrl,
+  searchReleaseIndex,
+} from "./search-index";
 import type {
   AvailabilityResponse,
   BatchItem,
@@ -23,8 +25,13 @@ app.get("/health", (c) => {
   return c.json({
     ok: true,
     service: "release-check-api",
-    index: "demo",
+    index: "demo-cache",
+    stats: getSearchIndexStats(),
   });
+});
+
+app.get("/index/stats", (c) => {
+  return c.json(getSearchIndexStats());
 });
 
 app.get("/search", (c) => {
@@ -33,10 +40,10 @@ app.get("/search", (c) => {
     query: {
       q: query,
       normalized: normalize(query),
-      source: "demo-index",
+      source: responseIndexSource(),
       latencyBudgetMs: INDEXED_SEARCH_LATENCY_BUDGET_MS,
     },
-    candidates: searchDemoIndex(query).slice(0, 10),
+    candidates: searchReleaseIndex(query).slice(0, 10),
   };
 
   return c.json(response);
@@ -45,13 +52,13 @@ app.get("/search", (c) => {
 app.get("/availability", (c) => {
   const artist = c.req.query("artist") ?? "";
   const track = c.req.query("track") ?? "";
-  const candidate = findAvailability(artist, track);
+  const candidate = findIndexedAvailability(artist, track);
   const response: AvailabilityResponse = {
     query: {
       artist,
       track,
       normalized: normalize(`${artist} ${track}`),
-      source: "demo-index",
+      source: responseIndexSource(),
       latencyBudgetMs: INDEXED_SEARCH_LATENCY_BUDGET_MS,
     },
     candidate,
@@ -66,10 +73,10 @@ app.get("/resolve", (c) => {
   const response: ResolveResponse = {
     query: {
       url,
-      source: "demo-index",
+      source: responseIndexSource(),
       latencyBudgetMs: INDEXED_SEARCH_LATENCY_BUDGET_MS,
     },
-    candidate: resolveDemoUrl(url),
+    candidate: resolveIndexedUrl(url),
   };
 
   return c.json(response);
@@ -80,19 +87,28 @@ app.post("/batch", async (c) => {
   const response: BatchResponse = {
     items: (payload.items ?? []).map((item) => {
       if (item.url) {
-        const candidate = resolveDemoUrl(item.url);
+        const candidate = resolveIndexedUrl(item.url);
         return { input: item, candidates: candidate ? [candidate] : [] };
       }
 
       const query = item.q ?? [item.artist, item.track].filter(Boolean).join(" ");
-      return { input: item, candidates: searchDemoIndex(query) };
+      return { input: item, candidates: searchReleaseIndex(query) };
     }),
   };
 
   return c.json(response);
 });
 
+app.post("/core/match", async (c) => {
+  const payload = (await c.req.json()) as CoreMatchInput;
+  return c.json(await matchWithRustCore(payload));
+});
+
 export default {
   port: Number(process.env.PORT ?? 3000),
   fetch: app.fetch,
 };
+
+function responseIndexSource(): "demo-index" | "demo-cache" {
+  return getSearchIndexStats().source === "cache" ? "demo-cache" : "demo-index";
+}

@@ -13,10 +13,13 @@
   "scripts": {
     "check": "bun run typecheck",
     "bench:public-search": "bun run scripts/bench-public-search.ts",
+    "bench:search": "bun run scripts/bench-search.ts",
+    "build:index": "bun run scripts/build-index.ts",
     "demo-data": "bun run scripts/demo-data.ts",
     "dev:demo": "bun run scripts/dev-demo.ts",
     "dev:api": "bun run --cwd apps/api dev",
     "dev:web": "bun run --cwd apps/web dev",
+    "eval:core": "bun run scripts/eval-core-bridge.ts",
     "eval:demo": "bun run scripts/eval-demo.ts",
     "eval:verified": "bun run scripts/eval-verified.ts",
     "test": "bun test",

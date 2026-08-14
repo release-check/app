@@ -6,6 +6,8 @@ export type ReleaseCheckPlatform =
   | "bandcamp"
   | "melon";
 
+export type ReleaseCheckIndexSource = "demo-index" | "demo-cache";
+
 export type ReleaseCheckAvailabilityState =
   | "available"
   | "missing"
@@ -19,6 +21,8 @@ export interface ReleaseCheckAvailabilityEntry {
   url?: string;
   region?: string;
   note?: string;
+  source?: string;
+  cachedAt?: string;
 }
 
 export type ReleaseCheckPlatformAvailability = Record<
@@ -47,13 +51,19 @@ export interface ReleaseCheckCandidate {
   ambiguity: string[];
   evidence: ReleaseCheckMatchEvidence[];
   availability: ReleaseCheckPlatformAvailability;
+  sample?: {
+    origin: "handwritten_demo" | "synthetic_load";
+    scene: string;
+    messyCase: boolean;
+    verified: boolean;
+  };
 }
 
 export interface ReleaseCheckSearchResponse {
   query: {
     q: string;
     normalized: string;
-    source: string;
+    source: ReleaseCheckIndexSource;
     latencyBudgetMs: number;
   };
   candidates: ReleaseCheckCandidate[];
@@ -64,7 +74,7 @@ export interface ReleaseCheckAvailabilityResponse {
     artist: string;
     track: string;
     normalized: string;
-    source: string;
+    source: ReleaseCheckIndexSource;
     latencyBudgetMs: number;
   };
   candidate: ReleaseCheckCandidate | null;
@@ -74,7 +84,7 @@ export interface ReleaseCheckAvailabilityResponse {
 export interface ReleaseCheckResolveResponse {
   query: {
     url: string;
-    source: string;
+    source: ReleaseCheckIndexSource;
     latencyBudgetMs: number;
   };
   candidate: ReleaseCheckCandidate | null;

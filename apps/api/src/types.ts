@@ -8,6 +8,7 @@ export const PLATFORMS = [
 ] as const;
 
 export type Platform = (typeof PLATFORMS)[number];
+export type IndexSource = "demo-index" | "demo-cache";
 
 export type AvailabilityState =
   | "available"
@@ -22,6 +23,8 @@ export interface AvailabilityEntry {
   url?: string;
   region?: string;
   note?: string;
+  source?: string;
+  cachedAt?: string;
 }
 
 export type PlatformAvailability = Record<Platform, AvailabilityEntry>;
@@ -47,12 +50,18 @@ export interface Candidate {
   ambiguity: string[];
   evidence: MatchEvidence[];
   availability: PlatformAvailability;
+  sample?: {
+    origin: "handwritten_demo" | "synthetic_load" | "verified_musicbrainz";
+    scene: string;
+    messyCase: boolean;
+    verified: boolean;
+  };
 }
 
 export interface QueryMetadata {
   q: string;
   normalized: string;
-  source: "demo-index";
+  source: IndexSource;
   latencyBudgetMs: number;
 }
 
@@ -66,7 +75,7 @@ export interface AvailabilityResponse {
     artist: string;
     track: string;
     normalized: string;
-    source: "demo-index";
+    source: IndexSource;
     latencyBudgetMs: number;
   };
   candidate: Candidate | null;
@@ -76,7 +85,7 @@ export interface AvailabilityResponse {
 export interface ResolveResponse {
   query: {
     url: string;
-    source: "demo-index";
+    source: IndexSource;
     latencyBudgetMs: number;
   };
   candidate: Candidate | null;
