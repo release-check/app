@@ -43,7 +43,10 @@ app.get("/search", (c) => {
       source: responseIndexSource(),
       latencyBudgetMs: INDEXED_SEARCH_LATENCY_BUDGET_MS,
     },
-    candidates: searchReleaseIndex(query).slice(0, 10),
+    candidates: searchReleaseIndex(query).slice(0, 10).map((candidate) => ({
+      ...candidate,
+      ...(candidate.sample?.origin ? { origin: candidate.sample.origin } : {}),
+    })),
   };
 
   return c.json(response);

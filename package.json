@@ -25,6 +25,9 @@
     "test": "bun test",
     "test:public-contract": "bun run scripts/test-public-contract.ts",
     "validate:provenance": "bun run scripts/validate-provenance.ts",
+    "rc:search": "bun run scripts/rc-cli.ts search",
+    "rc:availability": "bun run scripts/rc-cli.ts availability",
+    "rc:resolve": "bun run scripts/rc-cli.ts resolve",
     "typecheck": "bun run --cwd apps/api typecheck && bun run --cwd apps/web typecheck && bun run --cwd packages/rc-sdk-js typecheck"
   }
 }

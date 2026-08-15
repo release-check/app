@@ -15,6 +15,7 @@ const platformOrder = [
 ] as const;
 
 type Platform = (typeof platformOrder)[number];
+type CandidateOrigin = "handwritten_demo" | "synthetic_load" | "verified_musicbrainz";
 
 interface AvailabilityEntry {
   state: string;
@@ -39,6 +40,11 @@ interface Candidate {
     note: string;
   }>;
   availability: Record<Platform, AvailabilityEntry>;
+  origin?: CandidateOrigin;
+  sample?: {
+    origin?: CandidateOrigin;
+    verified?: boolean;
+  };
 }
 
 interface SearchResponse {
@@ -136,6 +142,7 @@ function renderCandidates(): void {
       const ambiguity = candidate.ambiguity
         .map((marker) => `<span class="pill pill-ambiguity">${escapeHtml(marker)}</span>`)
         .join("");
+      const originBadge = renderOriginBadge(candidate);
 
       return `
         <button class="candidate-button${activeClass}" data-candidate-id="${escapeHtml(candidate.id)}">
@@ -145,6 +152,7 @@ function renderCandidates(): void {
           </div>
           <div class="candidate-meta">
             <span class="pill pill-confidence">${Math.round(candidate.confidence * 100)}%</span>
+            ${originBadge}
             ${ambiguity}
           </div>
         </button>
@@ -179,13 +187,14 @@ function renderDetail(candidate: Candidate | undefined): void {
       </p>
       <div class="candidate-meta">
         <span class="pill pill-confidence">${Math.round(candidate.confidence * 100)}% confidence</span>
+        ${renderOriginBadge(candidate)}
         ${candidate.ambiguity
           .map((marker) => `<span class="pill pill-ambiguity">${escapeHtml(marker)}</span>`)
           .join("")}
       </div>
     </div>
 
-    <section>
+    <section class="detail-section">
       <div class="section-heading">
         <h2>Platform availability</h2>
       </div>
@@ -194,13 +203,16 @@ function renderDetail(candidate: Candidate | undefined): void {
       </div>
     </section>
 
-    <section>
-      <div class="section-heading">
-        <h2>Match evidence</h2>
-      </div>
-      <div class="evidence-list">
-        ${candidate.evidence.map(renderEvidence).join("")}
-      </div>
+    <section class="detail-section">
+      <details class="evidence-panel" open>
+        <summary class="evidence-panel-summary">
+          <span class="evidence-panel-title">Match evidence</span>
+          <span class="evidence-panel-count">${candidate.evidence.length} fields</span>
+        </summary>
+        <div class="evidence-list">
+          ${candidate.evidence.map(renderEvidence).join("")}
+        </div>
+      </details>
     </section>
   `;
 }
@@ -213,10 +225,10 @@ function renderPlatform(platform: Platform, entry: AvailabilityEntry | undefined
     : "";
 
   return `
-    <article class="platform-row">
+    <article class="platform-row platform-row--${escapeAttribute(state)}">
       <div class="platform-top">
         <span class="platform-name">${platformLabels[platform]}</span>
-        <span class="state state-${escapeAttribute(state)}">${escapeHtml(state.replace("_", " "))}</span>
+        ${renderStateBadge(state)}
       </div>
       <p class="platform-note">${escapeHtml(note)}</p>
       ${url}
@@ -225,15 +237,48 @@ function renderPlatform(platform: Platform, entry: AvailabilityEntry | undefined
 }
 
 function renderEvidence(evidence: Candidate["evidence"][number]): string {
+  const scorePercent = Math.round(evidence.score * 100);
+
   return `
-    <article class="evidence-row">
-      <div class="evidence-top">
+    <details class="evidence-row">
+      <summary class="evidence-summary">
         <span class="evidence-field">${escapeHtml(evidence.field)}</span>
-        <span class="score">${Math.round(evidence.score * 100)}%</span>
-      </div>
+        <span class="score">${scorePercent}%</span>
+      </summary>
       <p class="evidence-note">${escapeHtml(evidence.note)}</p>
-    </article>
+    </details>
   `;
+}
+
+function renderOriginBadge(candidate: Candidate): string {
+  const origin = candidate.origin ?? candidate.sample?.origin;
+  if (!origin) {
+    return "";
+  }
+
+  if (origin === "verified_musicbrainz") {
+    return '<span class="pill pill-verified" title="Hand-verified MusicBrainz seed">MB verified</span>';
+  }
+
+  if (origin === "handwritten_demo") {
+    return '<span class="pill pill-demo" title="Handwritten demo fixture">Demo seed</span>';
+  }
+
+  return '<span class="pill pill-synthetic" title="Synthetic load fixture">Synthetic</span>';
+}
+
+function renderStateBadge(state: string): string {
+  const labels: Record<string, string> = {
+    available: "Available",
+    missing: "Missing",
+    unknown: "Unknown",
+    region_locked: "Region locked",
+    removed: "Removed",
+    duplicate_candidate: "Duplicate candidate",
+  };
+
+  const label = labels[state] ?? state.replaceAll("_", " ");
+  return `<span class="state state-${escapeAttribute(state)}" title="${escapeAttribute(label)}">${escapeHtml(label)}</span>`;
 }
 
 function countUnknownStates(candidates: Candidate[]): number {
