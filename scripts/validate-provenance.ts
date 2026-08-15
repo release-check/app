@@ -53,7 +53,7 @@ await runGate("baseline_provenance_integrity", async () => {
     negative_control: negativeControl,
     limitations: [
       "The manifest records local fixture provenance only.",
-      "MusicBrainz API policy and data-license evidence are required in the ingest slice.",
+      "MusicBrainz policy documented in docs/musicbrainz-policy.md; API ingest output requires human review before promotion to hand-verified seeds.",
     ],
   };
 });

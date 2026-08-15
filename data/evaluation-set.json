@@ -1,23 +1,30 @@
 {
+  "schema_version": "releasecheck.evaluation-set.v2",
   "cases": [
     {
       "name": "exact original query",
       "query": "Park Hye Jin Like This",
-      "expectedTop3Id": "demo-park-hye-jin-like-this"
+      "expectedTop3Id": "demo-park-hye-jin-like-this",
+      "scene": "korea",
+      "groundTruth": "manual"
     },
     {
       "name": "same-name title query",
       "query": "Angel",
       "expectedTop3Id": "demo-dj-python-angel",
       "requiresAmbiguity": "same-title",
-      "minCandidates": 3
+      "minCandidates": 3,
+      "scene": "internet",
+      "groundTruth": "manual"
     },
     {
       "name": "live demo ambiguity query",
       "query": "DJ Python Angel live demo",
       "expectedTop3Id": "demo-dj-python-angel-live-demo",
       "requiresAmbiguity": "demo",
-      "minCandidates": 2
+      "minCandidates": 2,
+      "scene": "internet",
+      "groundTruth": "manual"
     }
   ],
   "requiredStateChecks": [

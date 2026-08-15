@@ -28,15 +28,15 @@
     },
     {
       "path": "data/evaluation-set.json",
-      "content_sha256": "83dba063b7909a3fb056e20be08ac7705af8d927ef03c76f2ac58f34e13991aa",
+      "content_sha256": "7b205a082f4771dec8da21485e1860341e9329ce8bc7e65401068bef178f50d4",
       "source_identifier": "repo:data/evaluation-set.json",
       "source_url": null,
       "retrieved_at": null,
       "classification": "handwritten_demo",
       "verification_state": "unverified",
-      "labels": ["top3_smoke", "ambiguity_smoke", "availability_state_smoke"],
+      "labels": ["top3_smoke", "ambiguity_smoke", "availability_state_smoke", "scene", "ground_truth"],
       "permitted_use": "contract_and_baseline_smoke_only",
-      "policy_note": "Local handwritten fixture; not independently held-out or source-verified."
+      "policy_note": "Local handwritten fixture; not independently held-out or source-verified. Schema v2 adds scene and groundTruth fields."
     }
   ]
 }
