@@ -59,6 +59,7 @@ See [docs/performance.md](docs/performance.md).
 Run the API and web UI together:
 
 ```bash
+bun install
 bun run dev:demo
 ```
 
@@ -67,7 +68,10 @@ Open `http://localhost:3001`.
 The web demo shows a search input, top candidates, six platform statuses,
 confidence, evidence, `unknown` states, and version/same-title ambiguity.
 
-For the full demo flow, see [docs/demo.md](docs/demo.md).
+Verified MusicBrainz seed queries such as `NewJeans Ditto` are searchable in the
+local index after `bun run build:index`.
+
+For the eight-step verification walkthrough, see [docs/demo.md](docs/demo.md).
 
 ## Local API
 
@@ -82,8 +86,10 @@ Useful Phase 1 requests:
 
 ```bash
 curl 'http://localhost:3000/health'
+curl 'http://localhost:3000/search?q=NewJeans%20Ditto'
+curl 'http://localhost:3000/availability?artist=NewJeans&track=Ditto'
+curl 'http://localhost:3000/resolve?url=https%3A%2F%2Fopen.spotify.com%2Ftrack%2F3r8RuvgbX9s7ammBn07D3W'
 curl 'http://localhost:3000/search?q=Park%20Hye%20Jin%20Like%20This'
-curl 'http://localhost:3000/availability?artist=Park%20Hye%20Jin&track=Like%20This'
 curl 'http://localhost:3000/search?q=DJ%20Python%20Angel%20live%20demo'
 ```
 
@@ -114,7 +120,7 @@ bun run eval:demo
 
 The evaluation checks top-3 candidate behavior, version and same-name
 ambiguity, six platform statuses, false-positive availability guards, and the
-expanded 500+ candidate index shape.
+expanded 600+ candidate index shape (609 today: 4 demo + 5 verified + 600 synthetic).
 
 Measure the local search path:
 
@@ -128,9 +134,20 @@ Verify the app-to-Rust matching bridge:
 bun run eval:core
 ```
 
-The 500+ load fixture is synthetic and clearly marked as unverified. It is for
-latency and contract pressure, not a substitute for the hand-verified golden
-set.
+The local index mixes three layers:
+
+- **5 MusicBrainz verified seeds** — hand-verified recording identities with
+  seed-writer platform checks (see `apps/api/src/verified-index.ts`)
+- **4 handwritten demo candidates** — ambiguity and false-positive guard cases
+- **600 synthetic load candidates** — unverified latency/contract pressure only
+
+Availability comes from cached/indexed adapter snapshots (`official_api`,
+`public_index`, `manual_seed` modes in `apps/api/src/adapters.ts`). User search
+does not fan out to live platform APIs. Verified labels were checked manually at
+seed-write time and can drift without automatic revalidation.
+
+See [docs/demo.md](docs/demo.md) for the full eight-step walkthrough and current
+limitations.
 
 ## Repository Layout
 
