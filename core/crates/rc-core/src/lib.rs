@@ -227,7 +227,13 @@ fn score_candidate(
             + (isrc.value() * 0.16)
             + (source_score.value() * 0.06),
     );
-    let status = decide_status(candidate.status, &component_scores, confidence);
+    let status = decide_status(
+        candidate.status,
+        &component_scores,
+        confidence,
+        &normalized_source.version_markers,
+        &normalized_candidate.version_markers,
+    );
     let evidence = build_evidence(candidate.status, &component_scores);
 
     MatchDecision {
@@ -246,17 +252,30 @@ fn decide_status(
     availability: PlatformStatus,
     scores: &ComponentScores,
     confidence: Confidence,
+    source_markers: &BTreeSet<VersionMarker>,
+    candidate_markers: &BTreeSet<VersionMarker>,
 ) -> MatchStatus {
     match availability {
         PlatformStatus::Unknown => MatchStatus::UnknownAvailability,
         PlatformStatus::Missing => MatchStatus::Rejected,
         PlatformStatus::Available => {
-            let identity_is_strong = scores.title.value() >= 0.90 && scores.artist.value() >= 0.90;
+            if hard_version_marker_conflict(source_markers, candidate_markers) {
+                return MatchStatus::Rejected;
+            }
+
+            let identity_is_strong =
+                scores.title.value() >= 0.90 && scores.artist.value() >= 0.90;
             let version_conflict = scores.version.value() <= 0.10;
             let duration_conflict = scores.duration.value() <= 0.10;
             let isrc_conflict = scores.isrc.value() <= 0.10;
+            let weighted_version_mismatch =
+                weighted_version_marker_mismatch(source_markers, candidate_markers);
 
-            if identity_is_strong && (version_conflict || duration_conflict || isrc_conflict) {
+            if identity_is_strong && (duration_conflict || isrc_conflict) {
+                MatchStatus::FalsePositive
+            } else if identity_is_strong && version_conflict && weighted_version_mismatch {
+                MatchStatus::PossibleMatch
+            } else if identity_is_strong && version_conflict {
                 MatchStatus::FalsePositive
             } else if confidence.value() >= 0.90
                 && scores.title.value() >= 0.90
@@ -275,6 +294,45 @@ fn decide_status(
             }
         }
     }
+}
+
+fn is_hard_version_marker(marker: &VersionMarker) -> bool {
+    matches!(
+        *marker,
+        VersionMarker::Live
+            | VersionMarker::Demo
+            | VersionMarker::Instrumental
+            | VersionMarker::SpedUp
+    )
+}
+
+fn hard_version_markers(markers: &BTreeSet<VersionMarker>) -> BTreeSet<VersionMarker> {
+    markers
+        .iter()
+        .copied()
+        .filter(|marker| is_hard_version_marker(marker))
+        .collect()
+}
+
+fn hard_version_marker_conflict(
+    left: &BTreeSet<VersionMarker>,
+    right: &BTreeSet<VersionMarker>,
+) -> bool {
+    let left_hard = hard_version_markers(left);
+    let right_hard = hard_version_markers(right);
+
+    if left_hard.is_empty() && right_hard.is_empty() {
+        return false;
+    }
+
+    left_hard.is_disjoint(&right_hard)
+}
+
+fn weighted_version_marker_mismatch(
+    left: &BTreeSet<VersionMarker>,
+    right: &BTreeSet<VersionMarker>,
+) -> bool {
+    left != right && !hard_version_marker_conflict(left, right)
 }
 
 fn build_evidence(availability: PlatformStatus, scores: &ComponentScores) -> Vec<MatchEvidence> {
@@ -745,7 +803,7 @@ mod tests {
 
         let decision = &match_candidates(&source, &[candidate])[0];
 
-        assert_eq!(decision.status, MatchStatus::FalsePositive);
+        assert_eq!(decision.status, MatchStatus::PossibleMatch);
         assert_eq!(decision.component_scores.version.value(), 0.0);
         assert!(decision.confidence.value() < 0.90);
     }
@@ -800,16 +858,90 @@ mod tests {
         assert!(decisions[0].confidence.value() >= 0.90);
         assert_eq!(decisions[0].component_scores.isrc.value(), 1.0);
 
-        assert_eq!(decisions[1].candidate.platform, "youtube");
-        assert_eq!(decisions[1].status, MatchStatus::UnknownAvailability);
-        assert!(decisions[1].confidence.value() >= 0.80);
+        assert_eq!(decisions[1].candidate.platform, "soundcloud");
+        assert_eq!(decisions[1].status, MatchStatus::PossibleMatch);
+        assert_eq!(decisions[1].component_scores.version.value(), 0.0);
 
-        assert_eq!(decisions[2].candidate.platform, "soundcloud");
-        assert_eq!(decisions[2].status, MatchStatus::FalsePositive);
-        assert_eq!(decisions[2].component_scores.version.value(), 0.0);
+        assert_eq!(decisions[2].candidate.platform, "youtube");
+        assert_eq!(decisions[2].status, MatchStatus::UnknownAvailability);
+        assert!(decisions[2].confidence.value() >= 0.80);
 
         assert_eq!(decisions[3].candidate.platform, "discogs");
         assert_eq!(decisions[3].status, MatchStatus::Rejected);
+    }
+
+
+    #[test]
+    fn live_demo_vs_original_is_rejected() {
+        let source = source("dj python", "angel");
+        let candidate = candidate("demo-index", "dj python", "angel live demo");
+
+        let decision = &match_candidates(&source, &[candidate])[0];
+
+        assert_eq!(decision.status, MatchStatus::Rejected);
+        assert_eq!(decision.component_scores.version.value(), 0.0);
+        assert!(
+            decision
+                .evidence
+                .iter()
+                .any(|evidence| evidence.field == EvidenceField::Version)
+        );
+    }
+
+    #[test]
+    fn remix_vs_original_is_possible_match() {
+        let source = source("2slimey", "roc");
+        let candidate = candidate("spotify", "2slimey", "roc remix");
+
+        let decision = &match_candidates(&source, &[candidate])[0];
+
+        assert_eq!(decision.status, MatchStatus::PossibleMatch);
+        assert_eq!(decision.component_scores.version.value(), 0.0);
+    }
+
+    #[test]
+    fn remaster_vs_original_is_possible_match() {
+        let source = source("museum music", "night drive");
+        let candidate = candidate("spotify", "museum music", "night drive remastered");
+
+        let decision = &match_candidates(&source, &[candidate])[0];
+
+        assert_eq!(decision.status, MatchStatus::PossibleMatch);
+        assert_eq!(decision.component_scores.version.value(), 0.0);
+    }
+
+    #[test]
+    fn same_version_markers_can_be_matched() {
+        let mut source = source("2slimey", "roc remix");
+        source.duration_ms = Some(180_000);
+        source.isrc = Some("US1234567890".to_string());
+
+        let mut candidate = candidate("spotify", "2slimey", "roc remix");
+        candidate.duration_ms = Some(181_000);
+        candidate.isrc = Some("us1234567890".to_string());
+
+        let decision = &match_candidates(&source, &[candidate])[0];
+
+        assert_eq!(decision.status, MatchStatus::Matched);
+        assert_eq!(decision.component_scores.version.value(), 1.0);
+    }
+
+    #[test]
+    fn identical_without_markers_is_matched() {
+        let mut source = source("museum music", "night drive");
+        source.duration_ms = Some(200_000);
+        source.isrc = Some("USRC17607839".to_string());
+
+        let mut candidate = candidate("spotify", "museum music", "night drive");
+        candidate.duration_ms = Some(201_000);
+        candidate.isrc = Some("USRC17607839".to_string());
+
+        let decision = &match_candidates(&source, &[candidate])[0];
+
+        assert_eq!(decision.status, MatchStatus::Matched);
+        assert_eq!(decision.component_scores.version.value(), 1.0);
+        assert!(decision.normalized_source.version_markers.is_empty());
+        assert!(decision.normalized_candidate.version_markers.is_empty());
     }
 
     #[test]

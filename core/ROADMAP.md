@@ -162,9 +162,18 @@ cargo test --workspace
 
 When benchmark tooling exists, also run the benchmark command and store a short report in docs or artifacts.
 
+## Version Marker Rules (resolved)
+
+Version markers are extracted from normalized title text and optional explicit `version` fields (`Live`, `Demo`, `Instrumental`, `SpedUp`, `Remix`, `Remaster`).
+
+| Marker class | Markers | On mismatch between source and candidate |
+|---|---|---|
+| Hard filter | `Live`, `Demo`, `Instrumental`, `SpedUp` | `Rejected` when hard-marker sets do not intersect (including one-sided hard markers). Evidence must include the `version` field. |
+| Weighted | `Remix`, `Remaster` | `PossibleMatch` with version score penalty (not promoted to `Matched`, not `FalsePositive` solely for version). |
+
+Same marker sets on both sides can reach `Matched` when other identity signals are strong. Identical normalized records with no markers on either side follow the same path.
+
 ## Open Questions
 
 - What is the first stable boundary between `core` and `app`: CLI JSON, local HTTP, generated files, or bindings?
-- Which matching rules are hard filters versus weighted score components?
-- How strict should version markers be for live/remix/demo/remaster matches?
 - Which concrete tracks enter the first golden set?
