@@ -39,7 +39,7 @@
     },
     {
       "path": "data/evaluation-set.json",
-      "content_sha256": "d2ea40a37eb56c84362836fc2c742eb6115995cd209c74a8adeb4b804558dde3",
+      "content_sha256": "45352149c7e4cb7b60cc2966240684429eaa36ea3669ef3acdee0ebbcf398619",
       "source_identifier": "repo:data/evaluation-set.json",
       "source_url": null,
       "retrieved_at": null,
@@ -53,7 +53,7 @@
         "ground_truth"
       ],
       "permitted_use": "contract_and_baseline_smoke_only",
-      "policy_note": "Local handwritten fixture; not independently held-out or source-verified. v2: 101 cases across korea/japan/internet scenes."
+      "policy_note": "128 cases: 101 scene-variant cases + 27 real MusicBrainz-ingested tracks (api_retrieved, not hand-verified)."
     }
   ]
 }

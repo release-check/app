@@ -1,0 +1,66 @@
+{
+  "seed_id": "mb-ingest-yerin-baek-square",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "facaa16c-10f1-4287-a977-a6c37bd585e6",
+    "track_mbid": "48fe1dc1-d2c9-4cd6-8419-c104959410a7",
+    "release_mbid": "8f96da07-3145-4162-8642-6fd7140b3ce9",
+    "release_group_mbid": "3c687a27-af46-4d2d-8981-dc8dc8241af9",
+    "artist_mbids": [
+      "d598652a-b64a-4e21-b607-bcec71698731"
+    ]
+  },
+  "metadata": {
+    "title": "Square (2017)",
+    "artist_credit": "Yerin Baek",
+    "release_title": "Every letter I sent you",
+    "release_status": "official",
+    "release_date": "2019-12-10",
+    "duration_ms": 261000,
+    "duration_precision": "display_seconds",
+    "isrcs": []
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:facaa16c-10f1-4287-a977-a6c37bd585e6",
+    "recording_url": "https://musicbrainz.org/recording/facaa16c-10f1-4287-a977-a6c37bd585e6",
+    "release_url": "https://musicbrainz.org/release/8f96da07-3145-4162-8642-6fd7140b3ce9",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/facaa16c-10f1-4287-a977-a6c37bd585e6?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T16:49:09Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "facaa16c-10f1-4287-a977-a6c37bd585e6",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: Yerin Baek. Title hint: Square."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T16:49:09Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}

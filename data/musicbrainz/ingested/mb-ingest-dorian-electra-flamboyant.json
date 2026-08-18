@@ -1,0 +1,68 @@
+{
+  "seed_id": "mb-ingest-dorian-electra-flamboyant",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "bdf5b110-33e6-484d-8781-5399f056e6a1",
+    "track_mbid": "040f631c-ff7d-4ccd-877c-0c82c9140ed5",
+    "release_mbid": "48c602aa-1b82-492d-a41e-9d44d7d0b6ab",
+    "release_group_mbid": "cac1757b-0d46-4ffb-9da4-2209355618bf",
+    "artist_mbids": [
+      "aefba883-dfc2-45ee-bce4-1dd903b13341"
+    ]
+  },
+  "metadata": {
+    "title": "Flamboyant",
+    "artist_credit": "Dorian Electra",
+    "release_title": "Flamboyant",
+    "release_status": "official",
+    "release_date": "2019-04-25",
+    "duration_ms": 196000,
+    "duration_precision": "display_seconds",
+    "isrcs": [
+      "QM24S1913856"
+    ]
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:bdf5b110-33e6-484d-8781-5399f056e6a1",
+    "recording_url": "https://musicbrainz.org/recording/bdf5b110-33e6-484d-8781-5399f056e6a1",
+    "release_url": "https://musicbrainz.org/release/48c602aa-1b82-492d-a41e-9d44d7d0b6ab",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/bdf5b110-33e6-484d-8781-5399f056e6a1?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T16:52:03Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "bdf5b110-33e6-484d-8781-5399f056e6a1",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: Dorian Electra. Title hint: Flamboyant."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T16:52:03Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}

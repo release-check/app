@@ -3,6 +3,7 @@ import { dirname } from "node:path";
 
 import { DEMO_INDEX } from "../apps/api/src/demo-index";
 import { VERIFIED_INDEX } from "../apps/api/src/verified-index";
+import { VERIFIED_INGESTED } from "../apps/api/src/verified-ingested";
 import { buildSyntheticCandidates } from "../apps/api/src/synthetic-fixtures";
 import {
   ADAPTER_POLICIES,
@@ -101,6 +102,7 @@ const candidates = enrichVerifiedFromCache(
       },
     })),
     ...VERIFIED_INDEX,
+    ...VERIFIED_INGESTED,
     ...buildSyntheticCandidates(),
   ],
   new Date(),
@@ -110,7 +112,9 @@ mkdirSync(dirname(outputPath.pathname), { recursive: true });
 await Bun.write(outputPath, `${JSON.stringify(candidates, null, 2)}\n`);
 
 const messyCaseCount = candidates.filter((candidate) => candidate.sample.messyCase).length;
-const handwrittenCount = DEMO_INDEX.length + VERIFIED_INDEX.length;
+const handwrittenCount = candidates.filter(
+  (candidate) => candidate.sample?.origin !== "synthetic_load",
+).length;
 
 console.log(
   JSON.stringify(

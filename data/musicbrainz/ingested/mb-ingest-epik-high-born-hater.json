@@ -1,0 +1,71 @@
+{
+  "seed_id": "mb-ingest-epik-high-born-hater",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "b9d1175c-03e1-4cae-ae5e-ce20856e3852",
+    "track_mbid": "24293c7c-3fb1-4fe6-800f-fc10993a64ea",
+    "release_mbid": "e5febe3f-29f6-43ed-adee-69f1517f1ed7",
+    "release_group_mbid": "a3335491-e71b-4eb7-8a05-779f12340eaf",
+    "artist_mbids": [
+      "57f1cdd6-cf32-4004-a095-3ef043c91b61",
+      "ff2f225e-a49e-47ee-866a-d4606c4e3fea",
+      "02631a80-5a17-40af-b3fc-eb1aeeffc55d",
+      "75312d53-db94-4dc1-a08f-2fa3511cf8f2",
+      "2650741e-908c-4cae-ba98-0717da3c3ce0",
+      "de461f00-89b7-46e2-b6ba-550ef383fb8e"
+    ]
+  },
+  "metadata": {
+    "title": "BORN HATER",
+    "artist_credit": "Epik High빈지노버벌진트B.IMINOBOBBY",
+    "release_title": "SHOEBOX",
+    "release_status": "official",
+    "release_date": "2014-10-21",
+    "duration_ms": 237000,
+    "duration_precision": "display_seconds",
+    "isrcs": []
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:b9d1175c-03e1-4cae-ae5e-ce20856e3852",
+    "recording_url": "https://musicbrainz.org/recording/b9d1175c-03e1-4cae-ae5e-ce20856e3852",
+    "release_url": "https://musicbrainz.org/release/e5febe3f-29f6-43ed-adee-69f1517f1ed7",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/b9d1175c-03e1-4cae-ae5e-ce20856e3852?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T16:49:05Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "b9d1175c-03e1-4cae-ae5e-ce20856e3852",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: Epik High. Title hint: Born Hater."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T16:49:05Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}

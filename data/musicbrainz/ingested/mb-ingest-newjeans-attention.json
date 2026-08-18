@@ -1,0 +1,68 @@
+{
+  "seed_id": "mb-ingest-newjeans-attention",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "554f90c9-c7f3-47be-8712-66243568070c",
+    "track_mbid": "1afc6a02-f042-4325-b629-6b0df780a5d8",
+    "release_mbid": "e0970084-b277-418b-9e47-e21689b11b77",
+    "release_group_mbid": "3dbba4ac-5dac-4e69-ac56-8e876a3802ae",
+    "artist_mbids": [
+      "49204a7a-ed85-407a-828f-6fd46f1d8126"
+    ]
+  },
+  "metadata": {
+    "title": "Attention",
+    "artist_credit": "NewJeans",
+    "release_title": "Attention",
+    "release_status": "official",
+    "release_date": "2022-07-22",
+    "duration_ms": 262000,
+    "duration_precision": "display_seconds",
+    "isrcs": [
+      "USA2P2230214"
+    ]
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:554f90c9-c7f3-47be-8712-66243568070c",
+    "recording_url": "https://musicbrainz.org/recording/554f90c9-c7f3-47be-8712-66243568070c",
+    "release_url": "https://musicbrainz.org/release/e0970084-b277-418b-9e47-e21689b11b77",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/554f90c9-c7f3-47be-8712-66243568070c?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T16:48:21Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "554f90c9-c7f3-47be-8712-66243568070c",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: NewJeans. Title hint: Attention."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T16:48:21Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}

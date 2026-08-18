@@ -51,7 +51,7 @@ export interface Candidate {
   evidence: MatchEvidence[];
   availability: PlatformAvailability;
   sample?: {
-    origin: "handwritten_demo" | "synthetic_load" | "verified_musicbrainz";
+    origin: "handwritten_demo" | "synthetic_load" | "verified_musicbrainz" | "musicbrainz_ingested";
     scene: string;
     messyCase: boolean;
     verified: boolean;

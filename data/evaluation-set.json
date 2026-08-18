@@ -746,6 +746,222 @@
       "minCandidates": 3,
       "scene": "internet",
       "groundTruth": "manual"
+    },
+    {
+      "name": "mb-ingest-ado-odo exact",
+      "query": "Ado 踊 (Bon-Odo remix)",
+      "expectedTop3Id": "mb-ingest-ado-odo",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-akmu-how-can-i-love-the-heartbreak-you-re-the-on exact",
+      "query": "Akmu How can i love the heartbreak, you're the one i love",
+      "expectedTop3Id": "mb-ingest-akmu-how-can-i-love-the-heartbreak-you-re-the-on",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-balming-tiger-armadillo exact",
+      "query": "Balming TigerOmega SapienByung Un Armadillo",
+      "expectedTop3Id": "mb-ingest-balming-tiger-armadillo",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-black-dresses-creep-u exact",
+      "query": "Black Dresses creep u",
+      "expectedTop3Id": "mb-ingest-black-dresses-creep-u",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-blackpink-ddu-du-ddu-du exact",
+      "query": "BLACKPINK DDU-DU DDU-DU",
+      "expectedTop3Id": "mb-ingest-blackpink-ddu-du-ddu-du",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-bts-dynamite exact",
+      "query": "BTS Dynamite",
+      "expectedTop3Id": "mb-ingest-bts-dynamite",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-burial-archangel exact",
+      "query": "Burial Archangel",
+      "expectedTop3Id": "mb-ingest-burial-archangel",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-dorian-electra-flamboyant exact",
+      "query": "Dorian Electra Flamboyant",
+      "expectedTop3Id": "mb-ingest-dorian-electra-flamboyant",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-epik-high-born-hater exact",
+      "query": "Epik High빈지노버벌진트B.IMINOBOBBY BORN HATER",
+      "expectedTop3Id": "mb-ingest-epik-high-born-hater",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-glaive-i-wanna-slam-my-head-against-the-wall exact",
+      "query": "glaive i wanna slam my head against the wall",
+      "expectedTop3Id": "mb-ingest-glaive-i-wanna-slam-my-head-against-the-wall",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-hannah-diamond-fade-away exact",
+      "query": "Hannah Diamond Fade Away",
+      "expectedTop3Id": "mb-ingest-hannah-diamond-fade-away",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-hikaru-utada-first-love exact",
+      "query": "Hikaru Utada First Love",
+      "expectedTop3Id": "mb-ingest-hikaru-utada-first-love",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-hyukoh-tomboy exact",
+      "query": "HYUKOH TOMBOY",
+      "expectedTop3Id": "mb-ingest-hyukoh-tomboy",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-iu-celebrity exact",
+      "query": "IU Celebrity",
+      "expectedTop3Id": "mb-ingest-iu-celebrity",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-kero-kero-bonito-flamingo exact",
+      "query": "Kero Kero Bonito Flamingo",
+      "expectedTop3Id": "mb-ingest-kero-kero-bonito-flamingo",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-miki-matsubara-stay-with-me exact",
+      "query": "CosmicFMMiki Matsubara Stay With Me",
+      "expectedTop3Id": "mb-ingest-miki-matsubara-stay-with-me",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-neon-bunny-seoul exact",
+      "query": "Neon Bunny Romance In Seoul",
+      "expectedTop3Id": "mb-ingest-neon-bunny-seoul",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-newjeans-attention exact",
+      "query": "NewJeans Attention",
+      "expectedTop3Id": "mb-ingest-newjeans-attention",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-newjeans-hype-boy exact",
+      "query": "NewJeans Hype boy",
+      "expectedTop3Id": "mb-ingest-newjeans-hype-boy",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-oneohtrix-point-never-sticky-drama exact",
+      "query": "Oneohtrix Point Never Sticky Drama",
+      "expectedTop3Id": "mb-ingest-oneohtrix-point-never-sticky-drama",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-radwimps-zenzenzense exact",
+      "query": "RADWIMPS Zenzenzense (English ver.)",
+      "expectedTop3Id": "mb-ingest-radwimps-zenzenzense",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-rina-sawayama-xs exact",
+      "query": "Rina Sawayama XS",
+      "expectedTop3Id": "mb-ingest-rina-sawayama-xs",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-silica-gel-desert-eagle exact",
+      "query": "Silica Gel Desert Eagle",
+      "expectedTop3Id": "mb-ingest-silica-gel-desert-eagle",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-sophie-immaterial exact",
+      "query": "SOPHIE Immaterial",
+      "expectedTop3Id": "mb-ingest-sophie-immaterial",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-tomoko-aran-midnight-pretenders exact",
+      "query": "Tomoko Aran Midnight Pretenders",
+      "expectedTop3Id": "mb-ingest-tomoko-aran-midnight-pretenders",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-yerin-baek-square exact",
+      "query": "Yerin Baek Square (2017)",
+      "expectedTop3Id": "mb-ingest-yerin-baek-square",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-yung-lean-kyoto exact",
+      "query": "Yung Lean Kyoto",
+      "expectedTop3Id": "mb-ingest-yung-lean-kyoto",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
     }
   ],
   "requiredStateChecks": [

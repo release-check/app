@@ -1,0 +1,66 @@
+{
+  "seed_id": "mb-ingest-neon-bunny-seoul",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "270170e2-7aba-48cf-a73c-af3a0474010c",
+    "track_mbid": "09771dcb-e930-4f80-81fb-6a6b4e3a8ffb",
+    "release_mbid": "c2e52da1-0b06-477d-a068-7c9a9a74f7e4",
+    "release_group_mbid": "e139bdff-3b56-4aee-995a-93fc9c5baff9",
+    "artist_mbids": [
+      "f3ab7392-d6b5-44f9-8b2e-f5d25c56ce68"
+    ]
+  },
+  "metadata": {
+    "title": "Romance In Seoul",
+    "artist_credit": "Neon Bunny",
+    "release_title": "Stay Gold",
+    "release_status": "official",
+    "release_date": "2017-01-18",
+    "duration_ms": 231000,
+    "duration_precision": "display_seconds",
+    "isrcs": []
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:270170e2-7aba-48cf-a73c-af3a0474010c",
+    "recording_url": "https://musicbrainz.org/recording/270170e2-7aba-48cf-a73c-af3a0474010c",
+    "release_url": "https://musicbrainz.org/release/c2e52da1-0b06-477d-a068-7c9a9a74f7e4",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/270170e2-7aba-48cf-a73c-af3a0474010c?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T16:49:36Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "270170e2-7aba-48cf-a73c-af3a0474010c",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: Neon Bunny. Title hint: Seoul."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T16:49:36Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}

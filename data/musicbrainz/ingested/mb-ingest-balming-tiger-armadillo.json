@@ -1,0 +1,70 @@
+{
+  "seed_id": "mb-ingest-balming-tiger-armadillo",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "a72c6fc1-8d6c-4532-a694-547f23d26864",
+    "track_mbid": "c364e1d6-616f-4110-8f05-6422069710fa",
+    "release_mbid": "362e333d-1921-4fda-9e1b-b2dec5d886ce",
+    "release_group_mbid": "a1b026ac-8719-48a0-a3e3-b26196f94238",
+    "artist_mbids": [
+      "b20847c7-1eb4-4fb5-a857-8fbc9f2bcbd1",
+      "8914dc46-0332-4be7-9c37-a57a90bfc74d",
+      "a3bcd5e8-70a9-44f0-905c-51598770f52c"
+    ]
+  },
+  "metadata": {
+    "title": "Armadillo",
+    "artist_credit": "Balming TigerOmega SapienByung Un",
+    "release_title": "Armadillo",
+    "release_status": "official",
+    "release_date": "2019-01-31",
+    "duration_ms": 151000,
+    "duration_precision": "display_seconds",
+    "isrcs": [
+      "KRB461900019"
+    ]
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:a72c6fc1-8d6c-4532-a694-547f23d26864",
+    "recording_url": "https://musicbrainz.org/recording/a72c6fc1-8d6c-4532-a694-547f23d26864",
+    "release_url": "https://musicbrainz.org/release/362e333d-1921-4fda-9e1b-b2dec5d886ce",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/a72c6fc1-8d6c-4532-a694-547f23d26864?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T16:49:06Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "a72c6fc1-8d6c-4532-a694-547f23d26864",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: Balming Tiger. Title hint: Armadillo."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T16:49:06Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}

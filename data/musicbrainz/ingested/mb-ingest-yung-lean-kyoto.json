@@ -1,0 +1,68 @@
+{
+  "seed_id": "mb-ingest-yung-lean-kyoto",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "60e1da20-def1-4eb5-a3d5-da5b0559fbf5",
+    "track_mbid": "5979b698-e6d6-43b0-b166-cee2a5a1968d",
+    "release_mbid": "d897546d-98fb-4c0d-aaa7-163cf930f1f5",
+    "release_group_mbid": "a7f38eac-6345-4c22-87fd-eab072f8bdf9",
+    "artist_mbids": [
+      "757ed661-fbad-4e45-b1cd-a6b09f06f54a"
+    ]
+  },
+  "metadata": {
+    "title": "Kyoto",
+    "artist_credit": "Yung Lean",
+    "release_title": "Kyoto",
+    "release_status": "official",
+    "release_date": "2013-12-10",
+    "duration_ms": 270000,
+    "duration_precision": "display_seconds",
+    "isrcs": [
+      "SEY491300022"
+    ]
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:60e1da20-def1-4eb5-a3d5-da5b0559fbf5",
+    "recording_url": "https://musicbrainz.org/recording/60e1da20-def1-4eb5-a3d5-da5b0559fbf5",
+    "release_url": "https://musicbrainz.org/release/d897546d-98fb-4c0d-aaa7-163cf930f1f5",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/60e1da20-def1-4eb5-a3d5-da5b0559fbf5?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T16:51:56Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "60e1da20-def1-4eb5-a3d5-da5b0559fbf5",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: Yung Lean. Title hint: Kyoto."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T16:51:56Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}

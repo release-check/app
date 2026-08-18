@@ -3,6 +3,7 @@ import { fileURLToPath } from "node:url";
 
 import { DEMO_INDEX, normalize } from "./demo-index";
 import { VERIFIED_INDEX } from "./verified-index";
+import { VERIFIED_INGESTED } from "./verified-ingested";
 import { buildSyntheticCandidates } from "./synthetic-fixtures";
 import type { Candidate } from "./types";
 
@@ -176,6 +177,7 @@ function loadSearchIndex(): Candidate[] {
       },
     })),
     ...VERIFIED_INDEX,
+    ...VERIFIED_INGESTED,
     ...buildSyntheticCandidates(),
   ];
 }

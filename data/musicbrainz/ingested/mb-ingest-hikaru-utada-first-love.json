@@ -1,0 +1,68 @@
+{
+  "seed_id": "mb-ingest-hikaru-utada-first-love",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "ad8c9e90-5340-4301-b275-9b5e5912a6b6",
+    "track_mbid": "7bffb68a-ae2c-4a15-9ee3-250fe4b1c3be",
+    "release_mbid": "a2c50acc-8da7-4246-a3ef-dbb56a81e077",
+    "release_group_mbid": "81f21054-78ac-4006-ab10-057db5a4ac83",
+    "artist_mbids": [
+      "b539e453-c4fe-47e3-8a07-8517eac74429"
+    ]
+  },
+  "metadata": {
+    "title": "First Love",
+    "artist_credit": "Hikaru Utada",
+    "release_title": "HIKARU UTADA SCIENCE FICTION TOUR 2024",
+    "release_status": "official",
+    "release_date": "2024-12-11",
+    "duration_ms": 258000,
+    "duration_precision": "display_seconds",
+    "isrcs": [
+      "JPU902404237"
+    ]
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:ad8c9e90-5340-4301-b275-9b5e5912a6b6",
+    "recording_url": "https://musicbrainz.org/recording/ad8c9e90-5340-4301-b275-9b5e5912a6b6",
+    "release_url": "https://musicbrainz.org/release/a2c50acc-8da7-4246-a3ef-dbb56a81e077",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/ad8c9e90-5340-4301-b275-9b5e5912a6b6?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T16:50:53Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "ad8c9e90-5340-4301-b275-9b5e5912a6b6",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: Hikaru Utada. Title hint: First Love."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T16:50:53Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}
