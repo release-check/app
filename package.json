@@ -24,6 +24,7 @@
     "eval:demo": "bun run scripts/eval-demo.ts",
     "eval:golden-core": "bun run scripts/eval-golden-core.ts",
     "eval:verified": "bun run scripts/eval-verified.ts",
+    "eval:quality": "bun run scripts/eval-quality.ts",
     "test": "bun test",
     "test:public-contract": "bun run scripts/test-public-contract.ts",
     "validate:provenance": "bun run scripts/validate-provenance.ts",

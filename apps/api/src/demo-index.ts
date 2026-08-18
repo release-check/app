@@ -179,7 +179,12 @@ export const DEMO_INDEX: Candidate[] = [
 ];
 
 export function normalize(value: string): string {
-  return value.trim().toLowerCase().replace(/\s+/g, " ");
+  return value
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .replace(/\s+/g, " ");
 }
 
 export function searchDemoIndex(query: string): Candidate[] {

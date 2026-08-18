@@ -4,7 +4,7 @@
   "fixtures": [
     {
       "path": "apps/api/src/demo-index.ts",
-      "content_sha256": "81292b0941a7146df8297a8e8c94cd621a6fa6ec8edf7f0ae030f4c46b5ab874",
+      "content_sha256": "2a0f21851f97b8c74d79afe71b89e89e085275a486ad3a55d59fe4af950392fc",
       "source_identifier": "repo:apps/api/src/demo-index.ts",
       "source_url": null,
       "retrieved_at": null,
