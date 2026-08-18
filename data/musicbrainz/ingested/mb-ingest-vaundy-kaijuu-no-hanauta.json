@@ -1,0 +1,68 @@
+{
+  "seed_id": "mb-ingest-vaundy-kaijuu-no-hanauta",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "ffa02d1d-455c-4088-b440-a0eb1539d334",
+    "track_mbid": "8ec621b4-2a30-4058-a1ee-2707a9a668a5",
+    "release_mbid": "2bf3032f-a151-46f4-a527-2bdf39db0443",
+    "release_group_mbid": "fad4df89-27da-42f2-8c5e-97c5ae5d8400",
+    "artist_mbids": [
+      "114b26ff-a1fe-41f3-9df8-5c093afe9c56"
+    ]
+  },
+  "metadata": {
+    "title": "怪獣の花唄",
+    "artist_credit": "Vaundy",
+    "release_title": "strobo",
+    "release_status": "official",
+    "release_date": "2020-05-27",
+    "duration_ms": 224000,
+    "duration_precision": "display_seconds",
+    "isrcs": [
+      "JPR652000112"
+    ]
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:ffa02d1d-455c-4088-b440-a0eb1539d334",
+    "recording_url": "https://musicbrainz.org/recording/ffa02d1d-455c-4088-b440-a0eb1539d334",
+    "release_url": "https://musicbrainz.org/release/2bf3032f-a151-46f4-a527-2bdf39db0443",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/ffa02d1d-455c-4088-b440-a0eb1539d334?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T17:31:49Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "ffa02d1d-455c-4088-b440-a0eb1539d334",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: Vaundy. Title hint: Kaijuu no Hanauta."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T17:31:49Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}

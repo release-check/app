@@ -1,0 +1,68 @@
+{
+  "seed_id": "mb-ingest-charli-xcx-von-dutch",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "5642ef30-228f-4ad3-a2ed-762062041a50",
+    "track_mbid": "48047d61-148c-42a1-94df-0a2c8186e7ad",
+    "release_mbid": "96a82121-68f1-40cd-b3de-57598cf264c0",
+    "release_group_mbid": "5242e955-77d3-4423-a564-f888ef816fe0",
+    "artist_mbids": [
+      "260b6184-8828-48eb-945c-bc4cb6fc34ca"
+    ]
+  },
+  "metadata": {
+    "title": "Von dutch",
+    "artist_credit": "Charli xcx",
+    "release_title": "Von dutch",
+    "release_status": "official",
+    "release_date": "2024-02-29",
+    "duration_ms": 164000,
+    "duration_precision": "display_seconds",
+    "isrcs": [
+      "USAT22400792"
+    ]
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:5642ef30-228f-4ad3-a2ed-762062041a50",
+    "recording_url": "https://musicbrainz.org/recording/5642ef30-228f-4ad3-a2ed-762062041a50",
+    "release_url": "https://musicbrainz.org/release/96a82121-68f1-40cd-b3de-57598cf264c0",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/5642ef30-228f-4ad3-a2ed-762062041a50?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T17:32:11Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "5642ef30-228f-4ad3-a2ed-762062041a50",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: Charli XCX. Title hint: Von dutch."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T17:32:11Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}

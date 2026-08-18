@@ -1146,6 +1146,278 @@
       "scene": "korea",
       "groundTruth": "musicbrainz-seed",
       "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-100-gecs-money-machine exact",
+      "query": "100 gecs Money Machine",
+      "expectedTop3Id": "mb-ingest-100-gecs-money-machine",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-ado-usseewa exact",
+      "query": "Ado うっせぇわ (Usseewa)",
+      "expectedTop3Id": "mb-ingest-ado-usseewa",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-aespa-savage exact",
+      "query": "aespa Savage",
+      "expectedTop3Id": "mb-ingest-aespa-savage",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-arca-nonbinary exact",
+      "query": "Arca Nonbinary",
+      "expectedTop3Id": "mb-ingest-arca-nonbinary",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-blackpink-how-you-like-that exact",
+      "query": "BLACKPINK How You Like That",
+      "expectedTop3Id": "mb-ingest-blackpink-how-you-like-that",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-blackpink-kill-this-love exact",
+      "query": "BLACKPINK Kill This Love",
+      "expectedTop3Id": "mb-ingest-blackpink-kill-this-love",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-bonobo-kerala exact",
+      "query": "Bonobo Kerala",
+      "expectedTop3Id": "mb-ingest-bonobo-kerala",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-bts-spring-day exact",
+      "query": "BTS Spring Day -Japanese ver.-",
+      "expectedTop3Id": "mb-ingest-bts-spring-day",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-charli-xcx-track-10 exact",
+      "query": "Charli XCX Track 10",
+      "expectedTop3Id": "mb-ingest-charli-xcx-track-10",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-charli-xcx-von-dutch exact",
+      "query": "Charli xcx Von dutch",
+      "expectedTop3Id": "mb-ingest-charli-xcx-von-dutch",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-dorian-electra-adam-steve exact",
+      "query": "Dorian Electra Adam & Steve",
+      "expectedTop3Id": "mb-ingest-dorian-electra-adam-steve",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-four-tet-two-thousand-and-seventeen exact",
+      "query": "Four Tet Two Thousand and Seventeen",
+      "expectedTop3Id": "mb-ingest-four-tet-two-thousand-and-seventeen",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-hikaru-utada-automatic exact",
+      "query": "Hikaru Utada Automatic",
+      "expectedTop3Id": "mb-ingest-hikaru-utada-automatic",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-iu-blueming exact",
+      "query": "IU Blueming",
+      "expectedTop3Id": "mb-ingest-iu-blueming",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-ive-love-dive exact",
+      "query": "IVE LOVE DIVE",
+      "expectedTop3Id": "mb-ingest-ive-love-dive",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-jamie-xx-gosh exact",
+      "query": "Jamie xx Gosh",
+      "expectedTop3Id": "mb-ingest-jamie-xx-gosh",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-jon-hopkins-emerald-rush exact",
+      "query": "Jon Hopkins Emerald Rush",
+      "expectedTop3Id": "mb-ingest-jon-hopkins-emerald-rush",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-kenshi-yonezu-kick-back exact",
+      "query": "米津玄師 KICK BACK",
+      "expectedTop3Id": "mb-ingest-kenshi-yonezu-kick-back",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-kenshi-yonezu-loser exact",
+      "query": "米津玄師 LOSER",
+      "expectedTop3Id": "mb-ingest-kenshi-yonezu-loser",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-kero-kero-bonito-sick-beat exact",
+      "query": "Kero Kero Bonito Sick Beat",
+      "expectedTop3Id": "mb-ingest-kero-kero-bonito-sick-beat",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-kim-petras-i-don-t-want-it-at-all exact",
+      "query": "Kim Petras I Don’t Want It at All",
+      "expectedTop3Id": "mb-ingest-kim-petras-i-don-t-want-it-at-all",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-king-gnu-specialz exact",
+      "query": "King Gnu SPECIALZ",
+      "expectedTop3Id": "mb-ingest-king-gnu-specialz",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-mrs-green-apple-inferno exact",
+      "query": "Mrs. GREEN APPLE インフェルノ",
+      "expectedTop3Id": "mb-ingest-mrs-green-apple-inferno",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-newjeans-omg exact",
+      "query": "NewJeans OMG",
+      "expectedTop3Id": "mb-ingest-newjeans-omg",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-red-velvet-psycho exact",
+      "query": "Red Velvet Psycho",
+      "expectedTop3Id": "mb-ingest-red-velvet-psycho",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-rico-nasty-ohfr exact",
+      "query": "Rico Nasty OHFR?",
+      "expectedTop3Id": "mb-ingest-rico-nasty-ohfr",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-ryokuoushoku-shakai-shout-baby exact",
+      "query": "緑黄色社会 Shout Baby",
+      "expectedTop3Id": "mb-ingest-ryokuoushoku-shakai-shout-baby",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-slayyyter-mine exact",
+      "query": "Slayyyter Mine",
+      "expectedTop3Id": "mb-ingest-slayyyter-mine",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-tommy-genesis-100-bad exact",
+      "query": "Tommy Genesis 100 Bad",
+      "expectedTop3Id": "mb-ingest-tommy-genesis-100-bad",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-twice-fancy exact",
+      "query": "TWICE FANCY",
+      "expectedTop3Id": "mb-ingest-twice-fancy",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-vaundy-kaijuu-no-hanauta exact",
+      "query": "Vaundy 怪獣の花唄",
+      "expectedTop3Id": "mb-ingest-vaundy-kaijuu-no-hanauta",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-yaeji-raingurl exact",
+      "query": "Yaeji raingurl",
+      "expectedTop3Id": "mb-ingest-yaeji-raingurl",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-yerin-baek-maybe-it-s-not-our-fault exact",
+      "query": "Yerin Baek Maybe It’s Not Our Fault",
+      "expectedTop3Id": "mb-ingest-yerin-baek-maybe-it-s-not-our-fault",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-yumi-matsutoya-haru-yo-koi exact",
+      "query": "松任谷由実 春よ、来い",
+      "expectedTop3Id": "mb-ingest-yumi-matsutoya-haru-yo-koi",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
     }
   ],
   "requiredStateChecks": [

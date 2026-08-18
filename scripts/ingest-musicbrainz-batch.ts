@@ -98,6 +98,51 @@ const CURATED_TRACKS: CuratedTrack[] = [
   { artist: "Caroline Polachek", title: "So Hot You're Hurting My Feelings", scene: "internet" },
   { artist: "Ecco2k", title: "Time", scene: "internet" },
   { artist: "Alice Longyu Gao", title: "Rich Bitch Juice", scene: "internet" },
+  // --- batch 3: korea ---
+  { artist: "NewJeans", title: "OMG", scene: "korea" },
+  { artist: "BTS", title: "Butter", scene: "korea" },
+  { artist: "BTS", title: "Spring Day", scene: "korea" },
+  { artist: "BLACKPINK", title: "Kill This Love", scene: "korea" },
+  { artist: "BLACKPINK", title: "How You Like That", scene: "korea" },
+  { artist: "TWICE", title: "Fancy", scene: "korea" },
+  { artist: "Red Velvet", title: "Psycho", scene: "korea" },
+  { artist: "aespa", title: "Savage", scene: "korea" },
+  { artist: "IVE", title: "Love Dive", scene: "korea" },
+  { artist: "IU", title: "Blueming", scene: "korea" },
+  { artist: "Zion.T", title: "Yanghwa Bridge", scene: "korea", artistAlt: "자이언티", titleAlt: "양화대교" },
+  { artist: "Jannabi", title: "for lovers who hesitate", scene: "korea", titleAlt: "주저하는 연인들을 위해" },
+  { artist: "HYUKOH", title: "Wi Ing Wi Ing", scene: "korea" },
+  { artist: "NELL", title: "Time Walking on Memory", scene: "korea", artistAlt: "넬" },
+  { artist: "Yerin Baek", title: "Maybe It's Not Our Fault", scene: "korea" },
+  // --- batch 3: japan ---
+  { artist: "Tatsuro Yamashita", title: "Christmas Eve", scene: "japan", artistAlt: "山下達郎", titleAlt: "クリスマス・イブ" },
+  { artist: "Yumi Matsutoya", title: "Haru yo, koi", scene: "japan", artistAlt: "松任谷由実", titleAlt: "春よ、来い" },
+  { artist: "Hikaru Utada", title: "Automatic", scene: "japan", artistAlt: "宇多田ヒカル" },
+  { artist: "LiSA", title: "Gurenge", scene: "japan", titleAlt: "紅蓮華" },
+  { artist: "Ado", title: "Usseewa", scene: "japan", titleAlt: "うっせぇわ" },
+  { artist: "Kenshi Yonezu", title: "Loser", scene: "japan", artistAlt: "米津玄師" },
+  { artist: "YOASOBI", title: "Idol", scene: "japan", titleAlt: "アイドル" },
+  { artist: "Vaundy", title: "Kaijuu no Hanauta", scene: "japan", titleAlt: "怪獣の花唄" },
+  { artist: "Eve", title: "Kaikai Kitan", scene: "japan", titleAlt: "廻廻奇譚" },
+  { artist: "Mrs. GREEN APPLE", title: "Inferno", scene: "japan", titleAlt: "インフェルノ" },
+  { artist: "Fujii Kaze", title: "Kirari", scene: "japan", artistAlt: "藤井風" },
+  { artist: "King Gnu", title: "Specialz", scene: "japan", titleAlt: "SPECIALZ" },
+  { artist: "Ryokuoushoku Shakai", title: "Shout Baby", scene: "japan", artistAlt: "緑黄色社会" },
+  // --- batch 3: internet ---
+  { artist: "Charli XCX", title: "Track 10", scene: "internet" },
+  { artist: "Charli XCX", title: "Von dutch", scene: "internet" },
+  { artist: "Kim Petras", title: "I Don't Want It at All", scene: "internet" },
+  { artist: "Slayyyter", title: "Mine", scene: "internet" },
+  { artist: "Dorian Electra", title: "Adam & Steve", scene: "internet" },
+  { artist: "Tommy Genesis", title: "100 Bad", scene: "internet" },
+  { artist: "Rico Nasty", title: "OHFR?", scene: "internet" },
+  { artist: "Arca", title: "Nonbinary", scene: "internet" },
+  { artist: "Kero Kero Bonito", title: "Sick Beat", scene: "internet" },
+  { artist: "100 gecs", title: "hand crushed by a mallet", scene: "internet" },
+  { artist: "Jamie xx", title: "Gosh", scene: "internet" },
+  { artist: "Four Tet", title: "Two Thousand and Seventeen", scene: "internet" },
+  { artist: "Bonobo", title: "Kerala", scene: "internet" },
+  { artist: "Jon Hopkins", title: "Emerald Rush", scene: "internet" },
 ];
 
 const SEARCH_URL = (artist: string, title: string) =>
@@ -139,6 +184,18 @@ const results: Array<{ track: CuratedTrack; status: string; seedId?: string; err
 
 mkdirSync(OUT_DIR, { recursive: true });
 
+async function withTimeout<T>(promise: Promise<T>, ms: number, label: string): Promise<T> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const timeout = new Promise<never>((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`timeout after ${ms}ms: ${label}`)), ms);
+  });
+  try {
+    return await Promise.race([promise, timeout]);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 for (const track of CURATED_TRACKS) {
   const seedId = slugifySeedId(track.artist, track.title);
   if (existsSync(`${OUT_DIR}/${seedId}.json`)) {
@@ -147,18 +204,26 @@ for (const track of CURATED_TRACKS) {
   }
 
   try {
-    const recordingMbid = await searchBestMbid(track, rateLimiter);
+    const recordingMbid = await withTimeout(
+      searchBestMbid(track, rateLimiter),
+      60_000,
+      `${track.artist} - ${track.title} search`,
+    );
     if (!recordingMbid) {
       results.push({ track, status: "no_match" });
       continue;
     }
 
-    const seed = await ingestMusicBrainzRecording({
-      recordingMbid,
-      artistHint: track.artist,
-      titleHint: track.title,
-      seedId,
-    });
+    const seed = await withTimeout(
+      ingestMusicBrainzRecording({
+        recordingMbid,
+        artistHint: track.artist,
+        titleHint: track.title,
+        seedId,
+      }),
+      60_000,
+      `${track.artist} - ${track.title} ingest`,
+    );
 
     writeFileSync(`${OUT_DIR}/${seedId}.json`, `${JSON.stringify(seed, null, 2)}\n`, "utf8");
     results.push({ track, status: "ingested", seedId });

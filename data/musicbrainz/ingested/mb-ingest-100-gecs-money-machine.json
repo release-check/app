@@ -1,0 +1,66 @@
+{
+  "seed_id": "mb-ingest-100-gecs-money-machine",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "ffc7f32b-7873-4f5e-92e4-dd99b1fc4519",
+    "track_mbid": "12767806-c5da-4f21-8ae9-fd53f3153db0",
+    "release_mbid": "687139dd-056b-4ce2-aa8b-528b4c066811",
+    "release_group_mbid": "8518b08f-163c-4043-b6e1-33a1056ea888",
+    "artist_mbids": [
+      "d6d45dda-2377-4faa-947b-e071efa085c0"
+    ]
+  },
+  "metadata": {
+    "title": "Money Machine",
+    "artist_credit": "100 gecs",
+    "release_title": "100 Gecs & the Chamber of Secrets",
+    "release_status": "official",
+    "release_date": "2019-06-28",
+    "duration_ms": 112000,
+    "duration_precision": "display_seconds",
+    "isrcs": []
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:ffc7f32b-7873-4f5e-92e4-dd99b1fc4519",
+    "recording_url": "https://musicbrainz.org/recording/ffc7f32b-7873-4f5e-92e4-dd99b1fc4519",
+    "release_url": "https://musicbrainz.org/release/687139dd-056b-4ce2-aa8b-528b4c066811",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/ffc7f32b-7873-4f5e-92e4-dd99b1fc4519?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T17:18:02Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "ffc7f32b-7873-4f5e-92e4-dd99b1fc4519",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: 100 gecs. Title hint: money machine."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T17:18:02Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}

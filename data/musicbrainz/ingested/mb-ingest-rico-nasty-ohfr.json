@@ -1,0 +1,68 @@
+{
+  "seed_id": "mb-ingest-rico-nasty-ohfr",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "e5ffd119-5710-4f96-8d69-5e3dbefc6d6a",
+    "track_mbid": "d16ee242-600d-4d9f-a3c8-57807681e8ce",
+    "release_mbid": "71f59238-0214-427e-a049-4a64a5277867",
+    "release_group_mbid": "8243bcd2-8e08-462f-83df-386039dccfe7",
+    "artist_mbids": [
+      "f7d8f1ce-6a72-422a-b746-22137b3a05d0"
+    ]
+  },
+  "metadata": {
+    "title": "OHFR?",
+    "artist_credit": "Rico Nasty",
+    "release_title": "Nightmare Vacation (video deluxe)",
+    "release_status": "official",
+    "release_date": "2020-12-04",
+    "duration_ms": 123000,
+    "duration_precision": "display_seconds",
+    "isrcs": [
+      "USATV2003894"
+    ]
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:e5ffd119-5710-4f96-8d69-5e3dbefc6d6a",
+    "recording_url": "https://musicbrainz.org/recording/e5ffd119-5710-4f96-8d69-5e3dbefc6d6a",
+    "release_url": "https://musicbrainz.org/release/71f59238-0214-427e-a049-4a64a5277867",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/e5ffd119-5710-4f96-8d69-5e3dbefc6d6a?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T17:32:27Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "e5ffd119-5710-4f96-8d69-5e3dbefc6d6a",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: Rico Nasty. Title hint: OHFR?."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T17:32:27Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}

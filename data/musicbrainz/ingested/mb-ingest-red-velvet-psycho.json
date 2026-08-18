@@ -1,0 +1,68 @@
+{
+  "seed_id": "mb-ingest-red-velvet-psycho",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "05ad2056-97f6-4aa4-bfb3-f12c6ecf2c7f",
+    "track_mbid": "71503a6f-26b8-44d4-be29-fb584fc30d2d",
+    "release_mbid": "1f78d12e-7f36-4841-a818-740abeb6d1d0",
+    "release_group_mbid": "2b1d5578-60d7-4a6c-9cfb-fedf72924641",
+    "artist_mbids": [
+      "4f0cb3b7-6c06-4317-ae35-ddf3106a17ee"
+    ]
+  },
+  "metadata": {
+    "title": "Psycho",
+    "artist_credit": "Red Velvet",
+    "release_title": "‘The ReVe Festival’ Finale",
+    "release_status": "official",
+    "release_date": "2019-12-23",
+    "duration_ms": 210000,
+    "duration_precision": "display_seconds",
+    "isrcs": [
+      "KRA301900597"
+    ]
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:05ad2056-97f6-4aa4-bfb3-f12c6ecf2c7f",
+    "recording_url": "https://musicbrainz.org/recording/05ad2056-97f6-4aa4-bfb3-f12c6ecf2c7f",
+    "release_url": "https://musicbrainz.org/release/1f78d12e-7f36-4841-a818-740abeb6d1d0",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/05ad2056-97f6-4aa4-bfb3-f12c6ecf2c7f?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T17:25:47Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "05ad2056-97f6-4aa4-bfb3-f12c6ecf2c7f",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: Red Velvet. Title hint: Psycho."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T17:25:47Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}

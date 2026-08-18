@@ -1,0 +1,68 @@
+{
+  "seed_id": "mb-ingest-ive-love-dive",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "12552138-914d-4f27-95c9-7d601047b341",
+    "track_mbid": "f2129445-a9b1-46b7-9245-dac99176da51",
+    "release_mbid": "716ac96e-b42f-4e4d-86be-d435c31e403e",
+    "release_group_mbid": "8ece2797-8a4f-4c18-b32a-620bd152a775",
+    "artist_mbids": [
+      "b2f2216a-d7a9-4ce0-8b8f-f494d9a8c196"
+    ]
+  },
+  "metadata": {
+    "title": "LOVE DIVE",
+    "artist_credit": "IVE",
+    "release_title": "LOVE DIVE -Japanese ver.-",
+    "release_status": "official",
+    "release_date": "2023-01-16",
+    "duration_ms": 177000,
+    "duration_precision": "display_seconds",
+    "isrcs": [
+      "KRNAR2236376"
+    ]
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:12552138-914d-4f27-95c9-7d601047b341",
+    "recording_url": "https://musicbrainz.org/recording/12552138-914d-4f27-95c9-7d601047b341",
+    "release_url": "https://musicbrainz.org/release/716ac96e-b42f-4e4d-86be-d435c31e403e",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/12552138-914d-4f27-95c9-7d601047b341?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T17:25:54Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "12552138-914d-4f27-95c9-7d601047b341",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: IVE. Title hint: Love Dive."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T17:25:54Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}

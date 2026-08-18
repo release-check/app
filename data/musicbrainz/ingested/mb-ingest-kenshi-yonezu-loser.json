@@ -1,0 +1,68 @@
+{
+  "seed_id": "mb-ingest-kenshi-yonezu-loser",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "71b3754f-8acd-434b-bafd-658f0b4366b6",
+    "track_mbid": "be87848c-f671-428a-a3bd-aaac48f48a85",
+    "release_mbid": "67ecff24-8ad5-4e47-ba79-6460d936e80c",
+    "release_group_mbid": "ee56a0a1-bdd8-4683-a64e-238149b8a183",
+    "artist_mbids": [
+      "09d4a85c-4916-4b4e-bc96-c4cfcf371046"
+    ]
+  },
+  "metadata": {
+    "title": "LOSER",
+    "artist_credit": "米津玄師",
+    "release_title": "LOSER / ナンバーナイン",
+    "release_status": "official",
+    "release_date": "2016-09-28",
+    "duration_ms": 244000,
+    "duration_precision": "display_seconds",
+    "isrcs": [
+      "JPU901602597"
+    ]
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:71b3754f-8acd-434b-bafd-658f0b4366b6",
+    "recording_url": "https://musicbrainz.org/recording/71b3754f-8acd-434b-bafd-658f0b4366b6",
+    "release_url": "https://musicbrainz.org/release/67ecff24-8ad5-4e47-ba79-6460d936e80c",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/71b3754f-8acd-434b-bafd-658f0b4366b6?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T17:27:02Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "71b3754f-8acd-434b-bafd-658f0b4366b6",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: Kenshi Yonezu. Title hint: Loser."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T17:27:02Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}
