@@ -21,7 +21,7 @@
     },
     {
       "path": "data/golden-set.json",
-      "content_sha256": "aa9773fa7ebd015b0a420bf4715b5cc76681df99b250b495bbf58e5a8537b207",
+      "content_sha256": "63402bf1cd5b1717a545ba4e55a56ece86c6d3e33b7b98bd7366eb8ef3514a77",
       "source_identifier": "repo:data/golden-set.json",
       "source_url": null,
       "retrieved_at": "2026-08-14",
