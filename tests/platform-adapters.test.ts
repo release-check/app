@@ -6,6 +6,7 @@ import { join } from "node:path";
 import {
   ADAPTER_POLICIES,
   lookupWithPlatformCache,
+  SoundCloudAdapter,
   SpotifyAdapter,
   withPlatformCache,
   type AdapterSnapshot,
@@ -232,5 +233,82 @@ describe("SpotifyAdapter", () => {
     } finally {
       rmSync(cacheRoot, { recursive: true, force: true });
     }
+  });
+});
+
+describe("SoundCloudAdapter", () => {
+  const originalClientId = process.env.SOUNDCLOUD_CLIENT_ID;
+  const originalClientSecret = process.env.SOUNDCLOUD_CLIENT_SECRET;
+
+  afterEach(() => {
+    if (originalClientId === undefined) delete process.env.SOUNDCLOUD_CLIENT_ID;
+    else process.env.SOUNDCLOUD_CLIENT_ID = originalClientId;
+    if (originalClientSecret === undefined) delete process.env.SOUNDCLOUD_CLIENT_SECRET;
+    else process.env.SOUNDCLOUD_CLIENT_SECRET = originalClientSecret;
+  });
+
+  test("missing env degrades to not-configured behavior", async () => {
+    delete process.env.SOUNDCLOUD_CLIENT_ID;
+    delete process.env.SOUNDCLOUD_CLIENT_SECRET;
+
+    const adapter = new SoundCloudAdapter();
+    const snapshots = await adapter.lookup("Artist", "Track");
+
+    expect(snapshots).toEqual([
+      {
+        platform: "soundcloud",
+        state: "unknown",
+        note: expect.stringContaining("not configured"),
+        fetchedAt: expect.any(String),
+      },
+    ]);
+  });
+
+  test("caches SoundCloud access tokens across lookups", async () => {
+    const fetchMock = mock(async (url: string | URL, init?: RequestInit) => {
+      const target = String(url);
+      if (target.includes("secure.soundcloud.com/oauth/token")) {
+        return new Response(JSON.stringify({ access_token: "token-1", expires_in: 3600 }), {
+          headers: { "content-type": "application/json" },
+        });
+      }
+      if (target.includes("api-v2.soundcloud.com/search/tracks")) {
+        return new Response(
+          JSON.stringify({
+            collection: [
+              { id: 1, title: "Track", permalink_url: "https://soundcloud.com/user/track" },
+            ],
+          }),
+          { headers: { "content-type": "application/json" } },
+        );
+      }
+      return new Response("not found", { status: 404 });
+    });
+
+    const adapter = new SoundCloudAdapter({
+      clientId: "client-id",
+      clientSecret: "client-secret",
+      fetch: fetchMock,
+    });
+
+    const first = await adapter.lookup("Artist", "Track");
+    const second = await adapter.lookup("Artist", "Track");
+
+    expect(first[0]).toMatchObject({
+      platform: "soundcloud",
+      state: "available",
+      url: "https://soundcloud.com/user/track",
+    });
+    expect(second).toEqual(first);
+
+    const tokenCalls = fetchMock.mock.calls.filter(([url]) =>
+      String(url).includes("secure.soundcloud.com/oauth/token"),
+    );
+    expect(tokenCalls).toHaveLength(1);
+  });
+
+  test("policy mode is official_api with fan-out blocked", async () => {
+    expect(ADAPTER_POLICIES.soundcloud.mode).toBe("official_api");
+    expect(ADAPTER_POLICIES.soundcloud.liveLookupAllowed).toBe(false);
   });
 });

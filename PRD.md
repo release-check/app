@@ -134,6 +134,11 @@ MusicBrainz와 Discogs는 메타데이터·검증 참조로만 사용한다. v0 
 5. **core↔app 경계**: CLI JSON 서브프로세스 유지 (`core-bridge.ts`). 확장 경로는 napi-rs 바인딩, 프로세스 오버헤드가 실측 문제가 될 때만.
 6. **레포 구조**: app+core 단일 레포 전환 확정 (2026-08-14). crate/패키지 경계는 유지, git 경계만 제거. core 이슈는 app으로 이관 완료, 실행은 이슈 #app-10에서 추적.
 
+### 결정됨 (2026-08-19)
+
+7. **SoundCloud 소스 모드 (I9-2)**: 공식 API 도입 확정. SoundCloudAdapter (OAuth 2.1 client credentials) 구현 완료 — `SOUNDCLOUD_CLIENT_ID/SECRET` 미설정 시 `not_configured` 우아한 하향. 자격증명 발급 후 엔드포인트 재검증 필요 (docs/soundcloud-policy.md).
+8. **Spotify 자격증명 (G1, I4-5)**: 발급·설정 진행 확정. `.env`에 `SPOTIFY_CLIENT_ID/SECRET` 주입 후 `bun run ingest-platform`으로 실데이터 교체 시작. 어댑터·캐시·ingest 파이프라인 준비 완료.
+
 ### 남은 항목
 
 - 평가 셋 확장 (scene당 20–50 케이스) 및 top-3 정확도 실측.

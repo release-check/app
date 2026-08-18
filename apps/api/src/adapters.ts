@@ -53,10 +53,10 @@ export const ADAPTER_POLICIES: Record<Platform, PlatformAdapterPolicy> = {
   },
   soundcloud: {
     platform: "soundcloud",
-    mode: "public_index",
+    mode: "official_api",
     liveLookupAllowed: false,
     cacheTtlHours: 12,
-    note: "Use indexed public results until official API credential path and policy are finalized.",
+    note: "Official API (OAuth client credentials) per I9-2 decision 2026-08-19; requires Artist Pro + app registration. Indexed fallback until credentials issued.",
   },
   bandcamp: {
     platform: "bandcamp",
@@ -336,3 +336,135 @@ export class SpotifyAdapter implements PlatformAdapter {
 }
 
 export const spotifyAdapter = withPlatformCache(new SpotifyAdapter());
+
+const SOUNDCLOUD_TOKEN_URL = "https://secure.soundcloud.com/oauth/token";
+const SOUNDCLOUD_SEARCH_URL = "https://api-v2.soundcloud.com/search/tracks";
+
+export interface SoundCloudAdapterOptions {
+  clientId?: string;
+  clientSecret?: string;
+  fetch?: FetchFn;
+}
+
+interface SoundCloudTokenResponse {
+  access_token: string;
+  expires_in: number;
+}
+
+interface SoundCloudSearchResponse {
+  collection?: Array<{
+    id: number;
+    title: string;
+    permalink_url?: string;
+    user?: { username?: string };
+  }>;
+}
+
+export class SoundCloudAdapter implements PlatformAdapter {
+  readonly platform = "soundcloud" as const;
+
+  private readonly clientId?: string;
+  private readonly clientSecret?: string;
+  private readonly fetchImpl: FetchFn;
+  private tokenCache: { accessToken: string; expiresAtMs: number } | null = null;
+
+  constructor(options?: SoundCloudAdapterOptions) {
+    this.clientId = options?.clientId ?? process.env.SOUNDCLOUD_CLIENT_ID;
+    this.clientSecret = options?.clientSecret ?? process.env.SOUNDCLOUD_CLIENT_SECRET;
+    this.fetchImpl = options?.fetch ?? fetch;
+  }
+
+  isConfigured(): boolean {
+    return Boolean(this.clientId && this.clientSecret);
+  }
+
+  async lookup(artist: string, title: string): Promise<AdapterSnapshot[]> {
+    if (!this.isConfigured()) {
+      return [
+        {
+          platform: this.platform,
+          state: "unknown",
+          note: "SoundCloud credentials not configured (SOUNDCLOUD_CLIENT_ID / SOUNDCLOUD_CLIENT_SECRET).",
+          fetchedAt: new Date().toISOString(),
+        },
+      ];
+    }
+
+    const accessToken = await this.getAccessToken();
+    const query = encodeURIComponent(`${artist} ${title}`);
+    // api-v2 public search takes client_id as a query parameter; token kept for
+    // authenticated endpoints. Endpoints/params must be re-verified against the
+    // issued app's docs when credentials land (I9-2).
+    const response = await this.fetchImpl(
+      `${SOUNDCLOUD_SEARCH_URL}?q=${query}&client_id=${encodeURIComponent(this.clientId!)}&limit=5`,
+      {
+        headers: { Authorization: `Bearer ${accessToken}` },
+      },
+    );
+
+    if (!response.ok) {
+      return [
+        {
+          platform: this.platform,
+          state: "unknown",
+          note: `SoundCloud search failed with status ${response.status}.`,
+          fetchedAt: new Date().toISOString(),
+        },
+      ];
+    }
+
+    const payload = (await response.json()) as SoundCloudSearchResponse;
+    const items = payload.collection ?? [];
+    const fetchedAt = new Date().toISOString();
+
+    if (items.length === 0) {
+      return [
+        {
+          platform: this.platform,
+          state: "missing",
+          note: "No SoundCloud track match returned for artist/title query.",
+          fetchedAt,
+        },
+      ];
+    }
+
+    return items.map((item) => ({
+      platform: this.platform,
+      state: "available" as const,
+      url: item.permalink_url ?? `https://soundcloud.com/search?q=${encodeURIComponent(`${artist} ${title}`)}`,
+      note: item.user?.username ? `${item.title} — ${item.user.username}` : item.title,
+      fetchedAt,
+    }));
+  }
+
+  private async getAccessToken(): Promise<string> {
+    const nowMs = Date.now();
+    if (this.tokenCache && this.tokenCache.expiresAtMs > nowMs) {
+      return this.tokenCache.accessToken;
+    }
+
+    const response = await this.fetchImpl(SOUNDCLOUD_TOKEN_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        grant_type: "client_credentials",
+        client_id: this.clientId!,
+        client_secret: this.clientSecret!,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`SoundCloud token request failed with status ${response.status}`);
+    }
+
+    const payload = (await response.json()) as SoundCloudTokenResponse;
+    this.tokenCache = {
+      accessToken: payload.access_token,
+      expiresAtMs: nowMs + payload.expires_in * 1000 - 60_000,
+    };
+
+    return this.tokenCache.accessToken;
+  }
+}
+
+export const soundCloudAdapter = withPlatformCache(new SoundCloudAdapter());
