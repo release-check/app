@@ -137,7 +137,7 @@ MusicBrainz와 Discogs는 메타데이터·검증 참조로만 사용한다. v0 
 ### 결정됨 (2026-08-19)
 
 7. **SoundCloud 소스 모드 (I9-2)**: ~~공식 API 도입 확정~~ → 2026-08-19 재검토: Artist Pro $99/년이 v0에 불필요하다고 판단, **`public_index` 유지로 회귀**. `SoundCloudAdapter` 코드는 유지 (미래 도입 시 재사용), 자격증명 발급 보류. (`docs/soundcloud-policy.md`)
-8. **Spotify 자격증명 (G1, I4-5)**: 발급·설정 진행 확정. `.env`에 `SPOTIFY_CLIENT_ID/SECRET` 주입 후 `bun run ingest-platform`으로 실데이터 교체 시작. 어댑터·캐시·ingest 파이프라인 준비 완료. → **2026-08-19 실측: Web API가 Spotify Premium 없이는 403** (앱 생성 완료, Client ID/Secret은 `app/.env`에 기록됨, token 발급은 동작). Premium 구독 여부는 사용자 결정 대기.
+8. **Spotify 자격증명 (G1, I4-5)**: 발급·설정 진행 확정. `.env`에 `SPOTIFY_CLIENT_ID/SECRET` 주입 후 `bun run ingest-platform`으로 실데이터 교체 시작. 어댑터·캐시·ingest 파이프라인 준비 완료. → **2026-08-19 실측: Web API가 Spotify Premium 없이는 403** (앱 생성 완료, Client ID/Secret은 `app/.env`에 기록됨, token 발급은 동작). → **결정: v0는 무료 경로 유지** — verified URL seed/index 기반 (612 후보, 골든 8/8·평가 101/101). 실데이터 교체는 Premium 구독 시점에 재개 (키는 `.env`에 보관).
 
 ### 남은 항목
 
