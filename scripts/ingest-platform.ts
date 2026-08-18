@@ -4,9 +4,7 @@ import { fileURLToPath } from "node:url";
 
 import {
   ADAPTER_POLICIES,
-  soundCloudAdapter,
   SoundCloudAdapter,
-  spotifyAdapter,
   SpotifyAdapter,
   type AdapterSnapshot,
   type PlatformAdapter,
@@ -54,12 +52,12 @@ interface IngestAdapter {
 const adapters: IngestAdapter[] = [
   {
     platform: "spotify",
-    adapter: spotifyAdapter,
+    adapter: new SpotifyAdapter(),
     configured: new SpotifyAdapter().isConfigured(),
   },
   {
     platform: "soundcloud",
-    adapter: soundCloudAdapter,
+    adapter: new SoundCloudAdapter(),
     configured: new SoundCloudAdapter().isConfigured(),
   },
 ];
