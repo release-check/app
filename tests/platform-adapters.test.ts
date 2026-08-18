@@ -307,8 +307,8 @@ describe("SoundCloudAdapter", () => {
     expect(tokenCalls).toHaveLength(1);
   });
 
-  test("policy mode is official_api with fan-out blocked", async () => {
-    expect(ADAPTER_POLICIES.soundcloud.mode).toBe("official_api");
+  test("policy mode is public_index with fan-out blocked (official API deferred)", async () => {
+    expect(ADAPTER_POLICIES.soundcloud.mode).toBe("public_index");
     expect(ADAPTER_POLICIES.soundcloud.liveLookupAllowed).toBe(false);
   });
 });

@@ -53,10 +53,10 @@ export const ADAPTER_POLICIES: Record<Platform, PlatformAdapterPolicy> = {
   },
   soundcloud: {
     platform: "soundcloud",
-    mode: "official_api",
+    mode: "public_index",
     liveLookupAllowed: false,
     cacheTtlHours: 12,
-    note: "Official API (OAuth client credentials) per I9-2 decision 2026-08-19; requires Artist Pro + app registration. Indexed fallback until credentials issued.",
+    note: "Deferred from official API (I9-2 revised 2026-08-19): Artist Pro cost not justified for v0. public_index until credentials/policy change; SoundCloudAdapter retained for future use.",
   },
   bandcamp: {
     platform: "bandcamp",
