@@ -10,33 +10,50 @@
       "retrieved_at": null,
       "classification": "handwritten_demo",
       "verification_state": "unverified",
-      "labels": ["confidence", "evidence", "ambiguity", "availability_state"],
+      "labels": [
+        "confidence",
+        "evidence",
+        "ambiguity",
+        "availability_state"
+      ],
       "permitted_use": "contract_and_baseline_smoke_only",
       "policy_note": "Runtime handwritten candidates; not authoritative matching or availability ground truth."
     },
     {
       "path": "data/golden-set.json",
-      "content_sha256": "a5bf5d24e965e420ade8030770de15596c77b778a833ebb97746d96e7f4a3418",
+      "content_sha256": "aa9773fa7ebd015b0a420bf4715b5cc76681df99b250b495bbf58e5a8537b207",
       "source_identifier": "repo:data/golden-set.json",
       "source_url": null,
       "retrieved_at": "2026-08-14",
       "classification": "verified_musicbrainz_identity",
       "verification_state": "hand_verified",
-      "labels": ["platform_url", "availability_state", "musicbrainz_mbid", "scene_bucket"],
+      "labels": [
+        "platform_url",
+        "availability_state",
+        "musicbrainz_mbid",
+        "scene_bucket",
+        "version_distinction"
+      ],
       "permitted_use": "golden_set_evaluation",
-      "policy_note": "Recording identities hand-verified against MusicBrainz core metadata (CC0); platform availability labels seed-writer verified via public links on 2026-08-14."
+      "policy_note": "Recording identities hand-verified against MusicBrainz core metadata (CC0); platform availability labels seed-writer verified via public links. v2 adds remix/live/remaster version cases."
     },
     {
       "path": "data/evaluation-set.json",
-      "content_sha256": "7b205a082f4771dec8da21485e1860341e9329ce8bc7e65401068bef178f50d4",
+      "content_sha256": "d2ea40a37eb56c84362836fc2c742eb6115995cd209c74a8adeb4b804558dde3",
       "source_identifier": "repo:data/evaluation-set.json",
       "source_url": null,
       "retrieved_at": null,
       "classification": "handwritten_demo",
       "verification_state": "unverified",
-      "labels": ["top3_smoke", "ambiguity_smoke", "availability_state_smoke", "scene", "ground_truth"],
+      "labels": [
+        "top3_smoke",
+        "ambiguity_smoke",
+        "availability_state_smoke",
+        "scene",
+        "ground_truth"
+      ],
       "permitted_use": "contract_and_baseline_smoke_only",
-      "policy_note": "Local handwritten fixture; not independently held-out or source-verified. Schema v2 adds scene and groundTruth fields."
+      "policy_note": "Local handwritten fixture; not independently held-out or source-verified. v2: 101 cases across korea/japan/internet scenes."
     }
   ]
 }

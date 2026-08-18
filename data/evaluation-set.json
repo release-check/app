@@ -25,6 +25,727 @@
       "minCandidates": 2,
       "scene": "internet",
       "groundTruth": "manual"
+    },
+    {
+      "name": "newjeans-ditto-exact",
+      "query": "NewJeans Ditto",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "verified-index"
+    },
+    {
+      "name": "newjeans-ditto-order-swap",
+      "query": "Ditto NewJeans",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "verified-index"
+    },
+    {
+      "name": "newjeans-ditto-title-only",
+      "query": "Ditto",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "verified-index"
+    },
+    {
+      "name": "newjeans-ditto-uppercase",
+      "query": "NEWJEANS DITTO",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "newjeans-ditto-extra-spacing",
+      "query": "newjeans  ditto",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "newjeans-ditto-hyphen-separator",
+      "query": "NewJeans - Ditto",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "newjeans-ditto-hangul-artist",
+      "query": "뉴진스 Ditto",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "newjeans-ditto-hangul-title",
+      "query": "NewJeans 디토",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "newjeans-ditto-omg-extra",
+      "query": "NewJeans Ditto OMG",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "newjeans-ditto-official-extra",
+      "query": "NewJeans Ditto official",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "newjeans-ditto-feat-style",
+      "query": "NewJeans Ditto feat",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "newjeans-ditto-live-no-collapse",
+      "query": "NewJeans Ditto live",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "manual",
+      "minCandidates": 2
+    },
+    {
+      "name": "newjeans-ditto-demo-no-collapse",
+      "query": "NewJeans Ditto demo",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "manual",
+      "minCandidates": 2
+    },
+    {
+      "name": "newjeans-ditto-live-demo-no-collapse",
+      "query": "NewJeans Ditto live demo",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "manual",
+      "minCandidates": 2
+    },
+    {
+      "name": "newjeans-ditto-remix-no-collapse",
+      "query": "NewJeans Ditto remix",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "newjeans-ditto-instrumental-no-collapse",
+      "query": "NewJeans Ditto instrumental",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "newjeans-ditto-remaster-no-collapse",
+      "query": "NewJeans Ditto remaster",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "newjeans-ditto-sped-up-no-collapse",
+      "query": "NewJeans Ditto sped up",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "newjeans-ditto-omg-order",
+      "query": "NewJeans OMG Ditto",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "newjeans-artist-only",
+      "query": "NewJeans",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "park-hye-jin-like-this-uppercase",
+      "query": "PARK HYE JIN LIKE THIS",
+      "expectedTop3Id": "demo-park-hye-jin-like-this",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "park-hye-jin-like-this-hyphenated-name",
+      "query": "Park Hye-Jin Like This",
+      "expectedTop3Id": "demo-park-hye-jin-like-this",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "park-hye-jin-like-this-order-swap",
+      "query": "Like This Park Hye Jin",
+      "expectedTop3Id": "demo-park-hye-jin-like-this",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "park-hye-jin-like-this-hangul-artist",
+      "query": "박혜진 Like This",
+      "expectedTop3Id": "demo-park-hye-jin-like-this",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "park-hye-jin-like-this-title-only",
+      "query": "Like This",
+      "expectedTop3Id": "demo-park-hye-jin-like-this",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "park-hye-jin-like-this-feat-style",
+      "query": "Park Hye Jin feat Like This",
+      "expectedTop3Id": "demo-park-hye-jin-like-this",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "park-hye-jin-like-this-live-no-collapse",
+      "query": "Park Hye Jin Like This live",
+      "expectedTop3Id": "demo-park-hye-jin-like-this",
+      "scene": "korea",
+      "groundTruth": "manual",
+      "minCandidates": 2
+    },
+    {
+      "name": "park-hye-jin-like-this-demo-no-collapse",
+      "query": "Park Hye Jin Like This demo",
+      "expectedTop3Id": "demo-park-hye-jin-like-this",
+      "scene": "korea",
+      "groundTruth": "manual",
+      "minCandidates": 2
+    },
+    {
+      "name": "park-hye-jin-like-this-remix-no-collapse",
+      "query": "Park Hye Jin Like This remix",
+      "expectedTop3Id": "demo-park-hye-jin-like-this",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "park-hye-jin-like-this-release-extra",
+      "query": "How can I Park Hye Jin Like This",
+      "expectedTop3Id": "demo-park-hye-jin-like-this",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "park-hye-jin-like-this-name-order-swap",
+      "query": "Hye Jin Park Like This",
+      "expectedTop3Id": "demo-park-hye-jin-like-this",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "park-hye-jin-like-this-lowercase",
+      "query": "park hye jin like this",
+      "expectedTop3Id": "demo-park-hye-jin-like-this",
+      "scene": "korea",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "like-this-demo-title-confusion",
+      "query": "Like This demo",
+      "expectedTop3Id": "demo-park-hye-jin-like-this",
+      "scene": "korea",
+      "groundTruth": "manual",
+      "minCandidates": 2
+    },
+    {
+      "name": "ditto-live-title-confusion",
+      "query": "Ditto live",
+      "expectedTop3Id": "verified-newjeans-ditto",
+      "scene": "korea",
+      "groundTruth": "manual",
+      "minCandidates": 2
+    },
+    {
+      "name": "ymo rydeen exact verified",
+      "query": "Yellow Magic Orchestra Rydeen",
+      "expectedTop3Id": "verified-ymo-rydeen",
+      "scene": "japan",
+      "groundTruth": "verified-index"
+    },
+    {
+      "name": "ymo rydeen ymo abbrev",
+      "query": "YMO Rydeen",
+      "expectedTop3Id": "verified-ymo-rydeen",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "ymo rydeen lowercase",
+      "query": "ymo rydeen",
+      "expectedTop3Id": "verified-ymo-rydeen",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "ymo rydeen title uppercase",
+      "query": "RYDEEN",
+      "expectedTop3Id": "verified-ymo-rydeen",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "ymo rydeen reversed order",
+      "query": "rydeen yellow magic orchestra",
+      "expectedTop3Id": "verified-ymo-rydeen",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "ymo rydeen all caps",
+      "query": "YELLOW MAGIC ORCHESTRA RYDEEN",
+      "expectedTop3Id": "verified-ymo-rydeen",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "ymo rydeen double space",
+      "query": "Yellow Magic Orchestra  Rydeen",
+      "expectedTop3Id": "verified-ymo-rydeen",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "ymo rydeen solid state survivor release",
+      "query": "Solid State Survivor Rydeen",
+      "expectedTop3Id": "verified-ymo-rydeen",
+      "scene": "japan",
+      "groundTruth": "verified-index"
+    },
+    {
+      "name": "ymo rydeen title release order",
+      "query": "Rydeen Solid State Survivor",
+      "expectedTop3Id": "verified-ymo-rydeen",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "ymo rydeen ymo reversed",
+      "query": "Rydeen YMO",
+      "expectedTop3Id": "verified-ymo-rydeen",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "ymo rydeen remaster confusion",
+      "query": "Yellow Magic Orchestra Rydeen remaster",
+      "expectedTop3Id": "verified-ymo-rydeen",
+      "scene": "japan",
+      "groundTruth": "manual",
+      "requiresAmbiguity": "remaster",
+      "minCandidates": 3
+    },
+    {
+      "name": "ymo rydeen remaster title first",
+      "query": "Rydeen remaster",
+      "expectedTop3Id": "verified-ymo-rydeen",
+      "scene": "japan",
+      "groundTruth": "manual",
+      "requiresAmbiguity": "remaster",
+      "minCandidates": 3
+    },
+    {
+      "name": "ymo rydeen remaster caps order",
+      "query": "RYDEEN remaster Yellow Magic Orchestra",
+      "expectedTop3Id": "verified-ymo-rydeen",
+      "scene": "japan",
+      "groundTruth": "manual",
+      "requiresAmbiguity": "remaster",
+      "minCandidates": 3
+    },
+    {
+      "name": "ymo rydeen extra token official",
+      "query": "Yellow Magic Orchestra Rydeen official",
+      "expectedTop3Id": "verified-ymo-rydeen",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "ymo rydeen same title",
+      "query": "Rydeen",
+      "expectedTop3Id": "verified-ymo-rydeen",
+      "scene": "japan",
+      "groundTruth": "verified-index"
+    },
+    {
+      "name": "ymo rydeen scene token",
+      "query": "japan rydeen ymo",
+      "expectedTop3Id": "verified-ymo-rydeen",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "mariya takeuchi plastic love exact verified",
+      "query": "Mariya Takeuchi Plastic Love",
+      "expectedTop3Id": "verified-mariya-takeuchi-plastic-love",
+      "scene": "japan",
+      "groundTruth": "verified-index"
+    },
+    {
+      "name": "mariya takeuchi plastic love reversed order",
+      "query": "Plastic Love Mariya Takeuchi",
+      "expectedTop3Id": "verified-mariya-takeuchi-plastic-love",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "mariya takeuchi plastic love title lowercase",
+      "query": "plastic love",
+      "expectedTop3Id": "verified-mariya-takeuchi-plastic-love",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "mariya takeuchi plastic love title only",
+      "query": "Plastic Love",
+      "expectedTop3Id": "verified-mariya-takeuchi-plastic-love",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "mariya takeuchi plastic love partial name",
+      "query": "takeuchi plastic love",
+      "expectedTop3Id": "verified-mariya-takeuchi-plastic-love",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "mariya takeuchi plastic love variety release",
+      "query": "Mariya Takeuchi plastic love variety",
+      "expectedTop3Id": "verified-mariya-takeuchi-plastic-love",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "mariya takeuchi plastic love variety title order",
+      "query": "Variety Plastic Love",
+      "expectedTop3Id": "verified-mariya-takeuchi-plastic-love",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "mariya takeuchi plastic love mixed script",
+      "query": "Mariya Takeuchi プラスティック・ラブ",
+      "expectedTop3Id": "verified-mariya-takeuchi-plastic-love",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "mariya takeuchi plastic love takeuchi first",
+      "query": "Takeuchi Mariya Plastic Love",
+      "expectedTop3Id": "verified-mariya-takeuchi-plastic-love",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "mariya takeuchi plastic love remaster confusion",
+      "query": "Mariya Takeuchi Plastic Love remaster",
+      "expectedTop3Id": "verified-mariya-takeuchi-plastic-love",
+      "scene": "japan",
+      "groundTruth": "manual",
+      "requiresAmbiguity": "remaster",
+      "minCandidates": 3
+    },
+    {
+      "name": "mariya takeuchi plastic love remaster title",
+      "query": "Plastic Love remaster",
+      "expectedTop3Id": "verified-mariya-takeuchi-plastic-love",
+      "scene": "japan",
+      "groundTruth": "manual",
+      "requiresAmbiguity": "remaster",
+      "minCandidates": 3
+    },
+    {
+      "name": "mariya takeuchi plastic love extra token official video",
+      "query": "Mariya Takeuchi Plastic Love official video",
+      "expectedTop3Id": "verified-mariya-takeuchi-plastic-love",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "mariya takeuchi plastic love name order variant",
+      "query": "plastic love mariya",
+      "expectedTop3Id": "verified-mariya-takeuchi-plastic-love",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "mariya takeuchi plastic love scene token",
+      "query": "japan plastic love",
+      "expectedTop3Id": "verified-mariya-takeuchi-plastic-love",
+      "scene": "japan",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "bjork joga exact verified",
+      "query": "Björk Jóga",
+      "expectedTop3Id": "verified-bjork-joga",
+      "scene": "internet",
+      "groundTruth": "verified-index"
+    },
+    {
+      "name": "bjork joga artist accent title ascii",
+      "query": "Björk Joga",
+      "expectedTop3Id": "verified-bjork-joga",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "bjork joga artist ascii title accent",
+      "query": "Bjork Jóga",
+      "expectedTop3Id": "verified-bjork-joga",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "bjork joga title only accent",
+      "query": "Jóga",
+      "expectedTop3Id": "verified-bjork-joga",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "bjork joga reversed order",
+      "query": "Jóga Björk",
+      "expectedTop3Id": "verified-bjork-joga",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "bjork joga homogenic release context",
+      "query": "Björk Jóga Homogenic",
+      "expectedTop3Id": "verified-bjork-joga",
+      "scene": "internet",
+      "groundTruth": "verified-index"
+    },
+    {
+      "name": "bjork joga homogenic title only",
+      "query": "Homogenic Jóga",
+      "expectedTop3Id": "verified-bjork-joga",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "bjork joga remix confusion",
+      "query": "Björk Jóga remix",
+      "expectedTop3Id": "verified-bjork-joga",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "bjork joga extra token official",
+      "query": "Björk Jóga official",
+      "expectedTop3Id": "verified-bjork-joga",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "bjork joga extra token listen",
+      "query": "listen Björk Jóga",
+      "expectedTop3Id": "verified-bjork-joga",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "charli xcx vroom vroom exact verified",
+      "query": "Charli XCX Vroom Vroom",
+      "expectedTop3Id": "verified-charli-xcx-vroom-vroom",
+      "scene": "internet",
+      "groundTruth": "verified-index"
+    },
+    {
+      "name": "charli xcx vroom vroom lowercase",
+      "query": "charli xcx vroom vroom",
+      "expectedTop3Id": "verified-charli-xcx-vroom-vroom",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "charli xcx vroom vroom ep context",
+      "query": "Charli XCX Vroom Vroom EP",
+      "expectedTop3Id": "verified-charli-xcx-vroom-vroom",
+      "scene": "internet",
+      "groundTruth": "verified-index"
+    },
+    {
+      "name": "charli xcx vroom vroom reversed order",
+      "query": "Vroom Vroom Charli XCX",
+      "expectedTop3Id": "verified-charli-xcx-vroom-vroom",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "charli xcx vroom vroom title only",
+      "query": "Vroom Vroom",
+      "expectedTop3Id": "verified-charli-xcx-vroom-vroom",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "charli xcx vroom partial title",
+      "query": "Charli XCX vroom",
+      "expectedTop3Id": "verified-charli-xcx-vroom-vroom",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "charli xcx vroom vroom remix confusion",
+      "query": "Charli XCX Vroom Vroom remix",
+      "expectedTop3Id": "verified-charli-xcx-vroom-vroom",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "charli xcx vroom vroom extra token youtube",
+      "query": "Charli XCX Vroom Vroom youtube",
+      "expectedTop3Id": "verified-charli-xcx-vroom-vroom",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "charli xcx vroom vroom extra token play",
+      "query": "play Charli XCX Vroom Vroom",
+      "expectedTop3Id": "verified-charli-xcx-vroom-vroom",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "dj python angel exact demo",
+      "query": "DJ Python Angel",
+      "expectedTop3Id": "demo-dj-python-angel",
+      "scene": "internet",
+      "groundTruth": "demo"
+    },
+    {
+      "name": "angel live demo title markers",
+      "query": "Angel live demo",
+      "expectedTop3Id": "demo-dj-python-angel-live-demo",
+      "requiresAmbiguity": "demo",
+      "minCandidates": 2,
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "dj python angel live marker",
+      "query": "DJ Python Angel live",
+      "expectedTop3Id": "demo-dj-python-angel-live-demo",
+      "requiresAmbiguity": "live",
+      "minCandidates": 2,
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "angel live demo dj python reversed",
+      "query": "Angel live demo DJ Python",
+      "expectedTop3Id": "demo-dj-python-angel-live-demo",
+      "requiresAmbiguity": "demo",
+      "minCandidates": 2,
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "dj python live demo angel reversed",
+      "query": "DJ Python live demo Angel",
+      "expectedTop3Id": "demo-dj-python-angel-live-demo",
+      "requiresAmbiguity": "demo",
+      "minCandidates": 2,
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "live angel dj python marker",
+      "query": "live Angel DJ Python",
+      "expectedTop3Id": "demo-dj-python-angel-live-demo",
+      "requiresAmbiguity": "live",
+      "minCandidates": 2,
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "dj python angel unreleased context",
+      "query": "DJ Python Angel unreleased",
+      "expectedTop3Id": "demo-dj-python-angel-live-demo",
+      "requiresAmbiguity": "live",
+      "minCandidates": 2,
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "mas amable angel release context",
+      "query": "Mas Amable Angel",
+      "expectedTop3Id": "demo-dj-python-angel",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "dj python mas amable angel full",
+      "query": "DJ Python Mas Amable Angel",
+      "expectedTop3Id": "demo-dj-python-angel",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "angel dj python reversed",
+      "query": "Angel DJ Python",
+      "expectedTop3Id": "demo-dj-python-angel",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "dj python angel remix confusion",
+      "query": "DJ Python Angel remix",
+      "expectedTop3Id": "demo-dj-python-angel",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "dj python angel extra token soundcloud",
+      "query": "DJ Python Angel soundcloud",
+      "expectedTop3Id": "demo-dj-python-angel",
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "massive attack angel exact demo",
+      "query": "Massive Attack Angel",
+      "expectedTop3Id": "demo-massive-attack-angel",
+      "requiresAmbiguity": "same-title",
+      "minCandidates": 3,
+      "scene": "internet",
+      "groundTruth": "demo"
+    },
+    {
+      "name": "angel massive attack reversed",
+      "query": "Angel Massive Attack",
+      "expectedTop3Id": "demo-massive-attack-angel",
+      "requiresAmbiguity": "same-title",
+      "minCandidates": 3,
+      "scene": "internet",
+      "groundTruth": "manual"
+    },
+    {
+      "name": "massive attack angel mezzanine context",
+      "query": "Massive Attack Angel Mezzanine",
+      "expectedTop3Id": "demo-massive-attack-angel",
+      "requiresAmbiguity": "same-title",
+      "minCandidates": 3,
+      "scene": "internet",
+      "groundTruth": "manual"
     }
   ],
   "requiredStateChecks": [

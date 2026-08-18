@@ -198,6 +198,84 @@
         "bandcamp": { "state": "missing" },
         "melon": { "state": "unknown" }
       }
+    },
+    {
+      "id": "golden-mb-newjeans-ditto-remix",
+      "scene": "korea",
+      "candidateId": "verified-newjeans-ditto-remix",
+      "canonical": {
+        "artist": "NewJeans",
+        "title": "Ditto (250 Remix)",
+        "release": "NJWMX",
+        "durationMs": 196000
+      },
+      "versionDistinction": "remix",
+      "queries": ["NewJeans Ditto 250 Remix", "Ditto remix NewJeans"],
+      "acceptableTop3Ids": ["verified-newjeans-ditto-remix"],
+      "rationale": "Official NJWMX remix album track; remix must stay separate from the original studio recording.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/6JVXVLqCPaodBSEwRFUN8w"
+        },
+        "youtube_music": { "state": "unknown" },
+        "apple_music": { "state": "unknown" },
+        "soundcloud": { "state": "unknown" },
+        "bandcamp": { "state": "missing" },
+        "melon": { "state": "unknown" }
+      }
+    },
+    {
+      "id": "golden-mb-bjork-joga-live",
+      "scene": "internet",
+      "candidateId": "verified-bjork-joga-live",
+      "canonical": {
+        "artist": "Björk",
+        "title": "Jóga (Live)",
+        "release": "Homogenic (Live)",
+        "durationMs": 265000
+      },
+      "versionDistinction": "live",
+      "queries": ["Björk Jóga Live", "Joga live Bjork"],
+      "acceptableTop3Ids": ["verified-bjork-joga-live"],
+      "rationale": "Homogenic (Live) 2003 track; live recording must not collapse into the original studio Jóga.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/250LMSgxJ8y4IZQ8WLyFjE"
+        },
+        "youtube_music": { "state": "unknown" },
+        "apple_music": { "state": "unknown" },
+        "soundcloud": { "state": "unknown" },
+        "bandcamp": { "state": "missing" },
+        "melon": { "state": "unknown" }
+      }
+    },
+    {
+      "id": "golden-mb-ymo-rydeen-remaster",
+      "scene": "japan",
+      "candidateId": "verified-ymo-rydeen-remaster",
+      "canonical": {
+        "artist": "Yellow Magic Orchestra",
+        "title": "Rydeen (2018 Remaster)",
+        "release": "Solid State Survivor (2018 Remaster)",
+        "durationMs": 268000
+      },
+      "versionDistinction": "remaster",
+      "queries": ["Yellow Magic Orchestra Rydeen Remaster", "RYDEEN 2018 Remaster"],
+      "acceptableTop3Ids": ["verified-ymo-rydeen-remaster"],
+      "rationale": "2018 Bob Ludwig remaster of the same track family; separate candidate from the original master.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/1YuQx0kg7RmQpbplPkJUQx"
+        },
+        "youtube_music": { "state": "unknown" },
+        "apple_music": { "state": "unknown" },
+        "soundcloud": { "state": "unknown" },
+        "bandcamp": { "state": "missing" },
+        "melon": { "state": "unknown" }
+      }
     }
   ],
   "negativeCases": [
@@ -208,6 +286,18 @@
     {
       "candidateId": "demo-massive-attack-angel",
       "reason": "same-title different-artist candidate must stay separated"
+    },
+    {
+      "candidateId": "verified-newjeans-ditto-remix",
+      "reason": "original Ditto query must not rank the remix version as top-1"
+    },
+    {
+      "candidateId": "verified-bjork-joga-live",
+      "reason": "original Jóga query must not rank the live version as top-1"
+    },
+    {
+      "candidateId": "verified-ymo-rydeen-remaster",
+      "reason": "original Rydeen query must not rank the remaster as top-1"
     }
   ]
 }

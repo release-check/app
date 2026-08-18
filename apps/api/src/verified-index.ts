@@ -282,4 +282,152 @@ export const VERIFIED_INDEX: Candidate[] = [
       verified: true,
     },
   },
+  {
+    id: "verified-newjeans-ditto-remix",
+    canonical: {
+      artist: "NewJeans",
+      title: "Ditto (250 Remix)",
+      release: "NJWMX",
+      durationSeconds: 196,
+      isrc: "USA2P2254487",
+    },
+    confidence: 0.88,
+    ambiguity: ["remix"],
+    evidence: [
+      { field: "artist", score: 1, note: "exact artist credit match" },
+      { field: "title", score: 0.9, note: "base title matches with remix marker" },
+      { field: "version", score: 0.5, note: "remix version must stay separate from original" },
+      { field: "source_url", score: 1, note: "verified Spotify track on NJWMX remix album" },
+    ],
+    availability: {
+      spotify: {
+        state: "available",
+        url: "https://open.spotify.com/track/6JVXVLqCPaodBSEwRFUN8w",
+      },
+      youtube_music: {
+        state: "unknown",
+        note: "no verified YouTube Music link",
+      },
+      apple_music: {
+        state: "unknown",
+        note: "no verified Apple Music link",
+      },
+      soundcloud: {
+        state: "unknown",
+        note: "no official SoundCloud upload confirmed",
+      },
+      bandcamp: {
+        state: "missing",
+        note: "not present on Bandcamp",
+      },
+      melon: {
+        state: "unknown",
+        note: "regional catalog availability not verified",
+      },
+    },
+    sample: {
+      origin: "verified_musicbrainz",
+      scene: "korea",
+      messyCase: true,
+      verified: true,
+    },
+  },
+  {
+    id: "verified-bjork-joga-live",
+    canonical: {
+      artist: "Björk",
+      title: "Jóga (Live)",
+      release: "Homogenic (Live)",
+      durationSeconds: 265,
+    },
+    confidence: 0.86,
+    ambiguity: ["live"],
+    evidence: [
+      { field: "artist", score: 1, note: "exact artist credit match" },
+      { field: "title", score: 0.88, note: "base title matches with live marker" },
+      { field: "version", score: 0.4, note: "live recording must not collapse into original" },
+      { field: "source_url", score: 1, note: "verified Spotify track on Homogenic (Live) 2003" },
+    ],
+    availability: {
+      spotify: {
+        state: "available",
+        url: "https://open.spotify.com/track/250LMSgxJ8y4IZQ8WLyFjE",
+      },
+      youtube_music: {
+        state: "unknown",
+        note: "no verified YouTube Music link",
+      },
+      apple_music: {
+        state: "unknown",
+        note: "no verified Apple Music link",
+      },
+      soundcloud: {
+        state: "unknown",
+        note: "no official SoundCloud upload confirmed",
+      },
+      bandcamp: {
+        state: "missing",
+        note: "not present on Bandcamp",
+      },
+      melon: {
+        state: "unknown",
+        note: "regional catalog availability not verified",
+      },
+    },
+    sample: {
+      origin: "verified_musicbrainz",
+      scene: "internet",
+      messyCase: true,
+      verified: true,
+    },
+  },
+  {
+    id: "verified-ymo-rydeen-remaster",
+    canonical: {
+      artist: "Yellow Magic Orchestra",
+      title: "Rydeen (2018 Remaster)",
+      release: "Solid State Survivor (2018 Remaster)",
+      durationSeconds: 268,
+    },
+    confidence: 0.87,
+    ambiguity: ["remaster"],
+    evidence: [
+      { field: "artist", score: 1, note: "exact artist credit match" },
+      { field: "title", score: 0.9, note: "base title matches with remaster marker" },
+      { field: "version", score: 0.55, note: "remaster is same track family, separate candidate" },
+      { field: "source_url", score: 1, note: "verified Spotify 2018 Bob Ludwig Remaster" },
+    ],
+    availability: {
+      spotify: {
+        state: "available",
+        url: "https://open.spotify.com/track/1YuQx0kg7RmQpbplPkJUQx",
+      },
+      youtube_music: {
+        state: "unknown",
+        note: "no verified YouTube Music link",
+      },
+      apple_music: {
+        state: "unknown",
+        note: "no verified Apple Music link",
+      },
+      soundcloud: {
+        state: "unknown",
+        note: "no official SoundCloud upload confirmed",
+      },
+      bandcamp: {
+        state: "missing",
+        note: "not present on Bandcamp",
+      },
+      melon: {
+        state: "unknown",
+        note: "regional catalog availability not verified",
+      },
+    },
+    sample: {
+      origin: "verified_musicbrainz",
+      scene: "japan",
+      messyCase: true,
+      verified: true,
+    },
+  },
 ];
