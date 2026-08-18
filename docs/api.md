@@ -51,6 +51,16 @@ Each candidate includes:
 - `ambiguity` markers such as `same-title`, `live`, or `demo`
 - matching `evidence`
 - six-platform `availability`
+- `origin` — `verified_musicbrainz`, `musicbrainz_ingested`, `handwritten_demo`, or `synthetic_load`
+
+### `GET /suggest?q=`
+
+Prefix autocomplete over the local index (artist, title, and ambiguity tokens),
+deduplicated by artist+title and capped at 8 suggestions.
+
+```bash
+curl 'http://localhost:3000/suggest?q=newjeans'
+```
 
 ### `GET /availability?artist=&track=`
 

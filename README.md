@@ -120,7 +120,16 @@ bun run eval:demo
 
 The evaluation checks top-3 candidate behavior, version and same-name
 ambiguity, six platform statuses, false-positive availability guards, and the
-expanded 600+ candidate index shape (609 today: 4 demo + 5 verified + 600 synthetic).
+expanded 600+ candidate index shape (696 today: 4 demo + 92 MusicBrainz real
+tracks + 600 synthetic). Quality gate:
+
+```bash
+bun run eval:quality
+```
+
+`eval:quality` measures golden-set pass rate (92 cases, 100% target), evaluation
+top-3 rate (185 cases), false-positive rate, and unknown rate with negative
+controls.
 
 Measure the local search path:
 
@@ -132,19 +141,23 @@ Verify the app-to-Rust matching bridge:
 
 ```bash
 bun run eval:core
+bun run eval:golden-core
 ```
 
 The local index mixes three layers:
 
-- **5 MusicBrainz verified seeds** — hand-verified recording identities with
-  seed-writer platform checks (see `apps/api/src/verified-index.ts`)
+- **92 MusicBrainz real tracks** — 8 hand-verified recording identities
+  (`apps/api/src/verified-index.ts`) plus 84 api-retrieved tracks
+  (`apps/api/src/verified-ingested.ts`, generated from `data/musicbrainz/ingested/`).
+  Every track has platform URLs web-verified in `data/golden-set.json`
 - **4 handwritten demo candidates** — ambiguity and false-positive guard cases
 - **600 synthetic load candidates** — unverified latency/contract pressure only
 
-Availability comes from cached/indexed adapter snapshots (`official_api`,
-`public_index`, `manual_seed` modes in `apps/api/src/adapters.ts`). User search
-does not fan out to live platform APIs. Verified labels were checked manually at
-seed-write time and can drift without automatic revalidation.
+Availability comes from golden-set hand-verified URLs and cached/indexed adapter
+snapshots (`official_api`, `public_index`, `manual_seed` modes in
+`apps/api/src/adapters.ts`). User search does not fan out to live platform APIs.
+MusicBrainz-ingested tracks are identity-verified via the MB API (1 rps, CC0 core
+metadata) but are not hand-verified availability ground truth.
 
 See [docs/demo.md](docs/demo.md) for the full eight-step walkthrough and current
 limitations.

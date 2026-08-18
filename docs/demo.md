@@ -1,8 +1,9 @@
 # Demo Flow
 
-Phase 2 demo mode runs the local API and web UI together. The index combines four
-handwritten demo candidates, five MusicBrainz hand-verified seeds, and 600 synthetic
-load fixtures built by `bun run build:index`.
+Phase 2 demo mode runs the local API and web UI together. The index combines
+handwritten demo candidates, 84 MusicBrainz-ingested real tracks (8 hand-verified,
+76 api-retrieved, all URL-verified in the golden set), and 600 synthetic load
+fixtures built by `bun run build:index` (696 candidates total).
 
 ## Run API And Web
 
@@ -51,16 +52,19 @@ bun run demo-data
 
 ```json
 {
-  "candidateCount": 609,
-  "handwrittenCount": 9,
+  "candidateCount": 696,
+  "handwrittenCount": 96,
   "syntheticCount": 600,
-  "verifiedCount": 9,
-  "messyCaseCount": 203
+  "verifiedCount": 12,
+  "messyCaseCount": 206
 }
 ```
 
-`handwrittenCount` is four demo fixtures plus five MusicBrainz verified seeds.
-`syntheticCount` is the unverified load fixture used for latency and contract pressure.
+`handwrittenCount` is four demo fixtures plus 92 real MusicBrainz tracks
+(12 hand-verified, 80 api-retrieved). `syntheticCount` is the unverified load
+fixture used for latency and contract pressure. `verifiedCount` counts
+hand-verified candidates only (sample.verified=true); api-retrieved tracks are
+identity-verified but not hand-verified.
 `demo-data` prints `indexStats`, handwritten candidates, a synthetic preview, and the
 golden/evaluation fixture metadata from `data/golden-set.json` and
 `data/evaluation-set.json`.
@@ -143,13 +147,13 @@ Example output:
 
 ```json
 {
-  "candidateCount": 609,
-  "verifiedCount": 9,
+  "candidateCount": 696,
+  "verifiedCount": 12,
   "syntheticCount": 600,
   "queryCount": 253,
-  "p50Ms": 0.468,
-  "p95Ms": 0.58,
-  "p99Ms": 0.792,
+  "p50Ms": 0.708,
+  "p95Ms": 0.854,
+  "p99Ms": 1.077,
   "latencyBudgetMs": 150,
   "indexSource": "cache"
 }
@@ -165,10 +169,13 @@ or adapter policy changes.
 
 ## Load Demo Data
 
-The handwritten fixture lives in `apps/api/src/demo-index.ts`. Verified MusicBrainz
+The handwritten fixture lives in `apps/api/src/demo-index.ts`. Hand-verified MusicBrainz
 seeds live in `apps/api/src/verified-index.ts` (sourced from
-`data/musicbrainz/positive-recording-seeds.v1.json`). Synthetic load fixtures are
-generated in `apps/api/src/synthetic-fixtures.ts` and merged by `scripts/build-index.ts`.
+`data/musicbrainz/positive-recording-seeds.v1.json`). 80 api-retrieved tracks live in
+`apps/api/src/verified-ingested.ts` (generated from `data/musicbrainz/ingested/*.json`).
+Golden-set URL verification and availability live in `data/golden-set.json` and are
+applied by `scripts/build-index.ts` enrichment. Synthetic load fixtures are generated in
+`apps/api/src/synthetic-fixtures.ts`.
 
 Print the combined candidate, golden, and evaluation fixture:
 

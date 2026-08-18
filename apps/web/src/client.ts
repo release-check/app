@@ -15,7 +15,11 @@ const platformOrder = [
 ] as const;
 
 type Platform = (typeof platformOrder)[number];
-type CandidateOrigin = "handwritten_demo" | "synthetic_load" | "verified_musicbrainz";
+type CandidateOrigin =
+  | "handwritten_demo"
+  | "synthetic_load"
+  | "verified_musicbrainz"
+  | "musicbrainz_ingested";
 
 interface AvailabilityEntry {
   state: string;
@@ -296,6 +300,10 @@ function renderOriginBadge(candidate: Candidate): string {
 
   if (origin === "verified_musicbrainz") {
     return '<span class="pill pill-verified" title="Hand-verified MusicBrainz seed">MB verified</span>';
+  }
+
+  if (origin === "musicbrainz_ingested") {
+    return '<span class="pill pill-ingested" title="MusicBrainz API-retrieved (not hand-verified)">MB ingested</span>';
   }
 
   if (origin === "handwritten_demo") {

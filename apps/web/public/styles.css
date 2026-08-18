@@ -212,6 +212,11 @@ h1 {
   color: #0f4f7a;
 }
 
+.pill-ingested {
+  background: #d9f2e5;
+  color: #0b5c3a;
+}
+
 .pill-demo {
   background: #e8e3d8;
   color: #4f4a3f;
