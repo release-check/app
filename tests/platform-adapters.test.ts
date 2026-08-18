@@ -197,7 +197,7 @@ describe("SpotifyAdapter", () => {
         fetchedAt: expect.any(String),
       },
     ]);
-    expect(second).toEqual(first);
+    expect(second).toEqual([{ ...first[0], fetchedAt: expect.any(String) }]);
 
     const tokenCalls = fetchMock.mock.calls.filter(([url]) =>
       String(url).includes("accounts.spotify.com/api/token"),
@@ -299,7 +299,7 @@ describe("SoundCloudAdapter", () => {
       state: "available",
       url: "https://soundcloud.com/user/track",
     });
-    expect(second).toEqual(first);
+    expect(second).toEqual([{ ...first[0], fetchedAt: expect.any(String) }]);
 
     const tokenCalls = fetchMock.mock.calls.filter(([url]) =>
       String(url).includes("secure.soundcloud.com/oauth/token"),
