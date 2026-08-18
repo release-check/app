@@ -1,0 +1,68 @@
+{
+  "seed_id": "mb-ingest-yoasobi-yoru-ni-kakeru",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "57a6dff3-daee-4e63-bc82-6bd6f5df2957",
+    "track_mbid": "7c8c92ff-6927-488d-bdd9-4a6ef761118e",
+    "release_mbid": "9e3992c7-06d1-4314-8e5c-504992660c8b",
+    "release_group_mbid": "08eaf50a-5389-42b8-be35-51a1df593c61",
+    "artist_mbids": [
+      "df6c619f-4334-43e2-8b6a-4a32af1e4f85"
+    ]
+  },
+  "metadata": {
+    "title": "夜に駆ける",
+    "artist_credit": "YOASOBI",
+    "release_title": "夜に駆ける",
+    "release_status": "official",
+    "release_date": "2019-12-14",
+    "duration_ms": 259000,
+    "duration_precision": "display_seconds",
+    "isrcs": [
+      "JPP301900716"
+    ]
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:57a6dff3-daee-4e63-bc82-6bd6f5df2957",
+    "recording_url": "https://musicbrainz.org/recording/57a6dff3-daee-4e63-bc82-6bd6f5df2957",
+    "release_url": "https://musicbrainz.org/release/9e3992c7-06d1-4314-8e5c-504992660c8b",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/57a6dff3-daee-4e63-bc82-6bd6f5df2957?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T17:03:59Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "57a6dff3-daee-4e63-bc82-6bd6f5df2957",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: YOASOBI. Title hint: Yoru ni Kakeru."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T17:03:59Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}

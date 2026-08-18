@@ -1,0 +1,68 @@
+{
+  "seed_id": "mb-ingest-se-so-neon-a-long-dream",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "e7207011-d20f-4fc6-86fb-fa742ffbfc3b",
+    "track_mbid": "d35302c3-b780-49e6-9065-c09cd430dc95",
+    "release_mbid": "b5643601-9ff8-4c27-8c2e-80480b5d1b1b",
+    "release_group_mbid": "1bc1c669-1edc-4c3f-b72f-3537122559b5",
+    "artist_mbids": [
+      "717d466b-36b8-4a43-86e9-e8b8c4a658d7"
+    ]
+  },
+  "metadata": {
+    "title": "긴 꿈",
+    "artist_credit": "새소년",
+    "release_title": "A Long Dream",
+    "release_status": "official",
+    "release_date": "2017-06-20",
+    "duration_ms": 258000,
+    "duration_precision": "display_seconds",
+    "isrcs": [
+      "KRA351700276"
+    ]
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:e7207011-d20f-4fc6-86fb-fa742ffbfc3b",
+    "recording_url": "https://musicbrainz.org/recording/e7207011-d20f-4fc6-86fb-fa742ffbfc3b",
+    "release_url": "https://musicbrainz.org/release/b5643601-9ff8-4c27-8c2e-80480b5d1b1b",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/e7207011-d20f-4fc6-86fb-fa742ffbfc3b?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T17:02:47Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "e7207011-d20f-4fc6-86fb-fa742ffbfc3b",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: SE SO NEON. Title hint: A Long Dream."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T17:02:47Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}

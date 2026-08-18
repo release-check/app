@@ -71,6 +71,138 @@ export const VERIFIED_INGESTED: Candidate[] = [
     }
   },
   {
+    "id": "mb-ingest-aespa-next-level",
+    "canonical": {
+      "artist": "aespa",
+      "title": "Next Level",
+      "release": "Next Level",
+      "durationSeconds": 235,
+      "isrc": "KRZ262100091"
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording b85c88bb-27a2-4773-bd0e-763144fe5c10 api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: korea)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "korea",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
+    "id": "mb-ingest-aimer-zankyosanka",
+    "canonical": {
+      "artist": "Aimer",
+      "title": "残響散歌",
+      "release": "Aimer Hall Tour 2022 “Walpurgisnacht” Live at TOKYO GARDEN THEATER",
+      "durationSeconds": 225,
+      "isrc": "JPU902202877"
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording cb2cb300-a08c-49d3-ba7a-be1848f880d8 api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: japan)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "japan",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
     "id": "mb-ingest-akmu-how-can-i-love-the-heartbreak-you-re-the-on",
     "canonical": {
       "artist": "Akmu",
@@ -131,6 +263,203 @@ export const VERIFIED_INGESTED: Candidate[] = [
     "sample": {
       "origin": "musicbrainz_ingested",
       "scene": "korea",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
+    "id": "mb-ingest-alice-longyu-gao-rich-bitch-juice",
+    "canonical": {
+      "artist": "Alice Longyu Gao",
+      "title": "Rich Bitch Juice",
+      "release": "Rich Bitch Juice",
+      "durationSeconds": 120,
+      "isrc": "USZ4V1900411"
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording 817674fd-e5a1-4fd0-9a08-b29a895cc81e api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: internet)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "internet",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
+    "id": "mb-ingest-anri-last-summer-whisper",
+    "canonical": {
+      "artist": "杏里",
+      "title": "Last Summer Whisper",
+      "release": "Heaven Beach",
+      "durationSeconds": 299,
+      "isrc": "JPFL08210190"
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording 4a2bf5cf-ff19-4316-810a-d1c63556a926 api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: japan)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "japan",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
+    "id": "mb-ingest-aphex-twin-windowlicker",
+    "canonical": {
+      "artist": "Aphex Twin",
+      "title": "Windowlicker",
+      "release": "Sven Väth in the Mix: The Sound of the Second Season: Noche y dia",
+      "durationSeconds": 841
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording f72d332d-6179-4843-8104-bedfccf1b0ba api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: internet)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "internet",
       "messyCase": false,
       "verified": false
     }
@@ -332,6 +661,71 @@ export const VERIFIED_INGESTED: Candidate[] = [
     }
   },
   {
+    "id": "mb-ingest-boards-of-canada-roygbiv",
+    "canonical": {
+      "artist": "Boards of Canada",
+      "title": "Roygbiv",
+      "release": "Ministry of Sound: The Chillout Session 2002",
+      "durationSeconds": 121
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording 4ea6b978-726a-4c65-834b-296947ba466e api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: internet)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "internet",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
     "id": "mb-ingest-bts-dynamite",
     "canonical": {
       "artist": "BTS",
@@ -464,6 +858,72 @@ export const VERIFIED_INGESTED: Candidate[] = [
     }
   },
   {
+    "id": "mb-ingest-caroline-polachek-so-hot-you-re-hurting-my-feeli",
+    "canonical": {
+      "artist": "Caroline Polachek",
+      "title": "So Hot You’re Hurting My Feelings",
+      "release": "So Hot You’re Hurting My Feelings",
+      "durationSeconds": 183,
+      "isrc": "USSM11902945"
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording aebc9cb3-a1b1-42dc-b8b8-b2af97daa107 api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: internet)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "internet",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
     "id": "mb-ingest-dorian-electra-flamboyant",
     "canonical": {
       "artist": "Dorian Electra",
@@ -494,6 +954,72 @@ export const VERIFIED_INGESTED: Candidate[] = [
         "field": "musicbrainz",
         "score": 1,
         "note": "recording bdf5b110-33e6-484d-8781-5399f056e6a1 api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: internet)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "internet",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
+    "id": "mb-ingest-ecco2k-time",
+    "canonical": {
+      "artist": "ECCO2K",
+      "title": "Time",
+      "release": "E",
+      "durationSeconds": 121,
+      "isrc": "SE5AJ1900823"
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording a55fbfdc-2df0-467a-8d10-39509b8dd8d7 api_retrieved (not hand-verified)"
       }
     ],
     "availability": {
@@ -590,6 +1116,72 @@ export const VERIFIED_INGESTED: Candidate[] = [
     "sample": {
       "origin": "musicbrainz_ingested",
       "scene": "korea",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
+    "id": "mb-ingest-fujii-kaze-shinunoga-e-wa",
+    "canonical": {
+      "artist": "藤井風",
+      "title": "死ぬのがいいわ",
+      "release": "Fujii Kaze Stadium Live \"Feelin' Good\"",
+      "durationSeconds": 199,
+      "isrc": "JPPO02405360"
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording 19ef534c-c63f-45d8-9309-e2337a881599 api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: japan)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "japan",
       "messyCase": false,
       "verified": false
     }
@@ -925,6 +1517,204 @@ export const VERIFIED_INGESTED: Candidate[] = [
     }
   },
   {
+    "id": "mb-ingest-ive-i-am",
+    "canonical": {
+      "artist": "IVE",
+      "title": "I AM",
+      "release": "I’ve IVE",
+      "durationSeconds": 184,
+      "isrc": "QM4TX2337764"
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording 46f73285-cdc1-41ac-8b6d-912bd15c6f19 api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: korea)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "korea",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
+    "id": "mb-ingest-junko-ohashi-telephone-number",
+    "canonical": {
+      "artist": "大橋純子",
+      "title": "テレフォン・ナンバー",
+      "release": "シティポップ LOVE 〜Long Vacation〜",
+      "durationSeconds": 140,
+      "isrc": "JPPH08100305"
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording f413c2cb-85c1-41e9-acfd-cc080497c71d api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: japan)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "japan",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
+    "id": "mb-ingest-kenshi-yonezu-lemon",
+    "canonical": {
+      "artist": "米津玄師",
+      "title": "Lemon",
+      "release": "Lemon",
+      "durationSeconds": 256,
+      "isrc": "JPU901800227"
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording 79a8b80c-018d-4004-b3ff-cc10d21a3ddd api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: japan)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "japan",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
     "id": "mb-ingest-kero-kero-bonito-flamingo",
     "canonical": {
       "artist": "Kero Kero Bonito",
@@ -986,6 +1776,138 @@ export const VERIFIED_INGESTED: Candidate[] = [
     "sample": {
       "origin": "musicbrainz_ingested",
       "scene": "internet",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
+    "id": "mb-ingest-king-gnu-hakujitsu",
+    "canonical": {
+      "artist": "King Gnu",
+      "title": "白日",
+      "release": "白日",
+      "durationSeconds": 276,
+      "isrc": "JPU901900431"
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording 3a04253c-6471-4b04-b933-4e0c88f441b8 api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: japan)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "japan",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
+    "id": "mb-ingest-le-sserafim-antifragile",
+    "canonical": {
+      "artist": "LE SSERAFIM",
+      "title": "ANTIFRAGILE",
+      "release": "ANTIFRAGILE",
+      "durationSeconds": 184,
+      "isrc": "USA2P2230329"
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording 5bf956f1-c656-444f-b9f3-9b08332bcc70 api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: korea)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "korea",
       "messyCase": false,
       "verified": false
     }
@@ -1253,6 +2175,72 @@ export const VERIFIED_INGESTED: Candidate[] = [
     }
   },
   {
+    "id": "mb-ingest-official-hige-dandism-pretender",
+    "canonical": {
+      "artist": "Official髭男dism",
+      "title": "Pretender",
+      "release": "Pretender",
+      "durationSeconds": 326,
+      "isrc": "JPPC01900265"
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording 665f6806-11bd-41c7-b2fc-daf4c153f906 api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: japan)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "japan",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
     "id": "mb-ingest-oneohtrix-point-never-sticky-drama",
     "canonical": {
       "artist": "Oneohtrix Point Never",
@@ -1450,6 +2438,137 @@ export const VERIFIED_INGESTED: Candidate[] = [
     }
   },
   {
+    "id": "mb-ingest-say-sue-me-old-town",
+    "canonical": {
+      "artist": "Say Sue Me",
+      "title": "Old Town",
+      "release": "10",
+      "durationSeconds": 299
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording ada86254-390c-46fa-b656-6de269bbf18f api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: korea)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "korea",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
+    "id": "mb-ingest-se-so-neon-a-long-dream",
+    "canonical": {
+      "artist": "새소년",
+      "title": "긴 꿈",
+      "release": "A Long Dream",
+      "durationSeconds": 258,
+      "isrc": "KRA351700276"
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording e7207011-d20f-4fc6-86fb-fa742ffbfc3b api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: korea)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "korea",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
     "id": "mb-ingest-silica-gel-desert-eagle",
     "canonical": {
       "artist": "Silica Gel",
@@ -1516,6 +2635,72 @@ export const VERIFIED_INGESTED: Candidate[] = [
     }
   },
   {
+    "id": "mb-ingest-sophie-faceshopping",
+    "canonical": {
+      "artist": "SOPHIE",
+      "title": "Faceshopping",
+      "release": "Faceshopping",
+      "durationSeconds": 249,
+      "isrc": "AUFF01800006"
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording 40361d33-7552-49cc-b427-f0b8447b1b80 api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: internet)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "internet",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
     "id": "mb-ingest-sophie-immaterial",
     "canonical": {
       "artist": "SOPHIE",
@@ -1576,6 +2761,136 @@ export const VERIFIED_INGESTED: Candidate[] = [
     "sample": {
       "origin": "musicbrainz_ingested",
       "scene": "internet",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
+    "id": "mb-ingest-tatsuro-yamashita-sparkle",
+    "canonical": {
+      "artist": "山下達郎",
+      "title": "SPARKLE",
+      "release": "JOY",
+      "durationSeconds": 283
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording 07e6298e-4ec9-48b5-8d42-c54a18021e1c api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: japan)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "japan",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
+    "id": "mb-ingest-the-black-skirts-everything",
+    "canonical": {
+      "artist": "검정치마",
+      "title": "Everything / 걱정하지마",
+      "release": "EVERYTHING",
+      "durationSeconds": 293
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording 8805a443-fd2c-40a6-b217-8aa4f9705421 api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: korea)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "korea",
       "messyCase": false,
       "verified": false
     }
@@ -1711,6 +3026,137 @@ export const VERIFIED_INGESTED: Candidate[] = [
     }
   },
   {
+    "id": "mb-ingest-yoasobi-yoru-ni-kakeru",
+    "canonical": {
+      "artist": "YOASOBI",
+      "title": "夜に駆ける",
+      "release": "夜に駆ける",
+      "durationSeconds": 259,
+      "isrc": "JPP301900716"
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording 57a6dff3-daee-4e63-bc82-6bd6f5df2957 api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: japan)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "japan",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
+    "id": "mb-ingest-yung-lean-ginseng-strip-2002",
+    "canonical": {
+      "artist": "Yung Lean",
+      "title": "Ginseng Strip 2002",
+      "release": "2014-07-31: Live at VFILES",
+      "durationSeconds": 154
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording d29f1fdd-9b8b-498c-bab5-52e1670bf63e api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: internet)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "internet",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
     "id": "mb-ingest-yung-lean-kyoto",
     "canonical": {
       "artist": "Yung Lean",
@@ -1772,6 +3218,72 @@ export const VERIFIED_INGESTED: Candidate[] = [
     "sample": {
       "origin": "musicbrainz_ingested",
       "scene": "internet",
+      "messyCase": false,
+      "verified": false
+    }
+  },
+  {
+    "id": "mb-ingest-zico-any-song",
+    "canonical": {
+      "artist": "ZICO",
+      "title": "Any Song",
+      "release": "Any Song",
+      "durationSeconds": 227,
+      "isrc": "KRA381905519"
+    },
+    "confidence": 0.85,
+    "ambiguity": [],
+    "evidence": [
+      {
+        "field": "artist",
+        "score": 1,
+        "note": "artist credit from MusicBrainz ws/2"
+      },
+      {
+        "field": "title",
+        "score": 1,
+        "note": "title from MusicBrainz ws/2 recording lookup"
+      },
+      {
+        "field": "duration",
+        "score": 0.9,
+        "note": "duration from MusicBrainz recording"
+      },
+      {
+        "field": "musicbrainz",
+        "score": 1,
+        "note": "recording 4d28e325-faab-4ff7-b281-e0dcac450c1a api_retrieved (not hand-verified)"
+      }
+    ],
+    "availability": {
+      "spotify": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "youtube_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "apple_music": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "soundcloud": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "bandcamp": {
+        "state": "unknown",
+        "note": "platform availability not yet verified"
+      },
+      "melon": {
+        "state": "unknown",
+        "note": "regional catalog availability not verified (scene: korea)"
+      }
+    },
+    "sample": {
+      "origin": "musicbrainz_ingested",
+      "scene": "korea",
       "messyCase": false,
       "verified": false
     }

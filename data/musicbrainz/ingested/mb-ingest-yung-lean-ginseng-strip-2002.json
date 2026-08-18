@@ -1,0 +1,66 @@
+{
+  "seed_id": "mb-ingest-yung-lean-ginseng-strip-2002",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "d29f1fdd-9b8b-498c-bab5-52e1670bf63e",
+    "track_mbid": "1bbca3e8-fcf5-4366-9b23-ae74bc1571a7",
+    "release_mbid": "3cd6c6c8-25e1-4b26-9235-98e2a4b5572b",
+    "release_group_mbid": "f33ef4a6-0dc3-413b-9b20-bcbe98198759",
+    "artist_mbids": [
+      "757ed661-fbad-4e45-b1cd-a6b09f06f54a"
+    ]
+  },
+  "metadata": {
+    "title": "Ginseng Strip 2002",
+    "artist_credit": "Yung Lean",
+    "release_title": "2014-07-31: Live at VFILES",
+    "release_status": "official",
+    "release_date": "2014-07-31",
+    "duration_ms": 154000,
+    "duration_precision": "display_seconds",
+    "isrcs": []
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:d29f1fdd-9b8b-498c-bab5-52e1670bf63e",
+    "recording_url": "https://musicbrainz.org/recording/d29f1fdd-9b8b-498c-bab5-52e1670bf63e",
+    "release_url": "https://musicbrainz.org/release/3cd6c6c8-25e1-4b26-9235-98e2a4b5572b",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/d29f1fdd-9b8b-498c-bab5-52e1670bf63e?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T17:04:27Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "d29f1fdd-9b8b-498c-bab5-52e1670bf63e",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: Yung Lean. Title hint: Ginseng Strip 2002."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T17:04:27Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}

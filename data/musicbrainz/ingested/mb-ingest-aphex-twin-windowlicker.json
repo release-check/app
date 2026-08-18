@@ -1,0 +1,66 @@
+{
+  "seed_id": "mb-ingest-aphex-twin-windowlicker",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "f72d332d-6179-4843-8104-bedfccf1b0ba",
+    "track_mbid": "c57e936f-c0e5-3601-8a4b-2d4d369b2c44",
+    "release_mbid": "c8098d22-b1b7-4e4b-9530-9ba744dc0810",
+    "release_group_mbid": "8a423ffd-8d3e-3b0d-8d04-d9617d62c167",
+    "artist_mbids": [
+      "f22942a1-6f70-4f48-866e-238cb2308fbd"
+    ]
+  },
+  "metadata": {
+    "title": "Windowlicker",
+    "artist_credit": "Aphex Twin",
+    "release_title": "Sven Väth in the Mix: The Sound of the Second Season: Noche y dia",
+    "release_status": "official",
+    "release_date": "2001-11-19",
+    "duration_ms": 841000,
+    "duration_precision": "display_seconds",
+    "isrcs": []
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:f72d332d-6179-4843-8104-bedfccf1b0ba",
+    "recording_url": "https://musicbrainz.org/recording/f72d332d-6179-4843-8104-bedfccf1b0ba",
+    "release_url": "https://musicbrainz.org/release/c8098d22-b1b7-4e4b-9530-9ba744dc0810",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/f72d332d-6179-4843-8104-bedfccf1b0ba?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T17:04:31Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "f72d332d-6179-4843-8104-bedfccf1b0ba",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: Aphex Twin. Title hint: Windowlicker."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T17:04:31Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}

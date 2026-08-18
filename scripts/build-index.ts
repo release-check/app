@@ -53,7 +53,7 @@ function platformCacheKey(artist: string, title: string): string {
 
 function enrichVerifiedFromCache(candidates: Candidate[], now: Date): Candidate[] {
   return candidates.map((candidate) => {
-    if (candidate.sample?.origin !== "verified_musicbrainz") {
+    if (candidate.sample?.origin !== "verified_musicbrainz" && candidate.sample?.origin !== "musicbrainz_ingested") {
       return candidate;
     }
 
@@ -90,22 +90,59 @@ function enrichVerifiedFromCache(candidates: Candidate[], now: Date): Candidate[
   });
 }
 
-const candidates = enrichVerifiedFromCache(
-  [
-    ...DEMO_INDEX.map((candidate) => ({
-      ...candidate,
-      sample: {
-        origin: "handwritten_demo" as const,
-        scene: "demo",
-        messyCase: candidate.ambiguity.length > 0,
-        verified: true,
-      },
-    })),
-    ...VERIFIED_INDEX,
-    ...VERIFIED_INGESTED,
-    ...buildSyntheticCandidates(),
-  ],
-  new Date(),
+function enrichFromGoldenSet(candidates: Candidate[]): Candidate[] {
+  const goldenPath = fileURLToPath(new URL("../data/golden-set.json", import.meta.url));
+  const golden = JSON.parse(readFileSync(goldenPath, "utf8")) as {
+    cases: Array<{
+      candidateId: string;
+      platforms: Record<string, { state: string; url?: string }>;
+    }>;
+  };
+  const byId = new Map(golden.cases.map((c) => [c.candidateId, c]));
+
+  return candidates.map((candidate) => {
+    const goldenCase = byId.get(candidate.id);
+    if (!goldenCase) {
+      return candidate;
+    }
+
+    let availability = candidate.availability;
+    for (const [platform, entry] of Object.entries(goldenCase.platforms)) {
+      if (!(platform in availability) || (entry.state !== "available" && entry.state !== "missing")) {
+        continue;
+      }
+      availability = {
+        ...availability,
+        [platform]: {
+          state: entry.state,
+          url: entry.url,
+          note: "hand-verified golden case",
+        },
+      };
+    }
+
+    return availability === candidate.availability ? candidate : { ...candidate, availability };
+  });
+}
+
+const candidates = enrichFromGoldenSet(
+  enrichVerifiedFromCache(
+    [
+      ...DEMO_INDEX.map((candidate) => ({
+        ...candidate,
+        sample: {
+          origin: "handwritten_demo" as const,
+          scene: "demo",
+          messyCase: candidate.ambiguity.length > 0,
+          verified: true,
+        },
+      })),
+      ...VERIFIED_INDEX,
+      ...VERIFIED_INGESTED,
+      ...buildSyntheticCandidates(),
+    ],
+    new Date(),
+  ),
 );
 
 mkdirSync(dirname(outputPath.pathname), { recursive: true });

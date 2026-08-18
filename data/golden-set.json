@@ -2,7 +2,11 @@
   "schema_version": "releasecheck.golden-set.v1",
   "iteration_id": "rc-golden-mb-seeds-v1-20260814",
   "description": "First real-data golden set: hand-verified MusicBrainz recording identities with public platform availability links. Scene buckets run in parallel (korea/japan/internet). Availability labels are seed-writer verified against public platform pages on 2026-08-14; identities verified against MusicBrainz core metadata (CC0).",
-  "scenes": ["korea", "japan", "internet"],
+  "scenes": [
+    "korea",
+    "japan",
+    "internet"
+  ],
   "cases": [
     {
       "id": "golden-mb-newjeans-ditto",
@@ -22,8 +26,13 @@
         "artistMbid": "49204a7a-ed85-407a-828f-6fd46f1d8126"
       },
       "versionDistinction": "original_studio",
-      "queries": ["NewJeans Ditto", "Ditto NewJeans"],
-      "acceptableTop3Ids": ["verified-newjeans-ditto"],
+      "queries": [
+        "NewJeans Ditto",
+        "Ditto NewJeans"
+      ],
+      "acceptableTop3Ids": [
+        "verified-newjeans-ditto"
+      ],
       "rationale": "Official Ditto release track links to this recording and credits NewJeans; duration and ISRC corroborate.",
       "platforms": {
         "spotify": {
@@ -38,8 +47,12 @@
           "state": "available",
           "url": "https://music.apple.com/us/song/1657231962"
         },
-        "soundcloud": { "state": "unknown" },
-        "bandcamp": { "state": "missing" },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
         "melon": {
           "state": "available",
           "url": "https://www.melon.com/song/detail.htm?songId=35945927"
@@ -63,8 +76,13 @@
         "artistMbid": "87c5dedd-371d-4a53-9f7f-80522fb7f3cb"
       },
       "versionDistinction": "original_studio",
-      "queries": ["Björk Jóga", "Bjork Joga"],
-      "acceptableTop3Ids": ["verified-bjork-joga"],
+      "queries": [
+        "Björk Jóga",
+        "Bjork Joga"
+      ],
+      "acceptableTop3Ids": [
+        "verified-bjork-joga"
+      ],
       "rationale": "Official Homogenic release track links to this recording and credits Björk.",
       "platforms": {
         "spotify": {
@@ -79,9 +97,15 @@
           "state": "available",
           "url": "https://music.apple.com/us/song/1101192924"
         },
-        "soundcloud": { "state": "unknown" },
-        "bandcamp": { "state": "missing" },
-        "melon": { "state": "unknown" }
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
       }
     },
     {
@@ -101,8 +125,13 @@
         "artistMbid": "ac5af671-1df0-4312-8b7b-e61992ecc883"
       },
       "versionDistinction": "original_studio",
-      "queries": ["Yellow Magic Orchestra Rydeen", "YMO Rydeen"],
-      "acceptableTop3Ids": ["verified-ymo-rydeen"],
+      "queries": [
+        "Yellow Magic Orchestra Rydeen",
+        "YMO Rydeen"
+      ],
+      "acceptableTop3Ids": [
+        "verified-ymo-rydeen"
+      ],
       "rationale": "Official compilation track links Rydeen by Yellow Magic Orchestra to this recording; remastered/live versions must stay separate.",
       "platforms": {
         "spotify": {
@@ -117,9 +146,15 @@
           "state": "available",
           "url": "https://music.apple.com/us/song/1291838926"
         },
-        "soundcloud": { "state": "unknown" },
-        "bandcamp": { "state": "missing" },
-        "melon": { "state": "unknown" }
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
       }
     },
     {
@@ -139,8 +174,12 @@
         "artistMbid": "260b6184-8828-48eb-945c-bc4cb6fc34ca"
       },
       "versionDistinction": "original_studio",
-      "queries": ["Charli XCX Vroom Vroom"],
-      "acceptableTop3Ids": ["verified-charli-xcx-vroom-vroom"],
+      "queries": [
+        "Charli XCX Vroom Vroom"
+      ],
+      "acceptableTop3Ids": [
+        "verified-charli-xcx-vroom-vroom"
+      ],
       "rationale": "Official Vroom Vroom EP track links to this recording and credits Charli XCX.",
       "platforms": {
         "spotify": {
@@ -156,9 +195,15 @@
           "url": "https://music.apple.com/us/album/vroom-vroom-ep/1083723149",
           "note": "album-level link; track-level page not confirmed"
         },
-        "soundcloud": { "state": "unknown" },
-        "bandcamp": { "state": "missing" },
-        "melon": { "state": "unknown" }
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
       }
     },
     {
@@ -178,8 +223,13 @@
         "artistMbid": "02bdc7ec-d102-4698-85e2-789a42d40b9c"
       },
       "versionDistinction": "original_studio",
-      "queries": ["Mariya Takeuchi Plastic Love", "Plastic Love Mariya Takeuchi"],
-      "acceptableTop3Ids": ["verified-mariya-takeuchi-plastic-love"],
+      "queries": [
+        "Mariya Takeuchi Plastic Love",
+        "Plastic Love Mariya Takeuchi"
+      ],
+      "acceptableTop3Ids": [
+        "verified-mariya-takeuchi-plastic-love"
+      ],
       "rationale": "Official Variety release track links プラスティック・ラブ by 竹内まりや to this recording; romanized title maps to the same identity.",
       "platforms": {
         "spotify": {
@@ -194,9 +244,15 @@
           "state": "available",
           "url": "https://music.apple.com/us/song/1591437487"
         },
-        "soundcloud": { "state": "unknown" },
-        "bandcamp": { "state": "missing" },
-        "melon": { "state": "unknown" }
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
       }
     },
     {
@@ -210,19 +266,34 @@
         "durationMs": 196000
       },
       "versionDistinction": "remix",
-      "queries": ["NewJeans Ditto 250 Remix", "Ditto remix NewJeans"],
-      "acceptableTop3Ids": ["verified-newjeans-ditto-remix"],
+      "queries": [
+        "NewJeans Ditto 250 Remix",
+        "Ditto remix NewJeans"
+      ],
+      "acceptableTop3Ids": [
+        "verified-newjeans-ditto-remix"
+      ],
       "rationale": "Official NJWMX remix album track; remix must stay separate from the original studio recording.",
       "platforms": {
         "spotify": {
           "state": "available",
           "url": "https://open.spotify.com/track/6JVXVLqCPaodBSEwRFUN8w"
         },
-        "youtube_music": { "state": "unknown" },
-        "apple_music": { "state": "unknown" },
-        "soundcloud": { "state": "unknown" },
-        "bandcamp": { "state": "missing" },
-        "melon": { "state": "unknown" }
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "unknown"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
       }
     },
     {
@@ -236,19 +307,34 @@
         "durationMs": 265000
       },
       "versionDistinction": "live",
-      "queries": ["Björk Jóga Live", "Joga live Bjork"],
-      "acceptableTop3Ids": ["verified-bjork-joga-live"],
+      "queries": [
+        "Björk Jóga Live",
+        "Joga live Bjork"
+      ],
+      "acceptableTop3Ids": [
+        "verified-bjork-joga-live"
+      ],
       "rationale": "Homogenic (Live) 2003 track; live recording must not collapse into the original studio Jóga.",
       "platforms": {
         "spotify": {
           "state": "available",
           "url": "https://open.spotify.com/track/250LMSgxJ8y4IZQ8WLyFjE"
         },
-        "youtube_music": { "state": "unknown" },
-        "apple_music": { "state": "unknown" },
-        "soundcloud": { "state": "unknown" },
-        "bandcamp": { "state": "missing" },
-        "melon": { "state": "unknown" }
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "unknown"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
       }
     },
     {
@@ -262,19 +348,566 @@
         "durationMs": 268000
       },
       "versionDistinction": "remaster",
-      "queries": ["Yellow Magic Orchestra Rydeen Remaster", "RYDEEN 2018 Remaster"],
-      "acceptableTop3Ids": ["verified-ymo-rydeen-remaster"],
+      "queries": [
+        "Yellow Magic Orchestra Rydeen Remaster",
+        "RYDEEN 2018 Remaster"
+      ],
+      "acceptableTop3Ids": [
+        "verified-ymo-rydeen-remaster"
+      ],
       "rationale": "2018 Bob Ludwig remaster of the same track family; separate candidate from the original master.",
       "platforms": {
         "spotify": {
           "state": "available",
           "url": "https://open.spotify.com/track/1YuQx0kg7RmQpbplPkJUQx"
         },
-        "youtube_music": { "state": "unknown" },
-        "apple_music": { "state": "unknown" },
-        "soundcloud": { "state": "unknown" },
-        "bandcamp": { "state": "missing" },
-        "melon": { "state": "unknown" }
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "unknown"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-newjeans-hype-boy",
+      "scene": "korea",
+      "candidateId": "mb-ingest-newjeans-hype-boy",
+      "canonical": {
+        "artist": "NewJeans",
+        "title": "Hype boy",
+        "release": "New Jeans",
+        "durationMs": 178000,
+        "isrc": "USA2P2230222"
+      },
+      "musicbrainz": {
+        "recordingMbid": "097fffc7-3c8b-4496-ac0b-da999bdaa541"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "NewJeans Hype boy"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-newjeans-hype-boy"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (097fffc7-3c8b-4496-ac0b-da999bdaa541); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/0a4MMyCrzT0En247IhqZbD"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1635469851"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-bts-dynamite",
+      "scene": "korea",
+      "candidateId": "mb-ingest-bts-dynamite",
+      "canonical": {
+        "artist": "BTS",
+        "title": "Dynamite",
+        "release": "Proof",
+        "durationMs": 199000,
+        "isrc": "USA2P2226583"
+      },
+      "musicbrainz": {
+        "recordingMbid": "2e3df1b2-7d1e-4300-8bdb-48784a9c40fc"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "BTS Dynamite"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-bts-dynamite"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (2e3df1b2-7d1e-4300-8bdb-48784a9c40fc); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/0v1x6rN6JHRapa03JElljE"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "unknown"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-blackpink-ddu-du-ddu-du",
+      "scene": "korea",
+      "candidateId": "mb-ingest-blackpink-ddu-du-ddu-du",
+      "canonical": {
+        "artist": "BLACKPINK",
+        "title": "DDU-DU DDU-DU",
+        "release": "DDU-DU DDU-DU",
+        "durationMs": 216000
+      },
+      "musicbrainz": {
+        "recordingMbid": "7ecfbff0-aabc-48c3-ae1f-a9320fc93a70"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "BLACKPINK DDU-DU DDU-DU"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-blackpink-ddu-du-ddu-du"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (7ecfbff0-aabc-48c3-ae1f-a9320fc93a70); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/4lQsB3ERTWSNaAN1IkuNRl"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1551479993"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-iu-celebrity",
+      "scene": "korea",
+      "candidateId": "mb-ingest-iu-celebrity",
+      "canonical": {
+        "artist": "IU",
+        "title": "Celebrity",
+        "release": "Celebrity",
+        "durationMs": 195000,
+        "isrc": "KRA382100464"
+      },
+      "musicbrainz": {
+        "recordingMbid": "52269c36-7694-4d96-ae3a-1b6ebc7fa945"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "IU Celebrity"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-iu-celebrity"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (52269c36-7694-4d96-ae3a-1b6ebc7fa945); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/5nCwjUUsmBuNZKn9Xu10Os"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1550907178"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-miki-matsubara-stay-with-me",
+      "scene": "japan",
+      "candidateId": "mb-ingest-miki-matsubara-stay-with-me",
+      "canonical": {
+        "artist": "CosmicFMMiki Matsubara",
+        "title": "Stay With Me",
+        "release": "Summer Girls (Deluxe)",
+        "durationMs": 234000
+      },
+      "musicbrainz": {
+        "recordingMbid": "c6fc8b0a-6142-43ae-a0f2-ffedee63022c"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "CosmicFMMiki Matsubara Stay With Me"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-miki-matsubara-stay-with-me"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (c6fc8b0a-6142-43ae-a0f2-ffedee63022c); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/2BHj31ufdEqVK5CkYDp9mA"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "unknown"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-hikaru-utada-first-love",
+      "scene": "japan",
+      "candidateId": "mb-ingest-hikaru-utada-first-love",
+      "canonical": {
+        "artist": "Hikaru Utada",
+        "title": "First Love",
+        "release": "HIKARU UTADA SCIENCE FICTION TOUR 2024",
+        "durationMs": 258000,
+        "isrc": "JPU902404237"
+      },
+      "musicbrainz": {
+        "recordingMbid": "ad8c9e90-5340-4301-b275-9b5e5912a6b6"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "Hikaru Utada First Love"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-hikaru-utada-first-love"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (ad8c9e90-5340-4301-b275-9b5e5912a6b6); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/39HrUxcvKF3jtLz7fUDWXc"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1558511033"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-yoasobi-yoru-ni-kakeru",
+      "scene": "japan",
+      "candidateId": "mb-ingest-yoasobi-yoru-ni-kakeru",
+      "canonical": {
+        "artist": "YOASOBI",
+        "title": "夜に駆ける",
+        "release": "夜に駆ける",
+        "durationMs": 259000,
+        "isrc": "JPP301900716"
+      },
+      "musicbrainz": {
+        "recordingMbid": "57a6dff3-daee-4e63-bc82-6bd6f5df2957"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "YOASOBI 夜に駆ける"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-yoasobi-yoru-ni-kakeru"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (57a6dff3-daee-4e63-bc82-6bd6f5df2957); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/3dPtXHP0oXQ4HCWHsOA9js"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1542182776"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-king-gnu-hakujitsu",
+      "scene": "japan",
+      "candidateId": "mb-ingest-king-gnu-hakujitsu",
+      "canonical": {
+        "artist": "King Gnu",
+        "title": "白日",
+        "release": "白日",
+        "durationMs": 276000,
+        "isrc": "JPU901900431"
+      },
+      "musicbrainz": {
+        "recordingMbid": "3a04253c-6471-4b04-b933-4e0c88f441b8"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "King Gnu 白日"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-king-gnu-hakujitsu"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (3a04253c-6471-4b04-b933-4e0c88f441b8); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/5iF0Yf9gju6ERpAch08JsC"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1536027148"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-sophie-immaterial",
+      "scene": "internet",
+      "candidateId": "mb-ingest-sophie-immaterial",
+      "canonical": {
+        "artist": "SOPHIE",
+        "title": "Immaterial",
+        "release": "Treble Fine",
+        "durationMs": 133000
+      },
+      "musicbrainz": {
+        "recordingMbid": "05fcac4a-f9d8-4c6f-8c92-815b5ebbbf32"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "SOPHIE Immaterial"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-sophie-immaterial"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (05fcac4a-f9d8-4c6f-8c92-815b5ebbbf32); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/7ub14NqqyR1MDUTXyFBTzO"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1709023790"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-rina-sawayama-xs",
+      "scene": "internet",
+      "candidateId": "mb-ingest-rina-sawayama-xs",
+      "canonical": {
+        "artist": "Rina Sawayama",
+        "title": "XS",
+        "release": "XS",
+        "durationMs": 201000,
+        "isrc": "GBK3W1901224"
+      },
+      "musicbrainz": {
+        "recordingMbid": "5db197d4-c946-4f1e-ba17-bf677bdcafca"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "Rina Sawayama XS"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-rina-sawayama-xs"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (5db197d4-c946-4f1e-ba17-bf677bdcafca); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/1peAiBjdwKtWqlgp9y9GNN"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1493469443"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-aphex-twin-windowlicker",
+      "scene": "internet",
+      "candidateId": "mb-ingest-aphex-twin-windowlicker",
+      "canonical": {
+        "artist": "Aphex Twin",
+        "title": "Windowlicker",
+        "release": "Sven Väth in the Mix: The Sound of the Second Season: Noche y dia",
+        "durationMs": 841000
+      },
+      "musicbrainz": {
+        "recordingMbid": "f72d332d-6179-4843-8104-bedfccf1b0ba"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "Aphex Twin Windowlicker"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-aphex-twin-windowlicker"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (f72d332d-6179-4843-8104-bedfccf1b0ba); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/60Pe9j2pCBa4Zp4ztf5nhd"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "unknown"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-ecco2k-time",
+      "scene": "internet",
+      "candidateId": "mb-ingest-ecco2k-time",
+      "canonical": {
+        "artist": "ECCO2K",
+        "title": "Time",
+        "release": "E",
+        "durationMs": 121000,
+        "isrc": "SE5AJ1900823"
+      },
+      "musicbrainz": {
+        "recordingMbid": "a55fbfdc-2df0-467a-8d10-39509b8dd8d7"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "ECCO2K Time"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-ecco2k-time"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (a55fbfdc-2df0-467a-8d10-39509b8dd8d7); platform URLs web-verified 2026-08-19. album-level link; track page not confirmed",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/album/443fOM9A1XN8A0HImpYKVT"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "unknown"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
       }
     }
   ],

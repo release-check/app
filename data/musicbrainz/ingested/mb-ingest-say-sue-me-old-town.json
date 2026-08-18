@@ -1,0 +1,66 @@
+{
+  "seed_id": "mb-ingest-say-sue-me-old-town",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "ada86254-390c-46fa-b656-6de269bbf18f",
+    "track_mbid": "1fb26cfe-f88e-459c-b141-c13bbe6264b7",
+    "release_mbid": "887b0330-8820-4b61-8c08-0533a08761a8",
+    "release_group_mbid": "bebae1eb-6fad-40bf-96e9-50ffebd4b24f",
+    "artist_mbids": [
+      "6533674b-9d30-4328-bdfe-92318e12e53a"
+    ]
+  },
+  "metadata": {
+    "title": "Old Town",
+    "artist_credit": "Say Sue Me",
+    "release_title": "10",
+    "release_status": "official",
+    "release_date": "2022-10-10",
+    "duration_ms": 299000,
+    "duration_precision": "display_seconds",
+    "isrcs": []
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:ada86254-390c-46fa-b656-6de269bbf18f",
+    "recording_url": "https://musicbrainz.org/recording/ada86254-390c-46fa-b656-6de269bbf18f",
+    "release_url": "https://musicbrainz.org/release/887b0330-8820-4b61-8c08-0533a08761a8",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/ada86254-390c-46fa-b656-6de269bbf18f?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T17:03:22Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "ada86254-390c-46fa-b656-6de269bbf18f",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: Say Sue Me. Title hint: Old Town."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T17:03:22Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}

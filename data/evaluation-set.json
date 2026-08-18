@@ -962,6 +962,190 @@
       "scene": "internet",
       "groundTruth": "musicbrainz-seed",
       "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-aespa-next-level exact",
+      "query": "aespa Next Level",
+      "expectedTop3Id": "mb-ingest-aespa-next-level",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-aimer-zankyosanka exact",
+      "query": "Aimer 残響散歌",
+      "expectedTop3Id": "mb-ingest-aimer-zankyosanka",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-alice-longyu-gao-rich-bitch-juice exact",
+      "query": "Alice Longyu Gao Rich Bitch Juice",
+      "expectedTop3Id": "mb-ingest-alice-longyu-gao-rich-bitch-juice",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-anri-last-summer-whisper exact",
+      "query": "杏里 Last Summer Whisper",
+      "expectedTop3Id": "mb-ingest-anri-last-summer-whisper",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-aphex-twin-windowlicker exact",
+      "query": "Aphex Twin Windowlicker",
+      "expectedTop3Id": "mb-ingest-aphex-twin-windowlicker",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-boards-of-canada-roygbiv exact",
+      "query": "Boards of Canada Roygbiv",
+      "expectedTop3Id": "mb-ingest-boards-of-canada-roygbiv",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-caroline-polachek-so-hot-you-re-hurting-my-feeli exact",
+      "query": "Caroline Polachek So Hot You’re Hurting My Feelings",
+      "expectedTop3Id": "mb-ingest-caroline-polachek-so-hot-you-re-hurting-my-feeli",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-ecco2k-time exact",
+      "query": "ECCO2K Time",
+      "expectedTop3Id": "mb-ingest-ecco2k-time",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-fujii-kaze-shinunoga-e-wa exact",
+      "query": "藤井風 死ぬのがいいわ",
+      "expectedTop3Id": "mb-ingest-fujii-kaze-shinunoga-e-wa",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-ive-i-am exact",
+      "query": "IVE I AM",
+      "expectedTop3Id": "mb-ingest-ive-i-am",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-junko-ohashi-telephone-number exact",
+      "query": "大橋純子 テレフォン・ナンバー",
+      "expectedTop3Id": "mb-ingest-junko-ohashi-telephone-number",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-kenshi-yonezu-lemon exact",
+      "query": "米津玄師 Lemon",
+      "expectedTop3Id": "mb-ingest-kenshi-yonezu-lemon",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-king-gnu-hakujitsu exact",
+      "query": "King Gnu 白日",
+      "expectedTop3Id": "mb-ingest-king-gnu-hakujitsu",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-le-sserafim-antifragile exact",
+      "query": "LE SSERAFIM ANTIFRAGILE",
+      "expectedTop3Id": "mb-ingest-le-sserafim-antifragile",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-official-hige-dandism-pretender exact",
+      "query": "Official髭男dism Pretender",
+      "expectedTop3Id": "mb-ingest-official-hige-dandism-pretender",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-say-sue-me-old-town exact",
+      "query": "Say Sue Me Old Town",
+      "expectedTop3Id": "mb-ingest-say-sue-me-old-town",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-se-so-neon-a-long-dream exact",
+      "query": "새소년 긴 꿈",
+      "expectedTop3Id": "mb-ingest-se-so-neon-a-long-dream",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-sophie-faceshopping exact",
+      "query": "SOPHIE Faceshopping",
+      "expectedTop3Id": "mb-ingest-sophie-faceshopping",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-tatsuro-yamashita-sparkle exact",
+      "query": "山下達郎 SPARKLE",
+      "expectedTop3Id": "mb-ingest-tatsuro-yamashita-sparkle",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-the-black-skirts-everything exact",
+      "query": "검정치마 Everything / 걱정하지마",
+      "expectedTop3Id": "mb-ingest-the-black-skirts-everything",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-yoasobi-yoru-ni-kakeru exact",
+      "query": "YOASOBI 夜に駆ける",
+      "expectedTop3Id": "mb-ingest-yoasobi-yoru-ni-kakeru",
+      "scene": "japan",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-yung-lean-ginseng-strip-2002 exact",
+      "query": "Yung Lean Ginseng Strip 2002",
+      "expectedTop3Id": "mb-ingest-yung-lean-ginseng-strip-2002",
+      "scene": "internet",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
+    },
+    {
+      "name": "mb-ingest-zico-any-song exact",
+      "query": "ZICO Any Song",
+      "expectedTop3Id": "mb-ingest-zico-any-song",
+      "scene": "korea",
+      "groundTruth": "musicbrainz-seed",
+      "minCandidates": 1
     }
   ],
   "requiredStateChecks": [

@@ -1,0 +1,68 @@
+{
+  "seed_id": "mb-ingest-fujii-kaze-shinunoga-e-wa",
+  "classification": "verified_musicbrainz_recording",
+  "identity": {
+    "recording_mbid": "19ef534c-c63f-45d8-9309-e2337a881599",
+    "track_mbid": "38c03eaf-c327-429b-af23-40ea288fd5a9",
+    "release_mbid": "73540f5e-bb4a-4ae1-9e2d-2c83aafc82b2",
+    "release_group_mbid": "4013b026-046e-456c-9a05-fb04c96c3a0b",
+    "artist_mbids": [
+      "c3a4aeca-8f02-4d22-b1ff-693434ab09a8"
+    ]
+  },
+  "metadata": {
+    "title": "死ぬのがいいわ",
+    "artist_credit": "藤井風",
+    "release_title": "Fujii Kaze Stadium Live \"Feelin' Good\"",
+    "release_status": "official",
+    "release_date": "2024-11-07",
+    "duration_ms": 199000,
+    "duration_precision": "display_seconds",
+    "isrcs": [
+      "JPPO02405360"
+    ]
+  },
+  "source": {
+    "provider": "MusicBrainz",
+    "source_identifier": "musicbrainz:recording:19ef534c-c63f-45d8-9309-e2337a881599",
+    "recording_url": "https://musicbrainz.org/recording/19ef534c-c63f-45d8-9309-e2337a881599",
+    "release_url": "https://musicbrainz.org/release/73540f5e-bb4a-4ae1-9e2d-2c83aafc82b2",
+    "api_lookup_url": "https://musicbrainz.org/ws/2/recording/19ef534c-c63f-45d8-9309-e2337a881599?inc=artists%2Breleases%2Brelease-groups%2Bisrcs&fmt=json",
+    "retrieved_at": "2026-08-18T17:03:53Z",
+    "retrieval_method": "musicbrainz_ws2_recording_lookup"
+  },
+  "label": {
+    "kind": "positive_recording_identity",
+    "expected_relationship": "exact_musicbrainz_recording",
+    "expected_recording_mbid": "19ef534c-c63f-45d8-9309-e2337a881599",
+    "rationale": "Selected an official MusicBrainz release track linked to the requested recording MBID. Artist hint: Fujii Kaze. Title hint: Shinunoga E-Wa."
+  },
+  "verification": {
+    "state": "api_retrieved",
+    "verified_at": "2026-08-18T17:03:53Z",
+    "method": "Fetched recording and release metadata via MusicBrainz ws/2 lookup using the core-metadata-only whitelist.",
+    "verified_by_role": "ingest_script",
+    "checked_fields": [
+      "recording_mbid",
+      "track_mbid",
+      "release_mbid",
+      "release_group_mbid",
+      "artist_mbids",
+      "title",
+      "artist_credit",
+      "release_status",
+      "release_date",
+      "duration_ms",
+      "isrcs"
+    ]
+  },
+  "policy_provenance": {
+    "license_id": "CC0-1.0",
+    "license_url": "https://musicbrainz.org/doc/About/Data_License",
+    "data_scope": "core_metadata_only",
+    "api_docs_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+    "rate_limit_url": "https://musicbrainz.org/doc/MusicBrainz_API/Rate_Limiting",
+    "redistribution": "permitted_core_metadata",
+    "policy_note": "No cover art, audio, ratings, tags, annotations, edit history, or platform availability is redistributed or inferred."
+  }
+}
