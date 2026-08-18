@@ -1,16 +1,21 @@
-import { existsSync, mkdirSync, readFileSync } from "node:fs";
+import { mkdirSync } from "node:fs";
 import { dirname } from "node:path";
-import { fileURLToPath } from "node:url";
 
+import { DEMO_INDEX } from "../apps/api/src/demo-index";
+import { VERIFIED_INDEX } from "../apps/api/src/verified-index";
+import { buildSyntheticCandidates } from "../apps/api/src/synthetic-fixtures";
 import {
   ADAPTER_POLICIES,
   availabilityFromSnapshot,
   type AdapterSnapshot,
 } from "../apps/api/src/adapters";
-import { DEMO_INDEX, normalize } from "../apps/api/src/demo-index";
-import { buildSyntheticCandidates } from "../apps/api/src/synthetic-fixtures";
-import { VERIFIED_INDEX } from "../apps/api/src/verified-index";
-import type { Candidate } from "../apps/api/src/types";
+import { existsSync, readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { normalize } from "../apps/api/src/demo-index";
+import type { Candidate, Platform } from "../apps/api/src/types";
+
+const outputPath = new URL("../data/cache/demo-index.json", import.meta.url);
+const cacheRoot = fileURLToPath(new URL("../data/cache/platform", import.meta.url));
 
 interface PlatformCacheEntry {
   snapshots: AdapterSnapshot[];
@@ -21,17 +26,15 @@ interface PlatformCacheDocument {
   entries: Record<string, PlatformCacheEntry>;
 }
 
-const outputPath = new URL("../data/cache/demo-index.json", import.meta.url);
-const spotifyCachePath = fileURLToPath(
-  new URL("../data/cache/platform/spotify.json", import.meta.url),
-);
+const ENRICHABLE_PLATFORMS: Platform[] = ["spotify", "soundcloud"];
 
-function readSpotifyCache(): PlatformCacheDocument {
-  if (!existsSync(spotifyCachePath)) {
+function readPlatformCache(platform: Platform): PlatformCacheDocument {
+  const path = `${cacheRoot}/${platform}.json`;
+  if (!existsSync(path)) {
     return { entries: {} };
   }
 
-  return JSON.parse(readFileSync(spotifyCachePath, "utf8")) as PlatformCacheDocument;
+  return JSON.parse(readFileSync(path, "utf8")) as PlatformCacheDocument;
 }
 
 function isCacheExpired(fetchedAt: string, ttlHours: number, now: Date): boolean {
@@ -47,38 +50,46 @@ function platformCacheKey(artist: string, title: string): string {
   return `${normalize(artist)}|${normalize(title)}`;
 }
 
-function enrichVerifiedSpotifyFromCache(candidates: Candidate[], now: Date): Candidate[] {
-  const cache = readSpotifyCache();
-  const ttlHours = ADAPTER_POLICIES.spotify.cacheTtlHours;
-
+function enrichVerifiedFromCache(candidates: Candidate[], now: Date): Candidate[] {
   return candidates.map((candidate) => {
     if (candidate.sample?.origin !== "verified_musicbrainz") {
       return candidate;
     }
 
     const key = platformCacheKey(candidate.canonical.artist, candidate.canonical.title);
-    const cached = cache.entries[key];
-    if (!cached || isCacheExpired(cached.fetchedAt, ttlHours, now)) {
-      return candidate;
+    let availability = candidate.availability;
+
+    for (const platform of ENRICHABLE_PLATFORMS) {
+      const cache = readPlatformCache(platform);
+      const cached = cache.entries[key];
+      const ttlHours = ADAPTER_POLICIES[platform].cacheTtlHours;
+      if (!cached || isCacheExpired(cached.fetchedAt, ttlHours, now)) {
+        continue;
+      }
+
+      const snapshot =
+        cached.snapshots.find((entry) => entry.platform === platform) ?? cached.snapshots[0];
+      if (!snapshot) {
+        continue;
+      }
+
+      // Real results only — degraded/unknown snapshots must not clobber
+      // hand-verified URLs with "unknown".
+      if (snapshot.state !== "available" && snapshot.state !== "missing") {
+        continue;
+      }
+
+      availability = {
+        ...availability,
+        [platform]: availabilityFromSnapshot(snapshot),
+      };
     }
 
-    const snapshot =
-      cached.snapshots.find((entry) => entry.platform === "spotify") ?? cached.snapshots[0];
-    if (!snapshot) {
-      return candidate;
-    }
-
-    return {
-      ...candidate,
-      availability: {
-        ...candidate.availability,
-        spotify: availabilityFromSnapshot(snapshot),
-      },
-    };
+    return availability === candidate.availability ? candidate : { ...candidate, availability };
   });
 }
 
-const candidates = enrichVerifiedSpotifyFromCache(
+const candidates = enrichVerifiedFromCache(
   [
     ...DEMO_INDEX.map((candidate) => ({
       ...candidate,
@@ -110,6 +121,7 @@ console.log(
       syntheticCount: candidates.length - handwrittenCount,
       verifiedCount: handwrittenCount,
       messyCaseCount,
+      enrichedPlatforms: ENRICHABLE_PLATFORMS,
     },
     null,
     2,

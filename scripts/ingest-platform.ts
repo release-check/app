@@ -1,19 +1,27 @@
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import {
   ADAPTER_POLICIES,
-  lookupWithPlatformCache,
+  soundCloudAdapter,
+  SoundCloudAdapter,
+  spotifyAdapter,
   SpotifyAdapter,
   type AdapterSnapshot,
+  type PlatformAdapter,
 } from "../apps/api/src/adapters";
 import { normalize } from "../apps/api/src/demo-index";
+import type { Platform } from "../apps/api/src/types";
 
 interface GoldenSetCase {
   id: string;
   canonical: {
     artist: string;
     title: string;
+    release?: string;
+    durationMs?: number;
+    isrc?: string;
   };
 }
 
@@ -30,26 +38,48 @@ interface PlatformCacheDocument {
   entries: Record<string, PlatformCacheEntry>;
 }
 
-type CacheDisposition = "hit" | "miss" | "not_configured";
+type CacheDisposition = "hit" | "fetched" | "not_configured";
 
 const goldenSetPath = fileURLToPath(new URL("../data/golden-set.json", import.meta.url));
 const cacheRoot = fileURLToPath(new URL("../data/cache/platform", import.meta.url));
-const spotifyCachePath = `${cacheRoot}/spotify.json`;
 
 const goldenSet = JSON.parse(readFileSync(goldenSetPath, "utf8")) as GoldenSetDocument;
-const spotifyCore = new SpotifyAdapter();
-const configured = Boolean(process.env.SPOTIFY_CLIENT_ID && process.env.SPOTIFY_CLIENT_SECRET);
+
+interface IngestAdapter {
+  platform: Platform;
+  adapter: PlatformAdapter;
+  configured: boolean;
+}
+
+const adapters: IngestAdapter[] = [
+  {
+    platform: "spotify",
+    adapter: spotifyAdapter,
+    configured: new SpotifyAdapter().isConfigured(),
+  },
+  {
+    platform: "soundcloud",
+    adapter: soundCloudAdapter,
+    configured: new SoundCloudAdapter().isConfigured(),
+  },
+];
 
 function platformCacheKey(artist: string, title: string): string {
   return `${normalize(artist)}|${normalize(title)}`;
 }
 
-function readSpotifyCache(): PlatformCacheDocument {
-  if (!existsSync(spotifyCachePath)) {
+function readCache(platform: Platform): PlatformCacheDocument {
+  const path = `${cacheRoot}/${platform}.json`;
+  if (!existsSync(path)) {
     return { entries: {} };
   }
+  return JSON.parse(readFileSync(path, "utf8")) as PlatformCacheDocument;
+}
 
-  return JSON.parse(readFileSync(spotifyCachePath, "utf8")) as PlatformCacheDocument;
+function writeCache(platform: Platform, document: PlatformCacheDocument): void {
+  const path = `${cacheRoot}/${platform}.json`;
+  mkdirSync(dirname(path), { recursive: true });
+  writeFileSync(path, `${JSON.stringify(document, null, 2)}\n`, "utf8");
 }
 
 function isCacheExpired(fetchedAt: string, ttlHours: number, now: Date): boolean {
@@ -57,71 +87,77 @@ function isCacheExpired(fetchedAt: string, ttlHours: number, now: Date): boolean
   if (Number.isNaN(fetchedMs)) {
     return true;
   }
-
   return now.getTime() - fetchedMs >= ttlHours * 60 * 60 * 1000;
 }
 
-function resolveCacheDisposition(artist: string, title: string, now: Date): CacheDisposition {
-  const key = platformCacheKey(artist, title);
-  const cached = readSpotifyCache().entries[key];
-  const ttlHours = ADAPTER_POLICIES.spotify.cacheTtlHours;
+async function ingestForAdapter(
+  ingest: IngestAdapter,
+  now: Date,
+): Promise<
+  Array<{ id: string; artist: string; title: string; cache: CacheDisposition; snapshots: number }>
+> {
+  const policy = ADAPTER_POLICIES[ingest.platform];
+  const results: Array<{
+    id: string;
+    artist: string;
+    title: string;
+    cache: CacheDisposition;
+    snapshots: number;
+  }> = [];
 
-  if (cached && !isCacheExpired(cached.fetchedAt, ttlHours, now)) {
-    return "hit";
+  for (const goldenCase of goldenSet.cases) {
+    const artist = goldenCase.canonical.artist;
+    const title = goldenCase.canonical.title;
+    const key = platformCacheKey(artist, title);
+    const document = readCache(ingest.platform);
+    const cached = document.entries[key];
+
+    if (cached && !isCacheExpired(cached.fetchedAt, policy.cacheTtlHours, now)) {
+      results.push({
+        id: goldenCase.id,
+        artist,
+        title,
+        cache: "hit",
+        snapshots: cached.snapshots.length,
+      });
+      continue;
+    }
+
+    if (!ingest.configured) {
+      results.push({ id: goldenCase.id, artist, title, cache: "not_configured", snapshots: 0 });
+      continue;
+    }
+
+    // Background ingest path: live lookup is allowed here (request path stays
+    // cache-only via liveLookupAllowed=false). The adapter writes no cache
+    // itself, so we persist the stamped snapshots directly.
+    const snapshots = await ingest.adapter.lookup(artist, title);
+    const stamped = snapshots.map((snapshot) => ({
+      ...snapshot,
+      fetchedAt: now.toISOString(),
+    }));
+    const nextDocument = readCache(ingest.platform);
+    nextDocument.entries[key] = { snapshots: stamped, fetchedAt: now.toISOString() };
+    writeCache(ingest.platform, nextDocument);
+
+    results.push({ id: goldenCase.id, artist, title, cache: "fetched", snapshots: stamped.length });
   }
 
-  if (!configured) {
-    return "not_configured";
-  }
-
-  return "miss";
+  return results;
 }
 
 const now = new Date();
-const tracks: Array<{
-  id: string;
-  artist: string;
-  title: string;
-  cache: CacheDisposition;
-}> = [];
+const perPlatform: Record<string, unknown> = {};
 
-for (const goldenCase of goldenSet.cases) {
-  const { artist, title } = goldenCase.canonical;
-  const cache = resolveCacheDisposition(artist, title, now);
-
-  await lookupWithPlatformCache(spotifyCore, artist, title, {
-    cacheRoot,
-    now: () => now,
-    policy: {
-      ...ADAPTER_POLICIES.spotify,
-      liveLookupAllowed: configured,
-    },
-  });
-
-  tracks.push({
-    id: goldenCase.id,
-    artist,
-    title,
-    cache,
-  });
+for (const ingest of adapters) {
+  perPlatform[ingest.platform] = await ingestForAdapter(ingest, now);
 }
-
-const summary = tracks.reduce(
-  (counts, track) => {
-    counts[track.cache] += 1;
-    return counts;
-  },
-  { hit: 0, miss: 0, not_configured: 0 },
-);
 
 console.log(
   JSON.stringify(
     {
-      platform: "spotify",
-      configured,
-      trackCount: tracks.length,
-      summary,
-      tracks,
+      trackCount: goldenSet.cases.length,
+      perPlatform,
     },
     null,
     2,
