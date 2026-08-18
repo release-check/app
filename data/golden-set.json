@@ -909,6 +909,1034 @@
           "state": "unknown"
         }
       }
+    },
+    {
+      "id": "golden-mb-newjeans-omg",
+      "scene": "korea",
+      "candidateId": "mb-ingest-newjeans-omg",
+      "canonical": {
+        "artist": "NewJeans",
+        "title": "OMG",
+        "release": "OMG",
+        "durationMs": 393000,
+        "isrc": "USA2P2251727"
+      },
+      "musicbrainz": {
+        "recordingMbid": "74774ea9-1b5b-4cd8-b1d2-8a9054b903e0"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "NewJeans OMG"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-newjeans-omg"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (74774ea9-1b5b-4cd8-b1d2-8a9054b903e0); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/65FftemJ1DbbZ45DUfHJXE"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1659513445"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-bts-spring-day",
+      "scene": "korea",
+      "candidateId": "mb-ingest-bts-spring-day",
+      "canonical": {
+        "artist": "BTS",
+        "title": "Spring Day -Japanese ver.-",
+        "release": "Blood Sweat & Tears",
+        "durationMs": 277000,
+        "isrc": "JPPO01701387"
+      },
+      "musicbrainz": {
+        "recordingMbid": "aec719f1-1e34-4f74-96bd-58e0a7508cb2"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "BTS Spring Day -Japanese ver.-"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-bts-spring-day"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (aec719f1-1e34-4f74-96bd-58e0a7508cb2); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/2j1fFjWHCI9KJSwcuYAOyF"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "unknown"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-blackpink-how-you-like-that",
+      "scene": "korea",
+      "candidateId": "mb-ingest-blackpink-how-you-like-that",
+      "canonical": {
+        "artist": "BLACKPINK",
+        "title": "How You Like That",
+        "release": "THE ALBUM",
+        "durationMs": 181000,
+        "isrc": "KRA402100129"
+      },
+      "musicbrainz": {
+        "recordingMbid": "ddffbf3a-7b8f-4531-933c-e18ef375fb46"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "BLACKPINK How You Like That"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-blackpink-how-you-like-that"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (ddffbf3a-7b8f-4531-933c-e18ef375fb46); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/3CnFNRxuNATylxY5gwvuwy"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "unknown"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-twice-fancy",
+      "scene": "korea",
+      "candidateId": "mb-ingest-twice-fancy",
+      "canonical": {
+        "artist": "TWICE",
+        "title": "FANCY",
+        "release": "FANCY YOU",
+        "durationMs": 215000,
+        "isrc": "US5TA1900042"
+      },
+      "musicbrainz": {
+        "recordingMbid": "55407857-babb-4f04-9915-4884f6acdc63"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "TWICE FANCY"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-twice-fancy"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (55407857-babb-4f04-9915-4884f6acdc63); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/0W5hTAWn8Tq0Qfhg1XP3YW"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1555390187"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-red-velvet-psycho",
+      "scene": "korea",
+      "candidateId": "mb-ingest-red-velvet-psycho",
+      "canonical": {
+        "artist": "Red Velvet",
+        "title": "Psycho",
+        "release": "‘The ReVe Festival’ Finale",
+        "durationMs": 210000,
+        "isrc": "KRA301900597"
+      },
+      "musicbrainz": {
+        "recordingMbid": "05ad2056-97f6-4aa4-bfb3-f12c6ecf2c7f"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "Red Velvet Psycho"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-red-velvet-psycho"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (05ad2056-97f6-4aa4-bfb3-f12c6ecf2c7f); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/3CYH422oy1cZNoo0GTG1TK"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1491888506"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-aespa-savage",
+      "scene": "korea",
+      "candidateId": "mb-ingest-aespa-savage",
+      "canonical": {
+        "artist": "aespa",
+        "title": "Savage",
+        "release": "Savage",
+        "durationMs": 252000,
+        "isrc": "KRZ262100253"
+      },
+      "musicbrainz": {
+        "recordingMbid": "d73a5c4c-4c7b-484f-854f-82ac981050eb"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "aespa Savage"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-aespa-savage"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (d73a5c4c-4c7b-484f-854f-82ac981050eb); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/3dbLT62Cvs46Ju7a8gpr36"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1587844525"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-ive-love-dive",
+      "scene": "korea",
+      "candidateId": "mb-ingest-ive-love-dive",
+      "canonical": {
+        "artist": "IVE",
+        "title": "LOVE DIVE",
+        "release": "LOVE DIVE -Japanese ver.-",
+        "durationMs": 177000,
+        "isrc": "KRNAR2236376"
+      },
+      "musicbrainz": {
+        "recordingMbid": "12552138-914d-4f27-95c9-7d601047b341"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "IVE LOVE DIVE"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-ive-love-dive"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (12552138-914d-4f27-95c9-7d601047b341); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/0Q5VnK2DYzRyfqQRJuUtvi"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1616804152"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-iu-blueming",
+      "scene": "korea",
+      "candidateId": "mb-ingest-iu-blueming",
+      "canonical": {
+        "artist": "IU",
+        "title": "Blueming",
+        "release": "Love poem",
+        "durationMs": 217000,
+        "isrc": "KRA381904704"
+      },
+      "musicbrainz": {
+        "recordingMbid": "bc35461a-184f-4908-a7df-52553978f17d"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "IU Blueming"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-iu-blueming"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (bc35461a-184f-4908-a7df-52553978f17d); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/4Dr2hJ3EnVh2Aaot6fRwDO"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1488300930"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-zico-any-song",
+      "scene": "korea",
+      "candidateId": "mb-ingest-zico-any-song",
+      "canonical": {
+        "artist": "ZICO",
+        "title": "Any Song",
+        "release": "Any Song",
+        "durationMs": 227000,
+        "isrc": "KRA381905519"
+      },
+      "musicbrainz": {
+        "recordingMbid": "4d28e325-faab-4ff7-b281-e0dcac450c1a"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "ZICO Any Song"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-zico-any-song"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (4d28e325-faab-4ff7-b281-e0dcac450c1a); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/1iIhGHzzrzqQfuNkFI2qAn"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1494673344"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-le-sserafim-antifragile",
+      "scene": "korea",
+      "candidateId": "mb-ingest-le-sserafim-antifragile",
+      "canonical": {
+        "artist": "LE SSERAFIM",
+        "title": "ANTIFRAGILE",
+        "release": "ANTIFRAGILE",
+        "durationMs": 184000,
+        "isrc": "USA2P2230329"
+      },
+      "musicbrainz": {
+        "recordingMbid": "5bf956f1-c656-444f-b9f3-9b08332bcc70"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "LE SSERAFIM ANTIFRAGILE"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-le-sserafim-antifragile"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (5bf956f1-c656-444f-b9f3-9b08332bcc70); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/6gM5w4sHEOUTlBL7UqBllJ"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1682502298"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-say-sue-me-old-town",
+      "scene": "korea",
+      "candidateId": "mb-ingest-say-sue-me-old-town",
+      "canonical": {
+        "artist": "Say Sue Me",
+        "title": "Old Town",
+        "release": "10",
+        "durationMs": 299000
+      },
+      "musicbrainz": {
+        "recordingMbid": "ada86254-390c-46fa-b656-6de269bbf18f"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "Say Sue Me Old Town"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-say-sue-me-old-town"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (ada86254-390c-46fa-b656-6de269bbf18f); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/5JYwPSffyYhXNhkyc8ZEvs"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1350446146"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-epik-high-born-hater",
+      "scene": "korea",
+      "candidateId": "mb-ingest-epik-high-born-hater",
+      "canonical": {
+        "artist": "Epik High빈지노버벌진트B.IMINOBOBBY",
+        "title": "BORN HATER",
+        "release": "SHOEBOX",
+        "durationMs": 237000
+      },
+      "musicbrainz": {
+        "recordingMbid": "b9d1175c-03e1-4cae-ae5e-ce20856e3852"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "Epik High빈지노버벌진트B.IMINOBOBBY BORN HATER"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-epik-high-born-hater"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (b9d1175c-03e1-4cae-ae5e-ce20856e3852); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/1Q4GCEgmuwVcR3FB1TpJFR"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1316881196"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-ado-usseewa",
+      "scene": "japan",
+      "candidateId": "mb-ingest-ado-usseewa",
+      "canonical": {
+        "artist": "Ado",
+        "title": "うっせぇわ (Usseewa)",
+        "release": "うっせぇわ (Usseewa)",
+        "durationMs": 203000
+      },
+      "musicbrainz": {
+        "recordingMbid": "57704841-23cc-4aea-bc5e-d5b4cedddfd3"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "Ado うっせぇわ (Usseewa)"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-ado-usseewa"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (57704841-23cc-4aea-bc5e-d5b4cedddfd3); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/61KYsWS25JXUO4fGb1138X"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1535123742"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-kenshi-yonezu-lemon",
+      "scene": "japan",
+      "candidateId": "mb-ingest-kenshi-yonezu-lemon",
+      "canonical": {
+        "artist": "米津玄師",
+        "title": "Lemon",
+        "release": "Lemon",
+        "durationMs": 256000,
+        "isrc": "JPU901800227"
+      },
+      "musicbrainz": {
+        "recordingMbid": "79a8b80c-018d-4004-b3ff-cc10d21a3ddd"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "米津玄師 Lemon"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-kenshi-yonezu-lemon"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (79a8b80c-018d-4004-b3ff-cc10d21a3ddd); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/7Cd17G3oNQ34OWUwS8ZxfR"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1537460612"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-fujii-kaze-shinunoga-e-wa",
+      "scene": "japan",
+      "candidateId": "mb-ingest-fujii-kaze-shinunoga-e-wa",
+      "canonical": {
+        "artist": "藤井風",
+        "title": "死ぬのがいいわ",
+        "release": "Fujii Kaze Stadium Live \"Feelin' Good\"",
+        "durationMs": 199000,
+        "isrc": "JPPO02405360"
+      },
+      "musicbrainz": {
+        "recordingMbid": "19ef534c-c63f-45d8-9309-e2337a881599"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "藤井風 死ぬのがいいわ"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-fujii-kaze-shinunoga-e-wa"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (19ef534c-c63f-45d8-9309-e2337a881599); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/4WRGaJL0Ie1cpms29DzgAT"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1645129439"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-vaundy-kaijuu-no-hanauta",
+      "scene": "japan",
+      "candidateId": "mb-ingest-vaundy-kaijuu-no-hanauta",
+      "canonical": {
+        "artist": "Vaundy",
+        "title": "怪獣の花唄",
+        "release": "strobo",
+        "durationMs": 224000,
+        "isrc": "JPR652000112"
+      },
+      "musicbrainz": {
+        "recordingMbid": "ffa02d1d-455c-4088-b440-a0eb1539d334"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "Vaundy 怪獣の花唄"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-vaundy-kaijuu-no-hanauta"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (ffa02d1d-455c-4088-b440-a0eb1539d334); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/3gQ19Wo6CbBpdHYmt2GVt0"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1707015516"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-radwimps-zenzenzense",
+      "scene": "japan",
+      "candidateId": "mb-ingest-radwimps-zenzenzense",
+      "canonical": {
+        "artist": "RADWIMPS",
+        "title": "Zenzenzense (English ver.)",
+        "release": "Your Name (Original Motion Picture Soundtrack) (Deluxe Edition)",
+        "durationMs": 278000,
+        "isrc": "JPPO01623124"
+      },
+      "musicbrainz": {
+        "recordingMbid": "4f0a7ae1-0a1d-45f6-98b8-8b7affdd44fd"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "RADWIMPS Zenzenzense (English ver.)"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-radwimps-zenzenzense"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (4f0a7ae1-0a1d-45f6-98b8-8b7affdd44fd); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/6KMIkoTWFxiSXzrF2ONSSc"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1523038457"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-charli-xcx-von-dutch",
+      "scene": "internet",
+      "candidateId": "mb-ingest-charli-xcx-von-dutch",
+      "canonical": {
+        "artist": "Charli xcx",
+        "title": "Von dutch",
+        "release": "Von dutch",
+        "durationMs": 164000,
+        "isrc": "USAT22400792"
+      },
+      "musicbrainz": {
+        "recordingMbid": "5642ef30-228f-4ad3-a2ed-762062041a50"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "Charli xcx Von dutch"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-charli-xcx-von-dutch"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (5642ef30-228f-4ad3-a2ed-762062041a50); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/3RtkC0F3WFxZgR3emm23Hm"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1732110358"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-arca-nonbinary",
+      "scene": "internet",
+      "candidateId": "mb-ingest-arca-nonbinary",
+      "canonical": {
+        "artist": "Arca",
+        "title": "Nonbinary",
+        "release": "Nonbinary",
+        "durationMs": 140000,
+        "isrc": "GBBKS1900101"
+      },
+      "musicbrainz": {
+        "recordingMbid": "7d813928-5172-4e7b-84d6-6899c666fd1d"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "Arca Nonbinary"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-arca-nonbinary"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (7d813928-5172-4e7b-84d6-6899c666fd1d); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/4lUlYGT5VvZWN3GBDIc9KT"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1508425845"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-four-tet-two-thousand-and-seventeen",
+      "scene": "internet",
+      "candidateId": "mb-ingest-four-tet-two-thousand-and-seventeen",
+      "canonical": {
+        "artist": "Four Tet",
+        "title": "Two Thousand and Seventeen",
+        "release": "Annie Mac Presents 2017",
+        "durationMs": 242000
+      },
+      "musicbrainz": {
+        "recordingMbid": "3b2abe77-10cb-4989-9c6e-47ca67d9b060"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "Four Tet Two Thousand and Seventeen"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-four-tet-two-thousand-and-seventeen"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (3b2abe77-10cb-4989-9c6e-47ca67d9b060); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/2ZIaH69kaz55RM4Pjx6KXl"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1288804817"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-bonobo-kerala",
+      "scene": "internet",
+      "candidateId": "mb-ingest-bonobo-kerala",
+      "canonical": {
+        "artist": "Bonobo",
+        "title": "Kerala",
+        "release": "Chilled House, Session 8",
+        "durationMs": 231000
+      },
+      "musicbrainz": {
+        "recordingMbid": "88d74247-6dad-4ac0-b4e5-5f1e9ce24843"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "Bonobo Kerala"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-bonobo-kerala"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (88d74247-6dad-4ac0-b4e5-5f1e9ce24843); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/3AuSogI89rld1KqfUpL3Np"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1169246072"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-kim-petras-i-don-t-want-it-at-all",
+      "scene": "internet",
+      "candidateId": "mb-ingest-kim-petras-i-don-t-want-it-at-all",
+      "canonical": {
+        "artist": "Kim Petras",
+        "title": "I Don’t Want It at All",
+        "release": "I Don’t Want It at All",
+        "durationMs": 250000,
+        "isrc": "GBWWP1703065"
+      },
+      "musicbrainz": {
+        "recordingMbid": "1958a939-0059-444e-82cb-0e1469015f63"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "Kim Petras I Don’t Want It at All"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-kim-petras-i-don-t-want-it-at-all"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (1958a939-0059-444e-82cb-0e1469015f63); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/4xhYxKvAxtrRd83MiqOy29"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1579002545"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
+    },
+    {
+      "id": "golden-mb-jon-hopkins-emerald-rush",
+      "scene": "internet",
+      "candidateId": "mb-ingest-jon-hopkins-emerald-rush",
+      "canonical": {
+        "artist": "Jon Hopkins",
+        "title": "Emerald Rush",
+        "release": "Emerald Rush",
+        "durationMs": 336000,
+        "isrc": "GBCEL1700692"
+      },
+      "musicbrainz": {
+        "recordingMbid": "4b8ac19a-3333-4261-9f81-fe5efd5383a0"
+      },
+      "versionDistinction": "original_studio",
+      "queries": [
+        "Jon Hopkins Emerald Rush"
+      ],
+      "acceptableTop3Ids": [
+        "mb-ingest-jon-hopkins-emerald-rush"
+      ],
+      "rationale": "MusicBrainz ws/2 api_retrieved identity (4b8ac19a-3333-4261-9f81-fe5efd5383a0); platform URLs web-verified 2026-08-19.",
+      "platforms": {
+        "spotify": {
+          "state": "available",
+          "url": "https://open.spotify.com/track/6wcnbGULtB51aNBJdWLjXq"
+        },
+        "youtube_music": {
+          "state": "unknown"
+        },
+        "apple_music": {
+          "state": "available",
+          "url": "https://music.apple.com/us/song/1349736993"
+        },
+        "soundcloud": {
+          "state": "unknown"
+        },
+        "bandcamp": {
+          "state": "missing"
+        },
+        "melon": {
+          "state": "unknown"
+        }
+      }
     }
   ],
   "negativeCases": [

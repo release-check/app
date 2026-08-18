@@ -21,7 +21,7 @@
     },
     {
       "path": "data/golden-set.json",
-      "content_sha256": "0ca1021c1fd26ebd8911155dd6df498f600096c7179400dc2c15384b583f2de0",
+      "content_sha256": "7b44647b2de261b5d1ffea9b71e26c62847665e48567f1c5acee31d6206c6cb7",
       "source_identifier": "repo:data/golden-set.json",
       "source_url": null,
       "retrieved_at": "2026-08-14",
@@ -35,7 +35,7 @@
         "version_distinction"
       ],
       "permitted_use": "golden_set_evaluation",
-      "policy_note": "20 cases: 5 hand-verified MB seeds + 3 version cases + 12 api_retrieved identities with web-verified platform URLs (2026-08-19)."
+      "policy_note": "43 cases: 5 hand-verified MB seeds + 3 version + 35 api_retrieved with web-verified platform URLs (2026-08-19)."
     },
     {
       "path": "data/evaluation-set.json",
