@@ -81,6 +81,44 @@ form.addEventListener("submit", (event) => {
   void runSearch(queryInput.value);
 });
 
+const suggestionsList = mustQuery<HTMLDataListElement>("#query-suggestions");
+let suggestionTimer: ReturnType<typeof setTimeout> | undefined;
+
+queryInput.addEventListener("input", () => {
+  clearTimeout(suggestionTimer);
+  suggestionTimer = setTimeout(() => {
+    void refreshSuggestions(queryInput.value);
+  }, 150);
+});
+
+async function refreshSuggestions(query: string): Promise<void> {
+  const trimmed = query.trim();
+  suggestionsList.innerHTML = "";
+  if (trimmed.length < 2) {
+    return;
+  }
+
+  try {
+    const url = new URL("/suggest", API_BASE);
+    url.searchParams.set("q", trimmed);
+    const response = await fetch(url);
+    if (!response.ok) {
+      return;
+    }
+
+    const payload = (await response.json()) as {
+      suggestions: Array<{ artist: string; title: string }>;
+    };
+    for (const suggestion of payload.suggestions ?? []) {
+      const option = document.createElement("option");
+      option.value = `${suggestion.artist} — ${suggestion.title}`;
+      suggestionsList.appendChild(option);
+    }
+  } catch {
+    // Suggestions are non-critical; drop silently.
+  }
+}
+
 void checkHealth();
 void runSearch(queryInput.value);
 

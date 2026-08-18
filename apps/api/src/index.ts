@@ -7,6 +7,7 @@ import {
   getSearchIndexStats,
   resolveIndexedUrl,
   searchReleaseIndex,
+  suggestReleaseIndex,
 } from "./search-index";
 import type {
   AvailabilityResponse,
@@ -50,6 +51,18 @@ app.get("/search", (c) => {
   };
 
   return c.json(response);
+});
+
+app.get("/suggest", (c) => {
+  const query = c.req.query("q") ?? "";
+  return c.json({
+    query: {
+      q: query,
+      normalized: normalize(query),
+      source: responseIndexSource(),
+    },
+    suggestions: suggestReleaseIndex(query),
+  });
 });
 
 app.get("/availability", (c) => {

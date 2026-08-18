@@ -75,6 +75,63 @@ export function searchReleaseIndex(query: string): Candidate[] {
     .map(({ candidate }) => candidate);
 }
 
+export interface Suggestion {
+  id: string;
+  artist: string;
+  title: string;
+}
+
+export function suggestReleaseIndex(query: string, limit = 8): Suggestion[] {
+  const normalized = normalize(query);
+  if (!normalized) {
+    return [];
+  }
+
+  const scored = SEARCH_INDEX.map((candidate) => {
+    const artistNorm = normalize(candidate.canonical.artist);
+    const titleNorm = normalize(candidate.canonical.title);
+    const artistPrefix = artistNorm.startsWith(normalized);
+    const titlePrefix = titleNorm.startsWith(normalized);
+    const tokenPrefix = normalize(candidate.ambiguity.join(" ")).split(" ").some((token) =>
+      token.startsWith(normalized),
+    );
+    if (!artistPrefix && !titlePrefix && !tokenPrefix) {
+      return null;
+    }
+
+    const prefixLength = Math.max(
+      artistPrefix ? normalized.length : 0,
+      titlePrefix ? normalized.length : 0,
+    );
+    return {
+      candidate,
+      score: prefixLength + (artistPrefix ? 0.6 : 0) + (titlePrefix ? 0.4 : 0) + candidate.confidence * 0.05,
+    };
+  })
+    .filter((entry): entry is NonNullable<typeof entry> => entry !== null)
+    .sort((left, right) => right.score - left.score);
+
+  const seen = new Set<string>();
+  const suggestions: Suggestion[] = [];
+  for (const { candidate } of scored) {
+    const key = `${candidate.canonical.artist}|${candidate.canonical.title}`;
+    if (seen.has(key)) {
+      continue;
+    }
+    seen.add(key);
+    suggestions.push({
+      id: candidate.id,
+      artist: candidate.canonical.artist,
+      title: candidate.canonical.title,
+    });
+    if (suggestions.length >= limit) {
+      break;
+    }
+  }
+
+  return suggestions;
+}
+
 export function findIndexedAvailability(artist: string, track: string): Candidate | null {
   const normalizedArtist = normalize(artist);
   const normalizedTrack = normalize(track);
