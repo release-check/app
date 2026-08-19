@@ -9,6 +9,12 @@ import {
   searchReleaseIndex,
   suggestReleaseIndex,
 } from "./search-index";
+import {
+  addSubmission,
+  getDb,
+  listSubmissions,
+  updateSubmissionStatus,
+} from "./storage";
 import type {
   AvailabilityResponse,
   BatchItem,
@@ -16,11 +22,72 @@ import type {
   ResolveResponse,
   SearchResponse,
 } from "./types";
+import { PLATFORMS } from "./types";
 
 const app = new Hono();
 const INDEXED_SEARCH_LATENCY_BUDGET_MS = 150;
 
 app.use("*", cors());
+
+app.post("/submissions", async (c) => {
+  const database = getDb();
+  if (!database) {
+    return c.json(
+      { error: "persistence disabled — set RELEASE_CHECK_DB to accept submissions" },
+      503,
+    );
+  }
+
+  const body = (await c.req.json().catch(() => null)) as
+    | { artist?: unknown; title?: unknown; platform?: unknown; url?: unknown; note?: unknown }
+    | null;
+  if (!body) {
+    return c.json({ error: "invalid JSON body" }, 400);
+  }
+  if (typeof body.artist !== "string" || typeof body.title !== "string") {
+    return c.json({ error: "artist and title (strings) are required" }, 400);
+  }
+  if (typeof body.platform !== "string" || !(PLATFORMS as readonly string[]).includes(body.platform)) {
+    return c.json({ error: `platform must be one of: ${PLATFORMS.join(", ")}` }, 400);
+  }
+  if (typeof body.url !== "string" || !/^https?:\/\//.test(body.url)) {
+    return c.json({ error: "url must be an http(s) link" }, 400);
+  }
+
+  const submission = addSubmission(database, {
+    artist: body.artist.trim(),
+    title: body.title.trim(),
+    platform: body.platform as (typeof PLATFORMS)[number],
+    url: body.url.trim(),
+    note: typeof body.note === "string" ? body.note.trim() : null,
+  });
+  return c.json({ submission }, 201);
+});
+
+app.get("/submissions", (c) => {
+  const database = getDb();
+  if (!database) {
+    return c.json({ error: "persistence disabled" }, 503);
+  }
+  const status = c.req.query("status");
+  return c.json({ submissions: listSubmissions(database, status) });
+});
+
+app.post("/submissions/:id/verify", async (c) => {
+  const database = getDb();
+  if (!database) {
+    return c.json({ error: "persistence disabled" }, 503);
+  }
+  const id = Number(c.req.param("id"));
+  if (!Number.isInteger(id)) {
+    return c.json({ error: "invalid submission id" }, 400);
+  }
+  const updated = updateSubmissionStatus(database, id, "verified");
+  if (!updated) {
+    return c.json({ error: "submission not found" }, 404);
+  }
+  return c.json({ submission: updated });
+});
 
 app.get("/health", (c) => {
   return c.json({
