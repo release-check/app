@@ -52,11 +52,10 @@ function isDbActive(): boolean {
 let db: Database | null | undefined;
 
 export function getDb(): Database | null {
-  if (db !== undefined) {
+  if (db) {
     return db;
   }
   if (!isDbActive()) {
-    db = null;
     return null;
   }
   const path = process.env.RELEASE_CHECK_DB || DEFAULT_DB_PATH;
