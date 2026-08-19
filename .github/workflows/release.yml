@@ -1,0 +1,34 @@
+name: release
+on:
+  push:
+    branches: [main]
+    paths:
+      - "core/**"
+      - "Dockerfile"
+      - ".dockerignore"
+  workflow_dispatch:
+
+jobs:
+  build-worker:
+    name: Build rc-worker binary
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Build release binary
+        run: cargo build --release -p rc-worker
+        working-directory: core
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rc-worker-linux-x86_64
+          path: core/target/release/rc-worker
+          if-no-files-found: error
+
+  docker:
+    name: Validate Docker image build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t releasecheck:ci .

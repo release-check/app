@@ -1,0 +1,11 @@
+.git
+.gitignore
+.codex
+node_modules
+data/cache
+data/releasecheck.db
+data/musicbrainz/ingested
+core/target
+tmp
+*.log
+.env
