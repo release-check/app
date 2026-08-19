@@ -5,6 +5,7 @@ import { DEMO_INDEX, normalize } from "./demo-index";
 import { VERIFIED_INDEX } from "./verified-index";
 import { VERIFIED_INGESTED } from "./verified-ingested";
 import { buildSyntheticCandidates } from "./synthetic-fixtures";
+import { bootstrapFromFixtures, getDb, loadCandidates } from "./storage";
 import type { Candidate } from "./types";
 
 export interface SearchIndexStats {
@@ -162,6 +163,12 @@ export function resolveIndexedUrl(url: string): Candidate | null {
 }
 
 function loadSearchIndex(): Candidate[] {
+  const database = getDb();
+  if (database) {
+    bootstrapFromFixtures(database);
+    return loadCandidates(database);
+  }
+
   if (existsSync(cachePath)) {
     return JSON.parse(readFileSync(cachePath, "utf8")) as Candidate[];
   }

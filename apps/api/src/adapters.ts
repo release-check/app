@@ -468,3 +468,92 @@ export class SoundCloudAdapter implements PlatformAdapter {
 }
 
 export const soundCloudAdapter = withPlatformCache(new SoundCloudAdapter());
+
+const ITUNES_SEARCH_URL = "https://itunes.apple.com/search";
+
+export interface ITunesAdapterOptions {
+  fetch?: FetchFn;
+  limit?: number;
+}
+
+interface ITunesSearchResponse {
+  resultCount: number;
+  results?: Array<{
+    trackName?: string;
+    artistName?: string;
+    collectionName?: string;
+    trackViewUrl?: string;
+    releaseDate?: string;
+    trackTimeMillis?: number;
+    isrc?: string;
+  }>;
+}
+
+/**
+ * Apple Music via the official public iTunes Search API — no credentials,
+ * no cost. Search is per-request limited (~20 requests/min guideline); the
+ * ingest path paces calls and caches via the platform cache layer.
+ */
+export class ITunesAdapter implements PlatformAdapter {
+  readonly platform = "apple_music" as const;
+
+  private readonly fetchImpl: FetchFn;
+  private readonly limit: number;
+
+  constructor(options?: ITunesAdapterOptions) {
+    this.fetchImpl = options?.fetch ?? fetch;
+    this.limit = options?.limit ?? 5;
+  }
+
+  isConfigured(): boolean {
+    return true;
+  }
+
+  async lookup(artist: string, title: string): Promise<AdapterSnapshot[]> {
+    const url = new URL(ITUNES_SEARCH_URL);
+    url.searchParams.set("term", `${artist} ${title}`);
+    url.searchParams.set("media", "music");
+    url.searchParams.set("entity", "song");
+    url.searchParams.set("limit", String(this.limit));
+
+    const response = await this.fetchImpl(url.toString(), {
+      headers: { Accept: "application/json" },
+    });
+
+    if (!response.ok) {
+      return [
+        {
+          platform: this.platform,
+          state: "unknown",
+          note: `iTunes search failed with status ${response.status}.`,
+          fetchedAt: new Date().toISOString(),
+        },
+      ];
+    }
+
+    const payload = (await response.json()) as ITunesSearchResponse;
+    const items = payload.results ?? [];
+    const fetchedAt = new Date().toISOString();
+
+    if (items.length === 0) {
+      return [
+        {
+          platform: this.platform,
+          state: "missing",
+          note: "No Apple Music track match returned for artist/title query.",
+          fetchedAt,
+        },
+      ];
+    }
+
+    return items.map((item) => ({
+      platform: this.platform,
+      state: "available" as const,
+      url: item.trackViewUrl ?? `https://music.apple.com/us/search?term=${encodeURIComponent(`${artist} ${title}`)}`,
+      note: item.artistName && item.trackName ? `${item.trackName} — ${item.artistName}` : undefined,
+      fetchedAt,
+    }));
+  }
+}
+
+export const itunesAdapter = withPlatformCache(new ITunesAdapter());

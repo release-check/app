@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 
 import {
   ADAPTER_POLICIES,
+  ITunesAdapter,
   SoundCloudAdapter,
   SpotifyAdapter,
   type AdapterSnapshot,
@@ -47,6 +48,7 @@ interface IngestAdapter {
   platform: Platform;
   adapter: PlatformAdapter;
   configured: boolean;
+  minIntervalMs?: number;
 }
 
 const adapters: IngestAdapter[] = [
@@ -59,6 +61,13 @@ const adapters: IngestAdapter[] = [
     platform: "soundcloud",
     adapter: new SoundCloudAdapter(),
     configured: new SoundCloudAdapter().isConfigured(),
+  },
+  {
+    platform: "apple_music",
+    adapter: new ITunesAdapter(),
+    configured: true,
+    // iTunes Search API guideline: ~20 requests/min — 3s pacing.
+    minIntervalMs: 3000,
   },
 ];
 
@@ -149,6 +158,11 @@ const perPlatform: Record<string, unknown> = {};
 
 for (const ingest of adapters) {
   perPlatform[ingest.platform] = await ingestForAdapter(ingest, now);
+  if (ingest.minIntervalMs) {
+    const { promise, resolve } = Promise.withResolvers<void>();
+    setTimeout(resolve, ingest.minIntervalMs);
+    await promise;
+  }
 }
 
 console.log(

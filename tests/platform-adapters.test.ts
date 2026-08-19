@@ -5,6 +5,7 @@ import { join } from "node:path";
 
 import {
   ADAPTER_POLICIES,
+  ITunesAdapter,
   lookupWithPlatformCache,
   SoundCloudAdapter,
   SpotifyAdapter,
@@ -310,5 +311,57 @@ describe("SoundCloudAdapter", () => {
   test("policy mode is public_index with fan-out blocked (official API deferred)", async () => {
     expect(ADAPTER_POLICIES.soundcloud.mode).toBe("public_index");
     expect(ADAPTER_POLICIES.soundcloud.liveLookupAllowed).toBe(false);
+  });
+});
+
+describe("ITunesAdapter", () => {
+  test("lookup returns available snapshots from the public API", async () => {
+    const fetchMock = mock(async () =>
+      new Response(
+        JSON.stringify({
+          resultCount: 1,
+          results: [
+            {
+              trackName: "Hype Boy",
+              artistName: "NewJeans",
+              trackViewUrl: "https://music.apple.com/us/song/1635469851",
+            },
+          ],
+        }),
+        { status: 200, headers: { "content-type": "application/json" } },
+      ),
+    );
+
+    const adapter = new ITunesAdapter({ fetch: fetchMock });
+    const snapshots = await adapter.lookup("NewJeans", "Hype Boy");
+
+    expect(snapshots).toEqual([
+      {
+        platform: "apple_music",
+        state: "available",
+        url: "https://music.apple.com/us/song/1635469851",
+        note: "Hype Boy — NewJeans",
+        fetchedAt: expect.any(String),
+      },
+    ]);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
+  test("empty result maps to missing", async () => {
+    const fetchMock = mock(async () =>
+      new Response(JSON.stringify({ resultCount: 0, results: [] }), {
+        status: 200,
+        headers: { "content-type": "application/json" },
+      }),
+    );
+
+    const adapter = new ITunesAdapter({ fetch: fetchMock });
+    const snapshots = await adapter.lookup("Nobody", "Nothing Here");
+
+    expect(snapshots[0]?.state).toBe("missing");
+  });
+
+  test("is always configured (no credentials needed)", () => {
+    expect(new ITunesAdapter().isConfigured()).toBe(true);
   });
 });
