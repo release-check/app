@@ -497,11 +497,11 @@ interface ITunesSearchResponse {
 export class ITunesAdapter implements PlatformAdapter {
   readonly platform = "apple_music" as const;
 
-  private readonly fetchImpl: FetchFn;
+  private readonly fetchImpl?: FetchFn;
   private readonly limit: number;
 
   constructor(options?: ITunesAdapterOptions) {
-    this.fetchImpl = options?.fetch ?? fetch;
+    this.fetchImpl = options?.fetch;
     this.limit = options?.limit ?? 5;
   }
 
@@ -510,13 +510,14 @@ export class ITunesAdapter implements PlatformAdapter {
   }
 
   async lookup(artist: string, title: string): Promise<AdapterSnapshot[]> {
+    const fetchImpl = this.fetchImpl ?? globalThis.fetch;
     const url = new URL(ITUNES_SEARCH_URL);
     url.searchParams.set("term", `${artist} ${title}`);
     url.searchParams.set("media", "music");
     url.searchParams.set("entity", "song");
     url.searchParams.set("limit", String(this.limit));
 
-    const response = await this.fetchImpl(url.toString(), {
+    const response = await fetchImpl(url.toString(), {
       headers: { Accept: "application/json" },
     });
 

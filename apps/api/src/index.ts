@@ -15,6 +15,7 @@ import {
   listSubmissions,
   updateSubmissionStatus,
 } from "./storage";
+import { liveLookup, liveLookupCooldownRemainingMs } from "./live-lookup";
 import type {
   AvailabilityResponse,
   BatchItem,
@@ -102,16 +103,35 @@ app.get("/index/stats", (c) => {
   return c.json(getSearchIndexStats());
 });
 
-app.get("/search", (c) => {
+app.get("/search", async (c) => {
   const query = c.req.query("q") ?? "";
+  const indexed = searchReleaseIndex(query).slice(0, 10);
+
+  let candidates = indexed;
+  let liveLookupNote: string | undefined;
+
+  const [artist, title] = splitQuery(query);
+  const exactMatch = artist && title ? findIndexedAvailability(artist, title) : null;
+
+  if (!exactMatch && artist && title) {
+    const live = await liveLookup(artist, title);
+    if (live.length > 0) {
+      candidates = [...live, ...indexed];
+      liveLookupNote = `live iTunes lookup returned ${live.length} unverified candidate(s)`;
+    } else if (liveLookupCooldownRemainingMs() > 0) {
+      liveLookupNote = "live lookup on cooldown — try again shortly";
+    }
+  }
+
   const response: SearchResponse = {
     query: {
       q: query,
       normalized: normalize(query),
       source: responseIndexSource(),
       latencyBudgetMs: INDEXED_SEARCH_LATENCY_BUDGET_MS,
+      liveLookup: liveLookupNote,
     },
-    candidates: searchReleaseIndex(query).slice(0, 10).map((candidate) => ({
+    candidates: candidates.map((candidate) => ({
       ...candidate,
       ...(candidate.sample?.origin ? { origin: candidate.sample.origin } : {}),
     })),
@@ -119,6 +139,17 @@ app.get("/search", (c) => {
 
   return c.json(response);
 });
+
+function splitQuery(query: string): [string, string] {
+  const parts = query.trim().split(/\s+/);
+  if (parts.length < 2) {
+    return ["", ""];
+  }
+  // Heuristic: last token = title, the rest = artist.
+  const title = parts[parts.length - 1]!;
+  const artist = parts.slice(0, -1).join(" ");
+  return [artist, title];
+}
 
 app.get("/suggest", (c) => {
   const query = c.req.query("q") ?? "";

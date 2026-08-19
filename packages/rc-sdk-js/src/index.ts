@@ -65,6 +65,7 @@ export interface ReleaseCheckSearchResponse {
     normalized: string;
     source: ReleaseCheckIndexSource;
     latencyBudgetMs: number;
+    liveLookup?: string;
   };
   candidates: ReleaseCheckCandidate[];
 }

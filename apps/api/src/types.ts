@@ -51,7 +51,12 @@ export interface Candidate {
   evidence: MatchEvidence[];
   availability: PlatformAvailability;
   sample?: {
-    origin: "handwritten_demo" | "synthetic_load" | "verified_musicbrainz" | "musicbrainz_ingested";
+    origin:
+      | "handwritten_demo"
+      | "synthetic_load"
+      | "verified_musicbrainz"
+      | "musicbrainz_ingested"
+      | "live_lookup";
     scene: string;
     messyCase: boolean;
     verified: boolean;
@@ -63,6 +68,7 @@ export interface QueryMetadata {
   normalized: string;
   source: IndexSource;
   latencyBudgetMs: number;
+  liveLookup?: string;
 }
 
 export interface SearchResponse {
