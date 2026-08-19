@@ -131,7 +131,7 @@ app.get("/search", async (c) => {
       latencyBudgetMs: INDEXED_SEARCH_LATENCY_BUDGET_MS,
       liveLookup: liveLookupNote,
     },
-    candidates: candidates.map((candidate) => ({
+    candidates: candidates.slice(0, 10).map((candidate) => ({
       ...candidate,
       ...(candidate.sample?.origin ? { origin: candidate.sample.origin } : {}),
     })),
