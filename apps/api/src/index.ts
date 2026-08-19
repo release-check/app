@@ -112,8 +112,13 @@ app.get("/search", async (c) => {
 
   const [artist, title] = splitQuery(query);
   const exactMatch = artist && title ? findIndexedAvailability(artist, title) : null;
+  const hasRealCandidate = indexed.some(
+    (candidate) => candidate.sample?.origin !== "synthetic_load",
+  );
 
-  if (!exactMatch && artist && title) {
+  // Live recovery only when the index has nothing real: no exact match and
+  // only synthetic/noise candidates (or nothing) ranked.
+  if (!exactMatch && !hasRealCandidate && artist && title) {
     const live = await liveLookup(artist, title);
     if (live.length > 0) {
       candidates = [...live, ...indexed];
